@@ -1,30 +1,31 @@
 .footer {
   margin: auto;
-  width: 90%;
+  width: 100%;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap:1vw;
-
-
+  gap:2vw;
+  
   &--logo {
-    flex-basis: 33%;
-    & img{
-      max-width:80%;
-      margin: auto;
-    }
+    display: none;
   }
   &--contact{
-    flex-basis: 33%;
-    line-height: 2vw;
+    
+    font-size: 3vw;
+    flex-basis: 50%;
+    font-size: 4vw;
     background-color: #424C6D;
-    border-radius: 15px;
+    border-radius: 3vw;
     color: aliceblue;
+    width: 100%;
+    height: 80%;
 
     &-contact{
-      margin: 1vw;
+      
+      margin: 1.5vw ;
 
       &__list{
-        margin-left: 1vw;
+        margin-left: 2vw;
         width: 90%;
         
       }
@@ -34,6 +35,55 @@
       &__list{
         margin-left: 1vw;
         
+      }
+    }
+  }
+
+}
+
+@media screen and (min-width: 600px){
+  .footer {
+    margin: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap:1vw;
+  
+  
+    &--logo {
+      display: block;
+      flex-basis: 33%;
+      & img{
+        max-width:80%;
+        margin: auto;
+      }
+    }
+    &--contact{
+      height: 15vw;
+      font-size: 1.8vw;
+      flex-basis: 33%;
+      line-height: 2vw;
+      background-color: #424C6D;
+      border-radius: 3vw;
+      color: aliceblue;
+      
+  
+      &-contact{
+        margin: 1vw;
+  
+        &__list{
+          margin-left: 1vw;
+          width: 90%;
+          
+        }
+      }
+      &-reseaux{
+        margin: 1vw;
+        &__list{
+          margin-left: 1vw;
+          
+        }
       }
     }
   }
