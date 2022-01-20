@@ -10,13 +10,20 @@
   background-color: rgb(70, 70, 216, 20%);
   display: flex;
   width: 90vw;
+  height: 10rem;
+  border-radius: 1rem;
 
   &--searchbar{
     height: 3rem;
     width: auto;
+    border-radius: 0.5rem;
   
   }
-  
+  &--logo{
+    width: 8rem;
+    height: 8rem;
+    border-radius: 1rem;
+  }
 
   &-link {
     margin: 0 1rem;
@@ -36,6 +43,7 @@
 
   &-user {
     display: inline-block;
+    text-align: right;
   }
 
   &-btn {

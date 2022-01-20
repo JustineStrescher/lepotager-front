@@ -5,7 +5,7 @@ import './NavBar.scss';
 const NavBar = () => (
   <div className="menu">
     <div className="menu--logo">
-      <img src={logo} alt="logo des culs fouettés" />
+      <img src={logo} alt="logo des culs fouettés" className="menu--logo" />
     </div>
     <div>
       <li>
