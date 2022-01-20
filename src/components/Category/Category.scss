@@ -4,14 +4,15 @@
   flex-wrap: wrap;
   margin-top: 2vw;
 }
-
+ 
 .CategoryCard{
   width: 90vw;
   height:90vw;
   
-  & a {
-    width: 80%;    
-  }
+  & a:hover{
+    color: aqua;   
+    }
+  
   &--button{
     height: 90%;
     width: 90%;
@@ -20,13 +21,14 @@
     position: relative;
     background-color:#CE7B5B;
     border-radius: 20vw;
-    
+   
     &-title{
       font-size: 14vw;
       position:absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50% , -50%);
+      transition: color 1.5s;
     }
   }
 }

@@ -5,16 +5,18 @@ import './Familly.scss';
 const FamillyCard = ({ name, picture }) => (
 
   <div className="FamillyCard">
-    <div className="FamillyCard--button">
-      <a href="">
+    <a href="">
+      <div className="FamillyCard--button">
         <div className="FamillyCard--image">
-          <img src={picture} alt="" />
+          <div className="FamillyCard--image-effect">
+            <img src={picture} alt="" />
+          </div>
         </div>
         <h2 className="FamillyCard--button-title">
           {name}
         </h2>
-      </a>
-    </div>
+      </div>
+    </a>
   </div>
 );
 

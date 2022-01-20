@@ -12,15 +12,32 @@
   &--image{
     width: 75%;
     margin: auto;
-    padding-top: 4vw;
     
+    margin-top: 2vw;
+    overflow: hidden;
+
+    &-effect{
+      overflow: hidden;
+      border-radius: 3vw;
+    }
+      
     & img{
       border-radius: 5vw;
-      margin: auto;
       width: 100%;
+      transition: transform 1s;
+      &:hover{
+        -ms-transform: scale(1) translate(0px); /* IE 9 */
+        -webkit-transform: scale(1) translate(0px); /* Safari 3-8 */
+        transform: scale(2) translate(0px);
+        }
       
     }
   }
+  & a:hover{
+      color: rgb(19, 146, 57);
+      border: aqua 2px solid;
+    }
+
 
   &--button{
     height: 90%;
@@ -29,8 +46,13 @@
     position: relative;
     background-color:#CE7B5B;
     border-radius: 10vw;
+    
+    transition: border 1.5s;
+    
 
+    
     &-title{
+
       text-align: center;
       font-size: 4vw;
       width: 80%;
@@ -38,6 +60,7 @@
       top: 80%;
       left: 50%;
       transform: translate(-50% , -50%);
+      transition: color 1.5s;
     }
   }
 }
@@ -67,9 +90,10 @@
       }
     }
     &--image{
-      padding-top: 2vw;
+       padding-top: 2vw;
       
       & img{
+        
         border-radius: 3vw;
       }
     }
