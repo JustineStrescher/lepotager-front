@@ -1,0 +1,61 @@
+@use 'sass:color';
+@use 'src/styles/vars';
+
+
+
+.menu {
+  text-align: center;
+  padding: 2rem 2rem;
+  border-bottom: 1px solid vars.$alt-color;
+  background-color: rgb(70, 70, 216, 20%);
+  display: flex;
+  width: 90vw;
+
+  &--searchbar{
+    height: 3rem;
+    width: auto;
+  
+  }
+  
+
+  &-link {
+    margin: 0 1rem;
+    cursor: pointer;
+    color: vars.$dark-color;
+    display: block;
+    text-decoration: none;
+
+    &--selected {
+      text-decoration: underline;
+    }
+
+    &:hover {
+      color: vars.$primary-color;
+    }
+  }
+
+  &-user {
+    display: inline-block;
+  }
+
+  &-btn {
+    background-color: vars.$primary-color;
+    border: 0;
+    color: vars.$light-color;
+    padding: 5px;
+    border-radius: 3px;
+    margin: 0 1rem;
+    display: inline-block;
+    min-width: 12em;
+
+    &:hover {
+      // https://sass-lang.com/documentation/modules/color
+      background-color: color.scale(vars.$primary-color, $lightness: -10%);
+    }
+  }
+}
+
+li {
+  display: inline-block;
+
+}
