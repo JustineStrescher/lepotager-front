@@ -1,10 +1,8 @@
 @use 'sass:color';
 @use '../../styles/vars';
+@import '../../styles/media-queries';
 
-%align-center {
-  display: flex;
-  align-items: center;
-}
+
 
 .menu {
   background: #1E6C5B;
@@ -13,28 +11,40 @@
   justify-content: space-between;
   padding: 0.5rem calc((100vw - 1000px) / 2);
   z-index: 10;
+  font-family: 'Amatic SC', cursive;
 
-  &--searchbar{
-    height: 3rem;
-    width: auto;
-    border-radius: 0.5rem;
   
-  }
   &--logo{
     width: 5rem;
     height: 5rem;
     border-radius: 1rem;
   }
 
+  &--hamburger{
+    display:none;
+    color: #F3EFE1;
+      @media screen and (max-width: 768px){
+        display: block;
+        position: absolute;
+        top: 0;
+      }
+  }
+
+  &--searchbar{
+    height: 3rem;
+    width: auto;
+    border-radius: 0.5rem;
+    display: inline-block;
+  
+  }
   &--link {
     color: #F3EFE1;
-    @extend %align-center;
+    align-items: center;
     justify-content: center;
     text-decoration: none;
-    padding: 0 3rem;
+    padding: 0 1rem;
     display: inline;
-    align-items: center;
-    vertical-align: center;
+    font-size: 2em;
 
     &:hover {
       color: #AB7341;
@@ -45,6 +55,8 @@
   &--user {
     display: flex;
     text-align: right;
+   
+    
   }
 
   &--button {
@@ -55,15 +67,11 @@
     background: #75B2B8;
     margin-left: 16px;
     color: #1E6C5B;
+    font-size: 1.5em;
 
     &:hover {
       background: #F3EFE1;
       transition: all 0.3s ease;
     }
   }
-}
-
-li {
-  display: inline-block;
-
 }
