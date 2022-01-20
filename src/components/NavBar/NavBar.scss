@@ -1,17 +1,18 @@
 @use 'sass:color';
-@use 'src/styles/vars';
+@use '../../styles/vars';
 
-
+%align-center {
+  display: flex;
+  align-items: center;
+}
 
 .menu {
-  text-align: center;
-  padding: 2rem 2rem;
-  border-bottom: 1px solid vars.$alt-color;
-  background-color: rgb(70, 70, 216, 20%);
+  background: #1E6C5B;
+  height: 80px;
   display: flex;
-  width: 90vw;
-  height: 10rem;
-  border-radius: 1rem;
+  justify-content: space-between;
+  padding: 0.5rem calc((100vw - 1000px) / 2);
+  z-index: 10;
 
   &--searchbar{
     height: 3rem;
@@ -20,45 +21,44 @@
   
   }
   &--logo{
-    width: 8rem;
-    height: 8rem;
+    width: 5rem;
+    height: 5rem;
     border-radius: 1rem;
   }
 
-  &-link {
-    margin: 0 1rem;
-    cursor: pointer;
-    color: vars.$dark-color;
-    display: block;
+  &--link {
+    color: #F3EFE1;
+    @extend %align-center;
+    justify-content: center;
     text-decoration: none;
-
-    &--selected {
-      text-decoration: underline;
-    }
+    padding: 0 3rem;
+    display: inline;
+    align-items: center;
+    vertical-align: center;
 
     &:hover {
-      color: vars.$primary-color;
-    }
+      color: #AB7341;
+      transition: all 0.3s ease;
+  }
   }
 
-  &-user {
-    display: inline-block;
+  &--user {
+    display: flex;
     text-align: right;
   }
 
-  &-btn {
-    background-color: vars.$primary-color;
-    border: 0;
-    color: vars.$light-color;
-    padding: 5px;
-    border-radius: 3px;
-    margin: 0 1rem;
-    display: inline-block;
-    min-width: 12em;
+  &--button {
+    padding: 12px 24px;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    background: #75B2B8;
+    margin-left: 16px;
+    color: #1E6C5B;
 
     &:hover {
-      // https://sass-lang.com/documentation/modules/color
-      background-color: color.scale(vars.$primary-color, $lightness: -10%);
+      background: #F3EFE1;
+      transition: all 0.3s ease;
     }
   }
 }

@@ -1,35 +1,36 @@
-import { Link } from 'react-router-dom';
+import { FaShoppingCart } from "react-icons/fa";
+import { NavLink } from 'react-router-dom';
 import logo from './logo.jpg';
 import './NavBar.scss';
 
-const NavBar = () => (
-  <div className="menu">
-    <div className="menu--logo">
-      <img src={logo} alt="logo des culs fouettés" className="menu--logo" />
-    </div>
-    <div>
-      <li>
-        <Link to="/" className="menu-link">Accueil</Link>
-      </li>
-      <li>
-        <Link to="/nos-produits" className="menu-link">Nos produits</Link>
-      </li>
-      <li>
-        <Link to="/a-propos" className="menu-link">A propos</Link>
-      </li>
-      <li>
-        <Link to="/mon-compte" className="menu-link">Mon compte</Link>
-      </li>
-    </div>
-    <input type="text" placeholder="Search.." className="menu--searchbar" />
-    <div className="menu--user">
-      <li>
-        <Link to="/connexion" className="menu-link">Se connecter</Link>
-      </li>
-      <li>
-        <Link to="/panier" className="menu-link">Mon panier</Link>
-      </li>
-    </div>
-  </div>
+const Navbar = () => (
+  <>
+    <section className="menu">
+      <NavLink to="/">
+        <img src={logo} alt="logo" className="menu--logo" />
+      </NavLink>
+      <div className="menu--nav ">
+        <NavLink to="/accueil" className="menu--link">
+          Accueil
+        </NavLink>
+        <NavLink to="/nos-produits" className="menu--link">
+          Nos produits
+        </NavLink>
+        <NavLink to="/a-propos" className="menu--link">
+          A propos
+        </NavLink>
+      </div>
+      <div>
+        <NavLink to="/panier" className="menu--button">
+          Mon panier
+          <FaShoppingCart />
+        </NavLink>
+        <NavLink to="/se-connecter" className="menu--button">
+          Se connecter
+        </NavLink>
+      </div>
+    </section>
+  </>
 );
-export default NavBar;
+
+export default Navbar;
