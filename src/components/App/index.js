@@ -1,14 +1,16 @@
 // == Import
 import './styles.css';
 
-import Category from '../Category';
 import Footer from '../Footer';
+import Category from '../Category';
+import Familly from '../Familly';
 
 // == Composant
 const App = () => (
 
   <div className="app">
     <Category />
+    <Familly />
     <Footer />
   </div>
 );

@@ -1,30 +1,41 @@
-.Category{
+.Familly{
   width: 100%;
   display: flex;
   flex-wrap: wrap;
   margin-top: 2vw;
 }
 
-.CategoryCard{
-  width: 90vw;
-  height:90vw;
-  
-  & a {
-    width: 80%;    
+.FamillyCard{
+  width: 45vw;
+  height:45vw;
+
+  &--image{
+    width: 75%;
+    margin: auto;
+    padding-top: 4vw;
+    
+    & img{
+      border-radius: 5vw;
+      margin: auto;
+      width: 100%;
+      
+    }
   }
+
   &--button{
     height: 90%;
     width: 90%;
     margin: auto;
-    padding: auto;
     position: relative;
     background-color:#CE7B5B;
-    border-radius: 20vw;
-    
+    border-radius: 10vw;
+
     &-title{
-      font-size: 14vw;
+      text-align: center;
+      font-size: 4vw;
+      width: 80%;
       position:absolute;
-      top: 50%;
+      top: 80%;
       left: 50%;
       transform: translate(-50% , -50%);
     }
@@ -33,9 +44,9 @@
 @media screen and (min-width: 600px){
 
  
-  .CategoryCard{
-    width: 44vw;
-    height:44vw;
+  .FamillyCard{
+    width: 22vw;
+    height:22vw;
     
     &--button{
       height: 90%;
@@ -43,18 +54,25 @@
       margin: auto;
       position: relative;
       background-color:#CE7B5B;
-      border-radius: 10vw;
+      border-radius: 5vw;
   
       &-title{
-        font-size: 7vw;
+        text-align: center;
+        width:80%;
+        font-size: 1.8vw;
         position:absolute;
-        top: 50%;
+        top: 80%;
         left: 50%;
         transform: translate(-50% , -50%);
+      }
+    }
+    &--image{
+      padding-top: 2vw;
+      
+      & img{
+        border-radius: 3vw;
       }
     }
     
   }
 }
-
-
