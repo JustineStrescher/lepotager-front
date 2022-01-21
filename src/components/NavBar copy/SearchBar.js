@@ -1,5 +1,5 @@
 const SearchBar = () => (
-  <div>
+  <div className="menu--searchbar">
     <form action="/" method="get">
       <input
         type="text"

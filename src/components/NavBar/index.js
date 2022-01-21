@@ -1,41 +1,50 @@
-import { FaShoppingCart, FaUserAlt } from 'react-icons/fa';
-import { Squash as Hamburger } from 'hamburger-react';
-import { NavLink } from 'react-router-dom';
-import logo from './logo.jpg';
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './NavBar.scss';
-import SearchBar from './SearchBar';
+import { AiOutlineClose, AiOutlineMenu, AiOutlineSearch } from 'react-icons/ai';
+import { FaUserAlt } from 'react-icons/fa';
+import logo from './logo.jpg';
 
-const Navbar = () => (
-  <>
-    <nav className="menu">
-      <NavLink to="/">
-        <img src={logo} alt="logo" className="menu--logo" />
-      </NavLink>
-      <Hamburger className="menu--hamburger" color="#F3EFE1" />
-      <div className="menu--nav ">
-        <NavLink to="/accueil" className="menu--link">
-          Accueil
-        </NavLink>
-        <NavLink to="/nos-produits" className="menu--link">
-          Nos produits
-        </NavLink>
-        <NavLink to="/a-propos" className="menu--link">
-          A propos
-        </NavLink>
-        <SearchBar className="menu--searchbar" />
-      </div>
-      <div>
-        <NavLink to="/panier" className="menu--button">
-          Mon panier
-          <FaShoppingCart />
-        </NavLink>
-        <NavLink to="/se-connecter" className="menu--button">
-          Se connecter
-          <FaUserAlt />
-        </NavLink>
-      </div>
-    </nav>
-  </>
-);
+const NavBar = () => {
+  const [isMobile, setIsMobile] = useState(false);
+  return (
+    <>
+      <nav className="navbar">
+        <Link to="/">
+          <img src={logo} alt="logo" className="navbar__logo" />
+        </Link>
+        <div
+          className="navbar__mobile--icon"
+          onClick={() => setIsMobile(!isMobile)}
+        >
+          {isMobile ? <AiOutlineClose /> : <AiOutlineMenu /> }
+        </div>
+        <ul
+          className={isMobile ? 'navbar__links--mobile' : 'navbar__links'}
+          onClick={() => setIsMobile(false)}
+        >
+          <>
+            <Link to="/" className="navbar__links--home">
+              <li>Accueil</li>
+            </Link>
 
-export default Navbar;
+            <Link to="/nos-produits" className="navbar__links--products">
+              <li>Nos produits</li>
+            </Link>
+            <Link to="/a-propos" className="navbar__links--about">
+              <li>A propos</li>
+            </Link>
+            <Link to="/se-connecter" className="navbar__links--account">
+              <li>Se connecter</li>
+            </Link>
+          </>
+        </ul>
+        <button type="submit" className="navbar__search">
+          <AiOutlineSearch />
+        </button>
+      </nav>
+    </>
+  );
+};
+
+export default NavBar;

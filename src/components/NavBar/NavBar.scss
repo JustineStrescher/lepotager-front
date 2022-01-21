@@ -1,77 +1,106 @@
-@use 'sass:color';
-@use '../../styles/vars';
-@import '../../styles/media-queries';
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 
+}
 
+.navbar{
 
-.menu {
-  background: #1E6C5B;
-  height: 80px;
   display: flex;
-  justify-content: space-between;
-  padding: 0.5rem calc((100vw - 1000px) / 2);
-  z-index: 10;
+  justify-content: space-around;
+  align-items: center;
+  height: 75px;
+  background-color: #1E6C5B;
+  color: #F3EFE1;
   font-family: 'Amatic SC', cursive;
+  font-size: 2rem;
 
-  
-  &--logo{
-    width: 5rem;
-    height: 5rem;
-    border-radius: 1rem;
+
+  &__logo{
+    width: 2em;
+    position: absolute;
+    top: 10px;
+    border-radius: 1em;
+    text-align: center;
+    margin-left:-1em;
   }
 
-  &--hamburger{
-    display:none;
-    color: #F3EFE1;
-      @media screen and (max-width: 768px){
-        display: block;
-        position: absolute;
-        top: 0;
-      }
-  }
-
-  &--searchbar{
-    height: 3rem;
-    width: auto;
-    border-radius: 0.5rem;
-    display: inline-block;
-  
-  }
-  &--link {
-    color: #F3EFE1;
+  &__search{
+    display: none;
     align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    padding: 0 1rem;
-    display: inline;
-    font-size: 2em;
-
-    &:hover {
-      color: #AB7341;
-      transition: all 0.3s ease;
-  }
-  }
-
-  &--user {
-    display: flex;
-    text-align: right;
-   
-    
-  }
-
-  &--button {
-    padding: 12px 24px;
+    font-size: 30px;
     border: none;
     outline: none;
-    border-radius: 4px;
-    background: #75B2B8;
-    margin-left: 16px;
-    color: #1E6C5B;
-    font-size: 1.5em;
+    background-color: #1E6C5B;
+    color: #F3EFE1;
+  }
 
-    &:hover {
-      background: #F3EFE1;
-      transition: all 0.3s ease;
+  &__links{
+    display: none;
+    &.li{
+      color: #AB7341;
+    }
+
+    &--mobile{
+      position: absolute;
+      display: block;
+      background-color: #75B2B8;
+      left: 0;
+      top: 70px;
+      transition: all 0.5 ease-out;
+      width: 100%;
+    }
+    
+    
+    &--home, &--products, &--account, &--about{
+      padding: 10px;
+      text-align: center;
+      width: 100%;
+      transition: all 0.5 ease-out;
+    }
+    
+  }
+  &__mobile--icon{
+    display: block;
+    position: absolute;
+    font-size: 30px;
+    border: none;
+    outline: none;
+    top: 15px;
+    right: 25px;
+    background-color: #1E6C5B;
+    color: #F3EFE1;
+  }
+
+}
+
+@media screen and (min-width:768px) {
+  .navbar{
+    justify-content: space-around;
+    align-items: center;
+
+    &__logo{
+      display: flex;
+      position:absolute;
+      left: 10%;
+    }
+    &__links{
+      display: flex;
+      justify-content: flex-end;
+      width: 70%;
+      &--account{
+        border: 1px solid #AB7341;
+        border-radius: 5px;
+        &:hover{
+          background-color: #F3EFE1;
+          color: #AB7341;
+        }
+      }
+    }
+    &__mobile--icon{
+      display: none;
+    }
+  
     }
   }
-}
