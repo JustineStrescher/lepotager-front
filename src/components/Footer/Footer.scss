@@ -1,5 +1,8 @@
+@use 'src/styles/vars';
+
 .footer {
   padding-top: 2vw;
+  padding-bottom: 2vw;
   margin: auto;
   width: 100%;
   display: flex;
@@ -15,9 +18,9 @@
     font-size: 3vw;
     flex-basis: 50%;
     font-size: 4vw;
-    background-color: #424C6D;
+    background-color: vars.$mainColor;
     border-radius: 3vw;
-    color: aliceblue;
+    
     width: 100%;
     height: 80%;
 
@@ -25,15 +28,20 @@
       margin: 1.5vw ;
 
       &__list{
-        margin-left: 2vw;
+        margin-left: 1vw;
         width: 90%;
+        & img {
+          width: 3vw;
+        }
       }
     }
     &-reseaux{
       margin: 1vw;
       &__list{
         margin-left: 1vw;
-        
+        & img {
+          width: 10vw;
+        }
       }
     }
   }
@@ -53,7 +61,7 @@
       display: block;
       flex-basis: 33%;
       & img{
-        max-width:80%;
+        width:80%;
         margin: auto;
       }
     }
@@ -62,25 +70,34 @@
       font-size: 1.8vw;
       flex-basis: 33%;
       line-height: 2vw;
-      background-color: #424C6D;
+      background-color: vars.$mainColor;
       border-radius: 3vw;
-      color: aliceblue;
+      
       
   
       &-contact{
         margin: 1vw;
   
         &__list{
-          margin-left: 1vw;
+          margin-top: 1vw;
+          margin-left: 0.5vw;
+          font-size: 1.5vw;
           width: 90%;
-          
+          & img {
+            width: 1.5vw;
+          }
         }
       }
       &-reseaux{
         margin: 1vw;
         &__list{
-          margin-left: 1vw;
-          
+          display: flex;
+          margin: 2vw;
+          justify-content: space-around;
+          & img {
+            
+            width: 5vw;
+          }
         }
       }
     }

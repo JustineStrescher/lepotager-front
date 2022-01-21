@@ -1,3 +1,5 @@
+@use 'src/styles/vars';
+
 .Product{
   width: 100%;
   display: flex;
@@ -27,9 +29,9 @@
       width: 100%;
       transition: transform 1s;
       &:hover{
-        -ms-transform: scale(2) translate(0px); /* IE 9 */
-        -webkit-transform: scale(2) translate(0px); /* Safari 3-8 */
-        transform: scale(2) translate(0px);
+        -ms-transform: scale(1.2) translate(0px); /* IE 9 */
+        -webkit-transform: scale(1.2) translate(0px); /* Safari 3-8 */
+        transform: scale(1.2) translate(0px);
         }
     }
   }
@@ -39,14 +41,17 @@
     width: 90%;
     margin: auto;
     position: relative;
-    background-color:#CE7B5B;
+    background-color: vars.$mainColor;
     border-radius: 10vw;
-    transition: all .5s;
+    transition: box-shadow 1.5s;
     &:hover{
-      box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+      box-shadow: rgb(0, 0, 0) 0px 20px 200px -10px;
     }
     &-button{
+      font-family: vars.$fontFamily;
+      height: 6vw;
       border-radius: 4vw;
+      border: none;
       text-align: center;
       font-size: 4vw;
       width: 80%;
@@ -85,7 +90,7 @@
       width: 90%;
       margin: auto;
       position: relative;
-      background-color:#CE7B5B;
+      background-color: vars.$mainColor;
       border-radius: 5vw;
   
       &-title{
@@ -98,6 +103,7 @@
       }
       
       &-button{
+        height: 3vw;
         border-radius: 2vw;
         text-align: center;
         width:80%;

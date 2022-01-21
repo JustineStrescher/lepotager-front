@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 
 import './Product.scss';
 
-const ProductCard = ({ name, picture }) => (
+const ProductCard = ({ picture }) => (
 
   <div className="ProductCard">
     <div className="ProductCard--button">
@@ -23,7 +23,6 @@ const ProductCard = ({ name, picture }) => (
 );
 
 ProductCard.propTypes = {
-  name: PropTypes.string.isRequired,
   picture: PropTypes.string.isRequired,
 };
 
