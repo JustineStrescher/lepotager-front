@@ -1,13 +1,13 @@
-.Familly{
+.Product{
   width: 100%;
   display: flex;
   flex-wrap: wrap;
   margin-top: 2vw;
 }
 
-.FamillyCard{
+.ProductCard{
   width: 45vw;
-  height:45vw;
+  height: 67.5vw;
 
   &--image{
     width: 75%;
@@ -15,6 +15,7 @@
     margin-top: 2vw;
     overflow: hidden;
     padding-top: 4vw;
+
     &-effect{
       overflow: hidden;
       border-radius: 5vw;
@@ -30,14 +31,8 @@
         -webkit-transform: scale(2) translate(0px); /* Safari 3-8 */
         transform: scale(2) translate(0px);
         }
-      
     }
   }
-  & a:hover{
-      color: rgb(19, 146, 57);
-      border: aqua 2px solid;
-    }
-
 
   &--button{
     height: 90%;
@@ -46,13 +41,12 @@
     position: relative;
     background-color:#CE7B5B;
     border-radius: 10vw;
-    
-    transition: border 1.5s;
-    
-
-    
-    &-title{
-
+    transition: all .5s;
+    &:hover{
+      box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    }
+    &-button{
+      border-radius: 4vw;
       text-align: center;
       font-size: 4vw;
       width: 80%;
@@ -62,14 +56,29 @@
       transform: translate(-50% , -50%);
       transition: color 1.5s;
     }
+    &-title{
+      position:absolute;
+      top: 58%;
+      left: 50%;
+      transform: translate(-50% , -50%);
+      font-size: 7vw;
+      text-align: center;
+      line-height: 7vw;
+
+      &-price{
+        font-size: 4vw;
+        top: 65%;
+      }
+    }
+
   }
 }
 @media screen and (min-width: 600px){
 
  
-  .FamillyCard{
+  .ProductCard{
     width: 22vw;
-    height:22vw;
+    height:33vw;
     
     &--button{
       height: 90%;
@@ -80,6 +89,16 @@
       border-radius: 5vw;
   
       &-title{
+        font-size: 3.5vw;
+        line-height: 3.5vw;
+        &-price{
+          font-size: 2vw;
+          top: 65%;
+        }
+      }
+      
+      &-button{
+        border-radius: 2vw;
         text-align: center;
         width:80%;
         font-size: 1.8vw;
@@ -93,10 +112,9 @@
        padding-top: 2vw;
       
       & img{
-        
         border-radius: 3vw;
       }
     }
-    
   }
 }
+
