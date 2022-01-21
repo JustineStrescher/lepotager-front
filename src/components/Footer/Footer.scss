@@ -1,14 +1,14 @@
 @use 'src/styles/vars';
 
 .footer {
-  padding-top: 2vw;
-  padding-bottom: 2vw;
+  padding-top: 4vw;
+  padding-bottom: 4vw;
   margin: auto;
-  width: 100%;
+  width: 90%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap:2vw;
+  gap:3vw;
   
   &--logo {
     display: none;
@@ -38,6 +38,9 @@
     &-reseaux{
       margin: 1vw;
       &__list{
+        display: flex;
+        margin: 2vw;
+        justify-content: space-around;
         margin-left: 1vw;
         & img {
           width: 10vw;
@@ -58,11 +61,13 @@
   
   
     &--logo {
+      margin: auto;
       display: block;
       flex-basis: 33%;
       & img{
+        
         width:80%;
-        margin: auto;
+        
       }
     }
     &--contact{
@@ -95,7 +100,6 @@
           margin: 2vw;
           justify-content: space-around;
           & img {
-            
             width: 5vw;
           }
         }

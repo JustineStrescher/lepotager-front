@@ -2,7 +2,7 @@ import './Category.scss';
 
 import { useSelector } from 'react-redux';
 
-import CategoryCard from './categoryCard';
+import CategoryCard from './CategoryCard';
 
 const Category = () => {
   const categoryList = useSelector((state) => state.category.CategoryData);

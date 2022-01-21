@@ -2,7 +2,7 @@ import './Product.scss';
 
 import { useSelector } from 'react-redux';
 
-import ProductCard from './productCard';
+import ProductCard from './ProductCard';
 
 const Product = () => {
   const productList = useSelector((state) => state.familly.FamillyData);

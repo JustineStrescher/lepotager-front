@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-import './Category.scss';
+import '../Category.scss';
 
 const CategoryCard = ({ name }) => (
 

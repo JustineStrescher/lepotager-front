@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-import './Familly.scss';
+import '../Familly.scss';
 
 const FamillyCard = ({ name, picture }) => (
 

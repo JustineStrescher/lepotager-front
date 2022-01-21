@@ -1,12 +1,12 @@
 import './Footer.scss';
 
-import logo from './Logo-cf.jpg';
-import mail from './envelope.png';
-import fb from './facebook.png';
-import insta from './instagram.png';
-import twitter from './twitter.png';
-import tel from './telephone.png';
-import adresse from './adress.png';
+import logo from './Logo/Logo-cf.jpg';
+import mail from './Logo/envelope.png';
+import fb from './Logo/facebook.png';
+import insta from './Logo/instagram.png';
+import twitter from './Logo/twitter.png';
+import tel from './Logo/telephone.png';
+import adresse from './Logo/adress.png';
 
 const Footer = () => (
   <section className="footer">

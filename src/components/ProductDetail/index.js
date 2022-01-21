@@ -1,15 +1,15 @@
-import './productDetail.scss';
+import './ProductDetail.scss';
 
 import { useSelector } from 'react-redux';
 
-import ProductDetailCard from './productDetail';
+import ProductDetailCard from './ProductDetailCard';
 
 const ProductDetail = () => {
-  const productList = useSelector((state) => state.product.ProductData);
+  const products = useSelector((state) => state.product.ProductData);
 
   return (
     <div className="ProductDetail">
-      {productList.map((product) => (
+      {products.map((product) => (
         <ProductDetailCard key={product.id} {...product} />
       ))}
     </div>
