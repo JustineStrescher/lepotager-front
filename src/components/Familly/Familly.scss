@@ -13,19 +13,22 @@
 
   &--image{
     width: 75%;
+    
     margin: auto;
     margin-top: 2vw;
     overflow: hidden;
     padding-top: 4vw;
     &-effect{
+      
       overflow: hidden;
       border-radius: 5vw;
     }
       
     & img{
-      
+      height: 20vw;
       border-radius: 5vw;
       width: 100%;
+      
       transition: transform 1s;
       &:hover{
         -ms-transform: scale(1.1) translate(0px); /* IE 9 */
@@ -45,7 +48,7 @@
     width: 90%;
     margin: auto;
     position: relative;
-    background-color:vars.$mainColor;
+    background-color:vars.$secondColor;
     border-radius: 10vw;
     transition: box-shadow 1.5s;
     &:hover{
@@ -78,7 +81,7 @@
       width: 90%;
       margin: auto;
       position: relative;
-      background-color:vars.$mainColor;
+      
       border-radius: 5vw;
   
       &-title{
@@ -95,7 +98,7 @@
        padding-top: 2vw;
       
       & img{
-        
+        height: 10vw;
         border-radius: 3vw;
       }
     }

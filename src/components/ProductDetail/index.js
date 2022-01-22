@@ -5,13 +5,11 @@ import { useSelector } from 'react-redux';
 import ProductDetailCard from './ProductDetailCard';
 
 const ProductDetail = () => {
-  const products = useSelector((state) => state.product.ProductData);
+  const product = useSelector((state) => state.product.ProductData[1]);
 
   return (
     <div className="ProductDetail">
-      {products.map((product) => (
-        <ProductDetailCard key={product.id} {...product} />
-      ))}
+      <ProductDetailCard key={product.id} {...product} />
     </div>
   );
 };

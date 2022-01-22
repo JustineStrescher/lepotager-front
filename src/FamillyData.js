@@ -14,7 +14,7 @@ export default [
   {
     id: 3,
     name: 'Les légumes fruits',
-    picture: 'https://images.pexels.com/photos/5644971/pexels-photo-5644971.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+    picture: 'https://media.istockphoto.com/photos/two-fresh-zucchini-isolated-picture-id94929472?k=20&m=94929472&s=612x612&w=0&h=kcnUXOMRsOIxdFNZJ_7VW2JC6dqwDlyDJayGMavU9rw=',
     available: true,
   },
   {

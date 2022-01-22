@@ -1,5 +1,5 @@
 // == Import
-import './styles.css';
+import './styles.scss';
 
 import Footer from '../Footer';
 import Category from '../Category';

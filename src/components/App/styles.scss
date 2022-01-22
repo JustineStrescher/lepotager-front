@@ -1,0 +1,11 @@
+@use 'src/styles/vars';
+body{
+  background-color: vars.$backColor;
+}
+.app {
+  margin: auto;
+  font-family: "helvetica";
+
+}
+
+

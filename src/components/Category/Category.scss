@@ -22,7 +22,7 @@
     margin: auto;
     padding: auto;
     position: relative;
-    background-color: vars.$mainColor;
+    background-color: vars.$secondColor;
     border-radius: 20vw;
     transition: box-shadow 1.5s;
     &:hover{
@@ -51,7 +51,6 @@
       width: 90%;
       margin: auto;
       position: relative;
-      background-color:vars.$mainColor;
       border-radius: 10vw;
   
       &-title{
