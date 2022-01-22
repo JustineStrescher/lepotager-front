@@ -1,31 +1,34 @@
 @use 'src/styles/vars';
 
 .Product{
-  width: 100%;
   display: flex;
   flex-wrap: wrap;
-  margin-top: 2vw;
+  max-width: 1200px;
+  width: 90%;
+  margin: auto;
+  margin-top: 2rem;
+  flex-basis: 50%;
+  align-items: center;
 }
 
 .ProductCard{
-  width: 45vw;
-  height: 67.5vw;
+  width: 50%;
+  font-size: vars.$fontSize;
 
   &--image{
     width: 75%;
     margin: auto;
-    margin-top: 2vw;
+    margin-top: 1rem;
     overflow: hidden;
-    padding-top: 4vw;
+    padding-top: 1rem;
 
     &-effect{
       overflow: hidden;
-      border-radius: 5vw;
+      border-radius: 1rem;
     }
       
     & img{
-      
-      border-radius: 5vw;
+      border-radius: 1rem;
       width: 100%;
       transition: transform 1s;
       &:hover{
@@ -37,61 +40,63 @@
   }
 
   &--button{
+    
     height: 90%;
     width: 90%;
     margin: auto;
     position: relative;
     background-color: vars.$secondColor;
-    border-radius: 10vw;
+    border-radius: 1.5rem;
     transition: box-shadow 1.5s;
     &:hover{
-      box-shadow: rgb(0, 0, 0) 0px 20px 60px -10px;
+      box-shadow: rgb(0, 0, 0) 0px 20px 30px -10px;
     }
     &-button{
       font-family: vars.$fontFamily;
-      height: 6vw;
-      border-radius: 4vw;
+      border-radius: 1rem;
       border: none;
       text-align: center;
-      font-size: 4vw;
-      width: 80%;
-      position:absolute;
-      top: 80%;
-      left: 50%;
-      transform: translate(-50% , -50%);
-      
+      width: 90%;
+      margin: 0.5rem auto;
+      background-color: vars.$borderColor;
+      border: vars.$borderColor 1.5px solid;
+      transition: border 1s ;
       &:hover{
-        border:rgb(0, 0, 0) 3px solid;
+        border:rgb(99, 99, 99) 1.5px solid;
       }
     }
     &-title{
-      width: 100%;
-      position:absolute;
-      top: 56%;
-      left: 50%;
-      transform: translate(-50% , -50%);
-      font-size: 6vw;
+      width: 85%;
+      margin: auto;
       text-align: center;
       
-
-      &-price{
-        font-size: 4vw;
-        top: 65%;
+      &-title{
+        color: vars.$mainColor;
+        padding: 0.5rem;
+        text-transform: uppercase;
       }
+      &-price{
+      
+      font-size: vars.$fontSize * 0.7;
     }
+    }
+    
     &-available_none{
       display: none;
     }
 
     &-available{
-      border-radius: 2vw;
-      position:absolute;
-      top: 92%;
+      width: 80%;
+      position: absolute;
+      top: 0;
       left: 50%;
-      transform: translate(-50% , -50%);
-      font-size: 4vw;
+      transform: translate(-50%,-50%);
+      border-radius: 0.5rem;
       text-align: center;
-      padding: 0.5vw 1.5vw ;
+      font-size: vars.$fontSize *0.9;
+      padding-top: 0.15rem;
+      padding-bottom: 0.10rem;
+      color: #fff;
       background-color: rgb(163, 60, 60);
 
     }
@@ -102,58 +107,43 @@
 
  
   .ProductCard{
-    width: 22vw;
-    height:33vw;
+    width: 25%;
+    font-size: vars.$fontSize * 1.25;
     
     &--button{
       height: 90%;
       width: 90%;
       margin: auto;
       position: relative;
-      
-      border-radius: 5vw;
+      border-radius: 1rem;
   
       &-title{
-        font-size: 3vw;
-        line-height: 2.5vw;
-        &-price{
-          font-size: 2vw;
-          top: 65%;
-        }
       }
       
       &-button{
-        height: 3vw;
-        border-radius: 2vw;
+        font-size: vars.$fontSize * 1.10;
+        border-radius: 1rem;
         text-align: center;
+        padding: 0.5rem;
         width:80%;
-        font-size: 1.8vw;
-        position:absolute;
-        top: 80%;
-        left: 50%;
-        transform: translate(-50% , -50%);
+        border:vars.$borderColor 2px solid;
+        margin-bottom: 1rem ;
         &:hover{
           border:black 2px solid;
         }
       }
       &-available{
-        border-radius: 2vw;
-        position:absolute;
-        top: 92%;
-        left: 50%;
-        transform: translate(-50% , -50%);
-        font-size: 1.8vw;
+        border-radius: 1rem;
         text-align: center;
-        padding: 0.5vw 1.5vw ;
         background-color: rgb(163, 60, 60);
   
       }
     }
     &--image{
-       padding-top: 2vw;
+       padding-top: 1rem;
       
       & img{
-        border-radius: 3vw;
+        border-radius: 2rem;
       }
     }
   }

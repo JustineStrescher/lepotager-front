@@ -10,13 +10,13 @@ const ProductCard = ({ picture, available }) => (
         </div>
       </div>
       <div className="ProductCard--button-title">
-        <h1>Choux de bruxelle
+        <h1 className="ProductCard--button-title-title">Choux de bruxelle
         </h1>
         <p className="ProductCard--button-title-price">15.23 €/kg </p>
+        <button className="ProductCard--button-button" type="button" href="">
+          Fiche produit
+        </button>
       </div>
-      <button className="ProductCard--button-button" type="button" href="">
-        Fiche produit
-      </button>
       <p className={!available ? 'ProductCard--button-available_none' : 'ProductCard--button-available'}>Indisponible</p>
     </div>
   </div>

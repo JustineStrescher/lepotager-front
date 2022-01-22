@@ -59,7 +59,6 @@ ProductDetailCard.propTypes = {
   picture: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
-  quantity: PropTypes.number.isRequired,
   description: PropTypes.string.isRequired,
   available: PropTypes.bool.isRequired,
   unit: PropTypes.string.isRequired,
