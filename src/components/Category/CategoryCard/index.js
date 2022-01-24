@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom';
 
 import '../Category.scss';
 
-const CategoryCard = ({ name }) => (
+const CategoryCard = ({ name, slug }) => (
 
   <div className="CategoryCard">
-    <Link to={`/${name}`} className="card-link">
+    <Link to={`/${slug}`} className="card-link">
       <div className="CategoryCard--button">
         <h2 className="CategoryCard--button-title">
           {name}
@@ -19,6 +19,7 @@ const CategoryCard = ({ name }) => (
 
 CategoryCard.propTypes = {
   name: PropTypes.string.isRequired,
+  slug: PropTypes.string.isRequired,
 };
 
 export default CategoryCard;

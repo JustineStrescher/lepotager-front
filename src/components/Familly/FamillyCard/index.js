@@ -7,8 +7,8 @@ import '../Familly.scss';
 const FamillyCard = ({ name, picture, slug }) => (
 
   <div className="FamillyCard">
-    <Link to={`/Légume/${slug}`} className="card-link">
-      <div className="FamillyCard--button">
+    <div className="FamillyCard--button">
+      <Link to={`/legumes/${slug}`} className="card-link">
         <div className="FamillyCard--image">
           <div className="FamillyCard--image-effect">
             <img src={picture} alt="" />
@@ -17,8 +17,8 @@ const FamillyCard = ({ name, picture, slug }) => (
         <h2 className="FamillyCard--button-title">
           {name}
         </h2>
-      </div>
-    </Link>
+      </Link>
+    </div>
   </div>
 );
 

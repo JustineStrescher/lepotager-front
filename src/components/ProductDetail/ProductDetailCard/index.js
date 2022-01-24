@@ -6,7 +6,7 @@ import { changeInputValue } from 'src/actions/productDetail';
 
 const ProductDetailCard = ({
   picture,
-  title,
+  name,
   price,
   description,
   available,
@@ -21,7 +21,7 @@ const ProductDetailCard = ({
         <img src={picture} alt="" />
       </div>
       <div className="ProductDetailCard--detail">
-        <h1 className="ProductDetailCard--detail-title">{title}</h1>
+        <h1 className="ProductDetailCard--detail-title">{name}</h1>
         <p className="ProductDetailCard--detail-description">{description}</p>
         <p className="ProductDetailCard--detail-price">Prix / {unit} : {price} €</p>
         <div className="ProductDetailCard--form">
@@ -57,7 +57,7 @@ const ProductDetailCard = ({
 
 ProductDetailCard.propTypes = {
   picture: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
   description: PropTypes.string.isRequired,
   available: PropTypes.bool.isRequired,

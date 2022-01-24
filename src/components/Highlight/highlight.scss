@@ -1,0 +1,29 @@
+@use 'src/styles/vars';
+
+.Highlight{
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  width: 90%;
+  margin: auto;
+  margin-top: 2rem;
+  flex-basis: 50%;
+  align-items: center;
+  &--title{
+    margin-top: 2.5rem;
+    margin-bottom: -2.5rem;
+    font-weight: bold;
+    text-align: center;
+    font-size: vars.$fontSize*2;
+    color: vars.$mainColor;
+  }
+}
+
+@media screen and (min-width: 600px){
+.Highlight{
+  &--title{
+    margin-top: 3rem;
+    
+    font-size: vars.$fontSize*2.5;
+  }
+}}

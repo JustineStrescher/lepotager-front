@@ -1,19 +1,5 @@
 export default [
   {
-    id: 12345,
-    category: 'légume fruit',
-    categorySlug: 'les-legumes-fleurs',
-    name: 'Courgette',
-    slug: 'Courgette',
-    picture: 'https://media.istockphoto.com/photos/two-fresh-zucchini-isolated-picture-id94929472?k=20&m=94929472&s=612x612&w=0&h=kcnUXOMRsOIxdFNZJ_7VW2JC6dqwDlyDJayGMavU9rw=',
-    description: 'Délicieuse courgettes de saison',
-    longDescription: 'delicieuse courgettes de saison du jardin',
-    available: true,
-    stock: 35,
-    price: 3.40,
-    unit: 'Kg',
-  },
-  {
     id: 12346,
     category: 'légume',
     categorySlug: 'legume-feuille',
@@ -68,7 +54,7 @@ export default [
     picture: 'https://media.istockphoto.com/photos/bunch-of-radishes-picture-id471245003?k=20&m=471245003&s=612x612&w=0&h=J_43NSZFYxVze33sPgvJiXVghqzl9m8aA2exEH0Fifk=',
     description: 'Délicieuse pomme de terre de saison',
     longDescription: 'Délicieuse pomme de terre de saison du jardin',
-    available: false,
+    available: true,
     stock: 45,
     price: 3.50,
     unit: 'Kg',

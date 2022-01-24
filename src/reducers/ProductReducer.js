@@ -1,11 +1,13 @@
-import ProductData from 'src/ProductDetailData';
-
 import {
   CHANGE_INPUT_VALUE,
 } from 'src/actions/productDetail';
 
+import ProductData from 'src/ProductDetailData';
+import HighlightData from '../HighlightData';
+
 export const initialState = {
   ProductData,
+  HighlightData,
   quantity: 0,
 };
 

@@ -1,4 +1,4 @@
-// @import url('https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap');
 
 // Generic
 $primary-color: #1E6C5B;
@@ -7,9 +7,6 @@ $dark-color: #AB7341;
 $light-color: #F3EFE1;
 $gutter: 2rem;
 
-// Global
-$global-font: 'Roboto', sans-serif;
-$global-font-weight: 300;
 
 // Title
 $title-font: 'Oswald', sans-serif;
@@ -19,9 +16,10 @@ $title-color: #000;
 // Post
 $post-text-color: #666;
 $post-hover-color: #f7f7f7;
+
 // https://www.local.bio/
 
-$mainColor: #0f3f12;
+$mainColor: #1E6C5B;
 $titleColor: #09270b;
 $secondColor : #ffffff;
 $backColor : #e4e1cd;
@@ -37,9 +35,9 @@ $borderColor: #D2D2D2;
 // $borderColor: #D2D2D2;
 
 $fontColor: #fff;
-$fontSize: 1rem;
+$fontSize: 1.6rem;
 
-$fontFamily: "Ubuntu Mono" ;
+$fontFamily: 'Amatic SC' , cursive ;
 
 // $gutter: 1rem;
 
