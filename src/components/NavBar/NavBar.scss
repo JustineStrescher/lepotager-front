@@ -13,6 +13,8 @@
   color: #F3EFE1;
   font-family: 'Amatic SC', cursive;
   font-size: 2rem;
+  position: relative;
+  height: 5rem;
 
   &__logo{
     width: 1.75em;
@@ -32,6 +34,7 @@
   }
 
   &__links{
+    top: 0px;
     display: none;
     & a:hover{
       color: #AB7341;
@@ -43,7 +46,7 @@
       display: block;
       background-color: #75B2B8;
       left: 0;
-      top: 0px;
+      top: 5rem;
       transition: all 0.5 ease-out;
       width: 100%;
     }
@@ -91,6 +94,9 @@
       width: 70%;
       & a:hover{
         color: #AB7341;
+      }
+      &--mobile{
+        display: none;
       }
       
       &--account{

@@ -1,0 +1,31 @@
+.search{
+  &__autocomplete{
+  font-family: 'Amatic SC', cursive;
+  font-size: 1.5rem;
+  color: white;
+  }
+
+ &__icon{
+  cursor: pointer;
+}
+}
+
+
+input {
+  height: 60px;
+  width: 100%;
+  min-width: 100%;
+  padding: 0;
+  border-radius: 0;
+  font-size: 2rem;
+  
+  background-color: transparent;
+  color: white;
+ 
+  border: none;
+  outline: none;
+  border-bottom: 3px solid #7c7a7a;
+ 
+  
+}
+
