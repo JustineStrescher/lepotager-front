@@ -20,14 +20,42 @@
     padding-top: 1.25rem;
     display: flex;
     flex-direction: column;
+    &-flex{
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+    }
     &-input{
       font-size: 0.9rem;        
       text-align: center;
       width: 30%;
       border-radius: 1rem;
-      border: vars.$borderColor;
-      
+      border: vars.$borderColor 2px solid;
       padding-right: 0.5rem;
+    }
+    &-ammount{
+      height: 1.5rem;
+      border: vars.$borderColor 2px solid;
+      font-size: 0.9rem;        
+      text-align: center;
+      padding: 0 0.5rem ;
+      border-radius: 0.5rem;
+      padding-top: 0.2rem;
+    }
+    &-button{
+      font-size: 1rem;
+      width: 60%;
+      margin:  1rem auto;
+      padding: 0.5rem 0 ;
+      border-radius: 1rem;
+      color: aliceblue;
+      border: vars.$mainColor 2px solid;
+      background-color: vars.$mainColor;
+      transition: all  0.5s;
+      &:hover{
+        color: vars.$mainColor;
+        background-color: #fff;
+      }
     }
   }
   &--image{
@@ -70,16 +98,9 @@
     }
     &-price{
       margin-top: 1rem;
+      margin-bottom: 1rem;
     }
-    &-button{
-      font-size: 1rem;
-      width: 60%;
-      margin:  1rem auto;
-      border-radius: 1rem;
-      color: aliceblue;
-      background-color: vars.$mainColor;
-      padding: 0.4rem;
-    }
+    
   }
 }
 
@@ -137,7 +158,6 @@
         border: vars.$mainColor 2px solid;
         color: vars.$mainColor;
         background-color: #fff;
-
       }
     }
   }

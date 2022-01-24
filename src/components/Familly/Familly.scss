@@ -27,8 +27,7 @@
     }
       
     & img{
-      height: 20vw;
-      width: 7rem;
+      width: 100%;
       border-radius: 1em;
       width: 100%;
       transition: transform 1s;
@@ -59,7 +58,7 @@
       text-transform: uppercase;
       color: vars.$titleColor;
       margin: auto ;
-      padding: 1rem ;
+      padding: 1.5rem ;
       width: 90%;
       text-align: center;
       font-size: 1rem;
@@ -95,7 +94,7 @@
        
       
       & img{
-        height: 7rem;
+        
         border-radius: 1rem;
       }
     }

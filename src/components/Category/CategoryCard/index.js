@@ -1,17 +1,19 @@
 import PropTypes from 'prop-types';
 
+import { Link } from 'react-router-dom';
+
 import '../Category.scss';
 
 const CategoryCard = ({ name }) => (
 
   <div className="CategoryCard">
-    <a href="">
+    <Link to={`/${name}`} className="card-link">
       <div className="CategoryCard--button">
         <h2 className="CategoryCard--button-title">
           {name}
         </h2>
       </div>
-    </a>
+    </Link>
   </div>
 );
 

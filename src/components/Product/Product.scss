@@ -20,7 +20,7 @@
     margin: auto;
     margin-top: 1rem;
     overflow: hidden;
-    padding-top: 1rem;
+    padding-top: 2rem;
 
     &-effect{
       overflow: hidden;
@@ -66,17 +66,17 @@
       }
     }
     &-title{
-      width: 85%;
+      width: 90%;
       margin: auto;
       text-align: center;
       
       &-title{
         color: vars.$mainColor;
-        padding: 0.5rem;
+        padding: 1rem;
         text-transform: uppercase;
       }
       &-price{
-      
+      padding-bottom: 1rem;
       font-size: vars.$fontSize * 0.7;
     }
     }

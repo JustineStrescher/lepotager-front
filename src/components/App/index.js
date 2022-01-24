@@ -11,10 +11,10 @@ import ProductDetail from '../ProductDetail';
 const App = () => (
 
   <div className="app">
-    <ProductDetail />
-    <Product />
     <Category />
     <Familly />
+    <Product />
+    <ProductDetail />
     <Footer />
   </div>
 );
