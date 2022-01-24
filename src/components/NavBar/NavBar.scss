@@ -1,61 +1,106 @@
-@use 'sass:color';
-@use 'src/styles/vars';
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 
+}
 
+.navbar{
 
-.menu {
-  text-align: center;
-  padding: 2rem 2rem;
-  border-bottom: 1px solid vars.$alt-color;
-  background-color: rgb(70, 70, 216, 20%);
   display: flex;
-  width: 90vw;
+  justify-content: space-around;
+  align-items: center;
+  height: 75px;
+  background-color: #1E6C5B;
+  color: #F3EFE1;
+  font-family: 'Amatic SC', cursive;
+  font-size: 2rem;
 
-  &--searchbar{
-    height: 3rem;
-    width: auto;
-  
+
+  &__logo{
+    width: 2em;
+    position: absolute;
+    top: 10px;
+    border-radius: 1em;
+    text-align: center;
+    margin-left:-1em;
   }
-  
 
-  &-link {
-    margin: 0 1rem;
-    cursor: pointer;
-    color: vars.$dark-color;
+  &__search{
+    display: none;
+    align-items: center;
+    font-size: 30px;
+    border: none;
+    outline: none;
+    background-color: #1E6C5B;
+    color: #F3EFE1;
+  }
+
+  &__links{
+    display: none;
+    &.li{
+      color: #AB7341;
+    }
+
+    &--mobile{
+      position: absolute;
+      display: block;
+      background-color: #75B2B8;
+      left: 0;
+      top: 70px;
+      transition: all 0.5 ease-out;
+      width: 100%;
+    }
+    
+    
+    &--home, &--products, &--account, &--about{
+      padding: 10px;
+      text-align: center;
+      width: 100%;
+      transition: all 0.5 ease-out;
+    }
+    
+  }
+  &__mobile--icon{
     display: block;
-    text-decoration: none;
-
-    &--selected {
-      text-decoration: underline;
-    }
-
-    &:hover {
-      color: vars.$primary-color;
-    }
+    position: absolute;
+    font-size: 30px;
+    border: none;
+    outline: none;
+    top: 15px;
+    right: 25px;
+    background-color: #1E6C5B;
+    color: #F3EFE1;
   }
 
-  &-user {
-    display: inline-block;
-  }
-
-  &-btn {
-    background-color: vars.$primary-color;
-    border: 0;
-    color: vars.$light-color;
-    padding: 5px;
-    border-radius: 3px;
-    margin: 0 1rem;
-    display: inline-block;
-    min-width: 12em;
-
-    &:hover {
-      // https://sass-lang.com/documentation/modules/color
-      background-color: color.scale(vars.$primary-color, $lightness: -10%);
-    }
-  }
 }
 
-li {
-  display: inline-block;
+@media screen and (min-width:768px) {
+  .navbar{
+    justify-content: space-around;
+    align-items: center;
 
-}
+    &__logo{
+      display: flex;
+      position:absolute;
+      left: 10%;
+    }
+    &__links{
+      display: flex;
+      justify-content: flex-end;
+      width: 70%;
+      &--account{
+        border: 1px solid #AB7341;
+        border-radius: 5px;
+        &:hover{
+          background-color: #F3EFE1;
+          color: #AB7341;
+        }
+      }
+    }
+    &__mobile--icon{
+      display: none;
+    }
+  
+    }
+  }

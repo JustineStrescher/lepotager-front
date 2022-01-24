@@ -1,7 +1,7 @@
 // == Import : npm
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 // == Import : local
 // Composants
@@ -11,9 +11,9 @@ import App from 'src/components/App';
 // 1. Élément React racine (celui qui contient l'ensemble de l'app)
 //    => crée une structure d'objets imbriqués (DOM virtuel)
 const rootReactElement = (
-  <BrowserRouter>
+  <Router>
     <App />
-  </BrowserRouter>
+  </Router>
 );
 
 // 2. La cible du DOM (là où la structure doit prendre vie dans le DOM)

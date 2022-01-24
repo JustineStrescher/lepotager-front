@@ -1,35 +1,50 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import logo from './logo.jpg';
 import './NavBar.scss';
+import { AiOutlineClose, AiOutlineMenu, AiOutlineSearch } from 'react-icons/ai';
+import { FaUserAlt } from 'react-icons/fa';
+import logo from './logo.jpg';
 
-const NavBar = () => (
-  <div className="menu">
-    <div className="menu--logo">
-      <img src={logo} alt="logo des culs fouettés" />
-    </div>
-    <div>
-      <li>
-        <Link to="/" className="menu-link">Accueil</Link>
-      </li>
-      <li>
-        <Link to="/nos-produits" className="menu-link">Nos produits</Link>
-      </li>
-      <li>
-        <Link to="/a-propos" className="menu-link">A propos</Link>
-      </li>
-      <li>
-        <Link to="/mon-compte" className="menu-link">Mon compte</Link>
-      </li>
-    </div>
-    <input type="text" placeholder="Search.." className="menu--searchbar" />
-    <div className="menu--user">
-      <li>
-        <Link to="/connexion" className="menu-link">Se connecter</Link>
-      </li>
-      <li>
-        <Link to="/panier" className="menu-link">Mon panier</Link>
-      </li>
-    </div>
-  </div>
-);
+const NavBar = () => {
+  const [isMobile, setIsMobile] = useState(false);
+  return (
+    <>
+      <nav className="navbar">
+        <Link to="/">
+          <img src={logo} alt="logo" className="navbar__logo" />
+        </Link>
+        <div
+          className="navbar__mobile--icon"
+          onClick={() => setIsMobile(!isMobile)}
+        >
+          {isMobile ? <AiOutlineClose /> : <AiOutlineMenu /> }
+        </div>
+        <ul
+          className={isMobile ? 'navbar__links--mobile' : 'navbar__links'}
+          onClick={() => setIsMobile(false)}
+        >
+          <>
+            <Link to="/" className="navbar__links--home">
+              <li>Accueil</li>
+            </Link>
+
+            <Link to="/nos-produits" className="navbar__links--products">
+              <li>Nos produits</li>
+            </Link>
+            <Link to="/a-propos" className="navbar__links--about">
+              <li>A propos</li>
+            </Link>
+            <Link to="/se-connecter" className="navbar__links--account">
+              <li>Se connecter</li>
+            </Link>
+          </>
+        </ul>
+        <button type="submit" className="navbar__search">
+          <AiOutlineSearch />
+        </button>
+      </nav>
+    </>
+  );
+};
+
 export default NavBar;
