@@ -4,7 +4,7 @@ import Home from 'src/components/Home';
 import About from 'src/components/About';
 import Products from 'src/components/Products';
 import Account from 'src/components/Account';
-import './styles.css';
+import './styles.scss';
 import { Route, Routes } from 'react-router-dom';
 
 // == Composants

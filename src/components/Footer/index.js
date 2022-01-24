@@ -1,4 +1,4 @@
-import './Footer.scss';
+import './footer.scss';
 
 import mail from './Logo/envelope.png';
 import fb from './Logo/facebook (2).png';
