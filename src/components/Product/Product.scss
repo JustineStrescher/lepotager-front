@@ -1,0 +1,150 @@
+@use 'src/styles/vars';
+
+.Product{
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  width: 90%;
+  margin: auto;
+  margin-top: 2rem;
+  flex-basis: 50%;
+  align-items: center;
+}
+
+.ProductCard{
+  width: 50%;
+  font-size: vars.$fontSize;
+
+  &--image{
+    width: 75%;
+    margin: auto;
+    margin-top: 1rem;
+    overflow: hidden;
+    padding-top: 2rem;
+
+    &-effect{
+      overflow: hidden;
+      border-radius: 1rem;
+    }
+      
+    & img{
+      border-radius: 1rem;
+      width: 100%;
+      transition: transform 1s;
+      &:hover{
+        -ms-transform: scale(1.1) translate(0px); /* IE 9 */
+        -webkit-transform: scale(1.1) translate(0px); /* Safari 3-8 */
+        transform: scale(1.1) translate(0px);
+        }
+    }
+  }
+
+  &--button{
+    
+    height: 90%;
+    width: 90%;
+    margin: auto;
+    position: relative;
+    background-color: vars.$secondColor;
+    border-radius: 1.5rem;
+    transition: box-shadow 1.5s;
+    &:hover{
+      box-shadow: rgb(0, 0, 0) 0px 20px 30px -10px;
+    }
+    &-button{
+      font-family: vars.$fontFamily;
+      border-radius: 1rem;
+      border: none;
+      text-align: center;
+      width: 90%;
+      margin: 0.5rem auto;
+      background-color: vars.$borderColor;
+      border: vars.$borderColor 1.5px solid;
+      transition: border 1s ;
+      &:hover{
+        border:rgb(99, 99, 99) 1.5px solid;
+      }
+    }
+    &-title{
+      width: 90%;
+      margin: auto;
+      text-align: center;
+      
+      &-title{
+        color: vars.$mainColor;
+        padding: 1rem;
+        text-transform: uppercase;
+      }
+      &-price{
+      padding-bottom: 1rem;
+      font-size: vars.$fontSize * 0.7;
+    }
+    }
+    
+    &-available_none{
+      display: none;
+    }
+
+    &-available{
+      width: 80%;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      border-radius: 0.5rem;
+      text-align: center;
+      font-size: vars.$fontSize *0.9;
+      padding-top: 0.15rem;
+      padding-bottom: 0.10rem;
+      color: #fff;
+      background-color: rgb(163, 60, 60);
+
+    }
+
+  }
+}
+@media screen and (min-width: 600px){
+
+ 
+  .ProductCard{
+    width: 25%;
+    font-size: vars.$fontSize * 1.25;
+    
+    &--button{
+      height: 90%;
+      width: 90%;
+      margin: auto;
+      position: relative;
+      border-radius: 1rem;
+  
+      &-title{
+      }
+      
+      &-button{
+        font-size: vars.$fontSize * 1.10;
+        border-radius: 1rem;
+        text-align: center;
+        padding: 0.5rem;
+        width:80%;
+        border:vars.$borderColor 2px solid;
+        margin-bottom: 1rem ;
+        &:hover{
+          border:black 2px solid;
+        }
+      }
+      &-available{
+        border-radius: 1rem;
+        text-align: center;
+        background-color: rgb(163, 60, 60);
+  
+      }
+    }
+    &--image{
+       padding-top: 1rem;
+      
+      & img{
+        border-radius: 2rem;
+      }
+    }
+  }
+}
