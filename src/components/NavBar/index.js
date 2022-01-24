@@ -8,7 +8,7 @@ import logo from './logo.jpg';
 const NavBar = () => {
   const [isMobile, setIsMobile] = useState(false);
   return (
-    <>
+    <section className="container__header">
       <nav className="navbar">
         <Link to="/">
           <img src={logo} alt="logo" className="navbar__logo" />
@@ -43,7 +43,7 @@ const NavBar = () => {
           <AiOutlineSearch />
         </button>
       </nav>
-    </>
+    </section>
   );
 };
 

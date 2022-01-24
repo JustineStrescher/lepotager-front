@@ -29,7 +29,7 @@ export default [
     unit: 'Kg',
   },
   {
-    id: 12346,
+    id: 12347,
     category: 'légume',
     categorySlug: 'legume-fruit',
     familly: 'légume tubercule',
@@ -44,7 +44,7 @@ export default [
     unit: 'Kg',
   },
   {
-    id: 12346,
+    id: 12348,
     category: 'légume',
     categorySlug: 'legume-fruit',
     familly: 'légume tubercule',
@@ -59,7 +59,7 @@ export default [
     unit: 'Kg',
   },
   {
-    id: 12346,
+    id: 12349,
     category: 'légume',
     categorySlug: 'legume-fruit',
     familly: 'légume tubercule',

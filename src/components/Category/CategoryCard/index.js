@@ -7,7 +7,7 @@ import '../Category.scss';
 const CategoryCard = ({ name }) => (
 
   <div className="CategoryCard">
-    <Link to={`/${name}`} className="card-link">
+    <Link to="/legumes" className="card-link">
       <div className="CategoryCard--button">
         <h2 className="CategoryCard--button-title">
           {name}
