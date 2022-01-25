@@ -1,0 +1,65 @@
+@use 'src/styles/vars';
+
+.Carousel{
+  max-width: 1200px;
+  
+  margin: auto;
+  display: block;
+  
+  &--div{
+    position: relative;
+    width: 100%;
+    height: 10rem;
+    overflow: hidden;
+    margin: auto;
+    background-color: vars.$backColor;
+    & h3{
+      font-weight: 600;
+      max-width:60%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      z-index: 2;
+      background: rgba(54, 25, 25, .5);
+      padding: 1rem;
+      color: azure;
+      border-radius: 1rem;
+      text-align: center;
+    }
+    & img{
+      position: absolute;
+      margin: auto;
+      width: 101%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+    }
+  }
+}
+@media screen and (min-width: 768px){
+  .Carousel{
+    height: 24rem;
+
+    &--div{
+      height: 22rem;
+      overflow: hidden;
+      border-radius: 2rem;
+    }
+    & h3{
+      
+      font-size:  vars.$fontSize * 1.3;
+      
+    }
+    & img{
+      position: absolute;
+      max-width: 1000px;
+      text-align: center;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      
+    }
+   
+}
+}

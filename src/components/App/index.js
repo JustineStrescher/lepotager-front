@@ -10,11 +10,13 @@ import Account from 'src/components/Account';
 import Footer from 'src/components/Footer';
 import './styles.scss';
 import { Route, Routes } from 'react-router-dom';
+import Carousel from 'src/components/Carousel';
 
 // == Composants
 const App = () => (
   <div className="app">
     <NavBar />
+    <Carousel />
     <Routes>
       <Route exact path="/" element={<Category />} />
       <Route exact path="/nos-produits" element={<Product />} />
