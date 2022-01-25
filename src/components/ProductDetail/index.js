@@ -1,5 +1,8 @@
 import './ProductDetail.scss';
 
+import Highlight from 'src/components/Highlight';
+import Carousel from 'src/components/Carousel';
+
 import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
@@ -15,9 +18,13 @@ const ProductDetail = () => {
   const product = useSelector((state) => findVegetable(state.product.ProductData, currentSlug));
 
   return (
-    <div className="ProductDetail">
-      <ProductDetailCard key={product.id} {...product} />
-    </div>
+    <section className="ProductDetail__container">
+      <Carousel />
+      <div className="ProductDetail">
+        <ProductDetailCard key={product.id} {...product} />
+      </div>
+      <Highlight />
+    </section>
   );
 };
 

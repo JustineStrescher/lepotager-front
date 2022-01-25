@@ -1,5 +1,4 @@
 @use 'src/styles/vars';
-
 .Category{
   display: flex;
   flex-wrap: wrap;
@@ -15,7 +14,7 @@
  
 .CategoryCard{
   
-  width: 45%;
+  width: 40%;
   margin: auto;
   color: vars.$secondColor;
   & a:hover{
@@ -33,11 +32,23 @@
     }
    
     &-title{
-      font-size: vars.$fontSize * 2;
+      font-size: vars.$fontSize * 1.2;
       padding: 3.5rem 0 ;
       text-align: center;
       margin: auto;
       transition: color 1.5s;
+    }
+  }
+}
+
+@media screen and (min-width: 350px){
+  .Category{
+    
+
+    .CategoryCard{
+  
+      width: 45%;
+      
     }
   }
 }
@@ -58,6 +69,7 @@
       border-radius: 4rem;
   
       &-title{
+        font-size: vars.$fontSize * 2;
         padding:7rem 0 ;
         text-align: center;
         font-size: 3.5rem;

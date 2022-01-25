@@ -8,7 +8,7 @@ import tel from './Logo/telephone.png';
 import adresse from './Logo/adress.png';
 
 const Footer = () => (
-  <section className="container">
+  <section className="Footer__container">
     <div className="footer">
       <div className="footer--contact">
         <div className="footer--contact-contact">
