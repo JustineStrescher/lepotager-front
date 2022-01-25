@@ -28,8 +28,8 @@ const NavBar = () => {
               <li>Accueil</li>
             </Link>
 
-            <Link to="/nos-produits" className="navbar__links--products">
-              <li>Nos produits</li>
+            <Link to="/legumes" className="navbar__links--products">
+              <li>Categories</li>
             </Link>
             <Link to="/a-propos" className="navbar__links--about">
               <li>A propos</li>

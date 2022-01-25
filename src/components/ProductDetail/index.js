@@ -13,7 +13,7 @@ const ProductDetail = () => {
   // ici on utilise useSelector pour récuperé la recette actuelle en fonction de la liste
   // des recettes présentes dans le state
   const product = useSelector((state) => findVegetable(state.product.ProductData, currentSlug));
-  console.log(product);
+
   return (
     <div className="ProductDetail">
       <ProductDetailCard key={product.id} {...product} />
