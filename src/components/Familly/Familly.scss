@@ -8,9 +8,9 @@
   max-width: 1200px;
   width: 90%;
   margin: auto;
-  margin-top: 2rem;
+  margin-top: 1rem;
   flex-basis: 50%;
-  align-items: center;
+  align-items: stretch;
 }
 
 .FamillyCard{
@@ -77,27 +77,31 @@
   width: 25%;
     
     &--button{
-      height: 90%;
+      min-height: 16rem;
       width: 90%;
       margin: auto;
       position: relative;
-      
       border-radius: 1rem;
   
       &-title{
         text-align: center;
-        width:80%;
+        width:95%;
         
       }
     }
     &--image{
-       padding-top: 1rem;
-       
-      
-      & img{
+
+      &-effect{
+        height: 8rem;
+        overflow: hidden;
         
+        & img{
+        max-height: 8rem;
         border-radius: 1rem;
       }
+      }
+      
+      
     }
     
   }

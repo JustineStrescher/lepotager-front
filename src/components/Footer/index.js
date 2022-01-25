@@ -1,5 +1,7 @@
 import './footer.scss';
 
+import { Link } from 'react-router-dom';
+
 import mail from './Logo/envelope.png';
 import fb from './Logo/facebook (2).png';
 import tel from './Logo/telephone.png';
@@ -22,9 +24,9 @@ const Footer = () => (
           <h2>Espace client </h2>
           <div className="footer--contact-reseaux__list">
             <ul>
-              <li><a href="">Mon compte</a></li>
-              <li><a href="">Mon panier</a></li>
-              <li><a href="">Mes commandes</a></li>
+              <Link to="/acount"><li>Mon compte</li></Link>
+              <Link to="/card"><li>Mon panier</li></Link>
+              <Link to="/command"><li>Mes commandes</li></Link>
             </ul>
           </div>
         </div>
@@ -32,9 +34,9 @@ const Footer = () => (
           <h2>A propos </h2>
           <div className="footer--contact-reseaux__list">
             <ul>
-              <li><a href="https://fr-fr.facebook.com/pages/category/Farm/Le-potager-des-culs-fouett%C3%A9s-1543041816026668/">Qui sommes nous ?</a></li>
-              <li><a href="">Concept</a></li>
-              <li><a href="">Horaires</a></li>
+              <Link to="/a-propos"><li>Qui sommes nous ?</li> </Link>
+              <Link to="/concept"><li>Concept</li></Link>
+              <li>Horaires</li>
             </ul>
           </div>
         </div>

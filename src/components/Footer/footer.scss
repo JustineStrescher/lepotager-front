@@ -35,7 +35,8 @@
         
         width: 100%;
         & img {
-          width: 0.8rem;
+          width: vars.$fontSize;
+          padding-right: 0.3rem;
         }
       }
     }
@@ -73,7 +74,9 @@
       background-color: vars.$mainColor;
       border-radius: 3vw;
       width: 100%;
+      
       &-contact{
+        padding-left: 1rem;
         margin: 0.5rem;
         width: 100%;
         flex-basis: 40%;
@@ -83,7 +86,7 @@
           
           width: 90%;
           & img {
-            width: 0.8rem;
+            width: vars.$fontSize;
           }
         }
       }
