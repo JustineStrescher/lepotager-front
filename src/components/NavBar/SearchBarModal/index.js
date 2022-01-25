@@ -2,6 +2,7 @@ import { createPortal } from 'react-dom';
 import './SearchBarModal.scss';
 import { AiOutlineClose } from 'react-icons/ai';
 import '../NavBar.scss';
+import { useEffect, useState } from 'react';
 
 const SearchBarModal = ({ open, children, onClose }) => {
   if (!open) return null;

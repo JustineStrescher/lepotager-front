@@ -1,6 +1,6 @@
 import './searchbar.scss';
 import { useState, useEffect } from 'react';
-import { AiOutlineSearch, AiOutlineClose } from 'react-icons/ai';
+import { AiOutlineSearch } from 'react-icons/ai';
 import SearchBarModal from '../SearchBarModal';
 
 const légumes = [

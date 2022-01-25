@@ -1,0 +1,33 @@
+
+
+.modal__container{
+  width: 500px;
+  height: 80%;
+  border-radius: 12px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+}
+
+.modal__body{
+  display: block;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.7rem;
+  text-align: center;
+}
+.modal__icon--close{
+    display: block;
+    position: absolute;
+    font-size: 30px;
+    border: none;
+    border-radius: 2rem;
+    outline: none;
+    top: 15px;
+    right: 25px;
+    background-color: none;
+    color: #F3EFE1;
+    cursor: pointer;
+}

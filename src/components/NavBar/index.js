@@ -5,9 +5,11 @@ import { AiOutlineClose, AiOutlineMenu, AiOutlineSearch } from 'react-icons/ai';
 // import { FaUserAlt } from 'react-icons/fa';
 import logo from './logo.jpg';
 import SearchBar from './SearchBar';
+import LoginModal from '../LoginModal';
 
 const NavBar = () => {
   const [isMobile, setIsMobile] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <section className="container__header">
       <nav className="navbar">
@@ -35,9 +37,10 @@ const NavBar = () => {
             <NavLink to="/a-propos" className="navbar__links--about">
               <li>A propos</li>
             </NavLink>
-            <NavLink to="/se-connecter" className="navbar__links--account">
+            <div className="navbar__links--account" onClick={() => setIsOpen(true)}>
               <li>Se connecter</li>
-            </NavLink>
+            </div>
+            <LoginModal open={isOpen} onClose={() => setIsOpen(false)} />
           </>
         </ul>
         <button type="submit" className="navbar__search">
