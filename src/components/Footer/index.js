@@ -14,9 +14,9 @@ const Footer = () => (
         <div className="footer--contact-contact">
           <h2>Nous contacter </h2>
           <ul className="footer--contact-contact__list">
-            <li><a href="les-culs-fouettés@gmail.com"><img src={mail} alt="mail" /> les-culs-fouettés@gmail.com</a></li>
-            <li><img src={tel} alt="mail" /><a> 06 66 66 66 66</a></li>
-            <li><img src={adresse} alt="mail" /> 2 champ du millieu 45000 Trouville</li>
+            <li><img src={mail} alt="mail" /> contact@lepotagerdesculsfouettes.fr</li>
+            <li><img src={tel} alt="mail" /><a> 06 81 22 67 05</a></li>
+            <li><img src={adresse} alt="mail" /> Rue du barboux 39350 Ougney</li>
             <li><a aria-label="facebook" href="https://fr-fr.facebook.com/pages/category/Farm/Le-potager-des-culs-fouett%C3%A9s-1543041816026668/"><img src={fb} alt="" /> Le potager des culs fouettés</a></li>
           </ul>
         </div>
@@ -25,7 +25,7 @@ const Footer = () => (
           <div className="footer--contact-reseaux__list">
             <ul>
               <Link to="/acount"><li>Mon compte</li></Link>
-              <Link to="/card"><li>Mon panier</li></Link>
+              <Link to="/panier"><li>Mon panier</li></Link>
               <Link to="/command"><li>Mes commandes</li></Link>
             </ul>
           </div>

@@ -6,6 +6,7 @@
   margin: auto;
   max-width: 1200px ;
   &-para{
+    color: vars.$secondColor;
     font-size: vars.$fontSize * 1.2;
     position: absolute;
     top: 50%;

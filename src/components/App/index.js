@@ -9,6 +9,7 @@ import Footer from 'src/components/Footer';
 import './styles.scss';
 
 import { Route, Routes } from 'react-router-dom';
+import Basket from 'src/components/Basket';
 import Error from '../Error';
 import AboutConcept from '../AboutConcept';
 
@@ -18,6 +19,7 @@ const App = () => (
     <NavBar />
     <Routes>
       <Route exact path="/" element={<Category />} />
+      <Route exact path="/panier" element={<Basket />} />
       <Route exact path="/a-propos" element={<AboutConcept />} />
       <Route exact path="/concept" element={<AboutConcept />} />
       <Route exact path="/nos-produits" element={<Product />} />

@@ -41,12 +41,14 @@ const ProductDetailCard = ({
               />
               <p className="ProductDetailCard--form-ammount">Total : {price * quantity} €</p>
             </div>
-            <button
-              type="button"
-              className={!available ? 'ProductDetailCard--form-button none' : 'ProductDetailCard--form-button'}
-            >
-              Ajouter au panier
-            </button>
+            {available && (
+              <button
+                type="button"
+                className={!available ? 'ProductDetailCard--form-button none' : 'ProductDetailCard--form-button'}
+              >
+                Ajouter au panier
+              </button>
+            )}
             <p className={!available ? 'ProductDetailCard--detail-available' : 'ProductDetailCard--detail-available_none'}>Produit non disponible</p>
           </form>
         </div>
