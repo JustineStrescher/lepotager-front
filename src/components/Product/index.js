@@ -1,5 +1,8 @@
 import './Product.scss';
 
+import Highlight from 'src/components/Highlight';
+import Carousel from 'src/components/Carousel';
+
 import { useParams } from 'react-router';
 import { useSelector } from 'react-redux';
 
@@ -18,7 +21,8 @@ const Product = () => {
   const category = useSelector((state) => findCategory(state.product.ProductData, currentSlug));
 
   return (
-    <section>
+    <section className="Product__container">
+      <Carousel />
       <div className="Product--title">
         <p>{category}</p>
       </div>
@@ -27,6 +31,7 @@ const Product = () => {
           <ProductCard key={product.id} {...product} />
         ))}
       </div>
+      <Highlight />
     </section>
   );
 };

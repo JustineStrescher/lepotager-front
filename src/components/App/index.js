@@ -1,15 +1,17 @@
 // == Import
+
 import NavBar from 'src/components/NavBar';
 import Category from 'src/components/Category';
 import Familly from 'src/components/Familly';
-import About from 'src/components/About';
-import Highlight from 'src/components/Highlight';
 import Product from 'src/components/Product';
 import ProductDetail from 'src/components/ProductDetail';
-import Account from 'src/components/Account';
 import Footer from 'src/components/Footer';
 import './styles.scss';
+
 import { Route, Routes } from 'react-router-dom';
+import Basket from 'src/components/Basket';
+import Error from '../Error';
+import AboutConcept from '../AboutConcept';
 
 // == Composants
 const App = () => (
@@ -17,14 +19,15 @@ const App = () => (
     <NavBar />
     <Routes>
       <Route exact path="/" element={<Category />} />
+      <Route exact path="/panier" element={<Basket />} />
+      <Route exact path="/a-propos" element={<AboutConcept />} />
+      <Route exact path="/concept" element={<AboutConcept />} />
       <Route exact path="/nos-produits" element={<Product />} />
-      <Route exact path="/a-propos" element={<About />} />
-      <Route exact path="/se-connecter" element={<Account />} />
       <Route exact path="/legumes" element={<Familly />} />
       <Route exact path="/legumes/:slug" element={<Product />} />
       <Route exact path="/legumes/:slug/:slug" element={<ProductDetail />} />
+      <Route path="*" element={<Error />} />
     </Routes>
-    <Highlight />
     <Footer />
   </div>
 );

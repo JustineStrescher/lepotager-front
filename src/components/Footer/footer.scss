@@ -1,5 +1,5 @@
 @use 'src/styles/vars';
-.container{
+.Footer__container{
   margin-top: 2rem;
 }
 .footer {
@@ -29,13 +29,14 @@
     }    
     &-contact{
       
-      margin: 1.2rem ;
+      // margin: 1.2rem ;
       
       &__list{
         
         width: 100%;
         & img {
-          width: 0.8rem;
+          width: vars.$fontSize;
+          padding-right: 0.3rem;
         }
       }
     }
@@ -53,7 +54,7 @@
 }
 
 @media screen and (min-width: 768px){
-.container{
+.Footer__container{
   width: 100%;
   background-color: vars.$mainColor;
 }
@@ -73,7 +74,10 @@
       background-color: vars.$mainColor;
       border-radius: 3vw;
       width: 100%;
+      margin: 1.2rem ;
+      
       &-contact{
+        padding-left: 1rem;
         margin: 0.5rem;
         width: 100%;
         flex-basis: 40%;
@@ -83,7 +87,7 @@
           
           width: 90%;
           & img {
-            width: 0.8rem;
+            width: vars.$fontSize;
           }
         }
       }
@@ -96,8 +100,6 @@
         
         &__list{
           margin-top: 0.5rem;
-          
-          
         }
       }
     }

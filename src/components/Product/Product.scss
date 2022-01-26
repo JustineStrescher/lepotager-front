@@ -8,7 +8,8 @@
   margin: auto;
   margin-top: 2rem;
   flex-basis: 50%;
-  align-items: center;
+  align-items: stretch;
+
   &--title{
     margin-top: 2.5rem;
     margin-bottom: -2.5rem;
@@ -23,6 +24,7 @@
   width: 50%;
   font-size: vars.$fontSize*1.2;
   margin-top: 2rem;
+  
 
   &--image{
     width: 75%;
@@ -30,15 +32,16 @@
     margin-top: 1rem;
     overflow: hidden;
     padding-top: 2rem;
-
+    
     &-effect{
       overflow: hidden;
       border-radius: 1rem;
-    }
       
-    & img{
+      
+      & img{
       border-radius: 1rem;
       width: 100%;
+      max-height: 9rem;
       transition: transform 1s;
       &:hover{
         -ms-transform: scale(1.1) translate(0px); /* IE 9 */
@@ -47,10 +50,13 @@
         }
     }
   }
+    }
+      
+    
 
   &--button{
+    // height: 20rem;
     
-    height: 90%;
     width: 90%;
     margin: auto;
     position: relative;
@@ -122,10 +128,11 @@
  
   .ProductCard{
     width: 25%;
+    min-height: 90%;
     font-size: vars.$fontSize * 1.25;
     
     &--button{
-      height: 90%;
+      
       width: 90%;
       margin: auto;
       position: relative;
@@ -154,7 +161,7 @@
       }
     }
     &--image{
-       padding-top: 1rem;
+       padding-top: 2rem;
       
       & img{
         border-radius: 2rem;

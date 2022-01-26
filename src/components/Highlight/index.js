@@ -8,7 +8,7 @@ const Highlight = () => {
   const productList = useSelector((state) => state.product.HighlightData);
 
   return (
-    <section>
+    <div className="Highlight__container">
       <div className="Highlight--title">
         <p>Nos produits du moment</p>
       </div>
@@ -17,7 +17,7 @@ const Highlight = () => {
           <ProductCard key={product.id} {...product} />
         ))}
       </div>
-    </section>
+    </div>
   );
 };
 

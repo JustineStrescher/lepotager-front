@@ -1,0 +1,213 @@
+@use 'src/styles/vars';
+
+.Basket{
+  
+  max-width: 1200px;
+  width: 90%;
+  margin: auto;
+  margin-top: 3rem;
+
+  &--title{
+    margin: 1rem 0;
+    font-weight: bold;
+    text-align: center;
+    font-size: vars.$fontSize*1.5;
+    color: vars.$mainColor;
+  }
+}
+.BasketCard{
+  color: vars.$mainColor;
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  font-size: vars.$fontSize *1;
+  background-color: vars.$secondColor;
+  border-radius: 1.5rem;
+
+  &-none{
+    display: none;
+  }
+  &--form{
+    display: flex;
+    
+    
+    &-flex{
+      margin: auto;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      align-items: center;
+      gap: 0.5rem;
+
+        &-ammount{
+        
+        border: vars.$borderColor 2px solid;
+        text-align: center;
+        padding: 0.2rem 0.6rem ;
+        border-radius: 0.5rem;
+        padding-top: 0.2rem;
+        }
+
+        &-button{
+        font-family: vars.$fontFamily;
+        font-size: vars.$fontSize *1;
+        margin:  1rem auto;
+        padding: 0.3rem;
+        border-radius: 0.5rem;
+        color: vars.$secondColor;
+        border: vars.$mainColor 2px solid;
+        
+        background-color: vars.$mainColor;
+        transition: all  0.5s;
+
+        &:hover{
+
+          color: vars.$mainColor;
+          background-color: #fff;
+        }
+      }
+    }
+  }
+  &--listing{
+    padding-bottom: 0.5rem;
+    text-align: center;
+    border-bottom: vars.$borderColor 1px solid;;
+    padding-top: 0.5rem;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    & h2 {
+       font-weight: bold;
+        }
+    &-product{
+      flex-basis: 70%;
+
+      &-resume{
+
+        display: flex;
+
+        & img{
+          width: 20%;
+        }
+        &__detail{
+
+          margin-left: 1rem;
+          text-align: left;
+          & h1{
+
+            font-weight: bold;
+            margin-bottom: 0.3rem;
+
+          }
+          & button {
+
+            border-radius: 1rem ;
+            margin-top: 0.3rem;
+            background-color: vars.$secondColor;
+            font-family: vars.$fontFamily;
+            border: vars.$mainColor 3px solid;
+            font-size: vars.$fontSize*0.7;
+
+            &:hover{
+
+              border: vars.$titleColor 3px solid;
+            }
+          }
+        }
+      }
+    }
+    &-price{
+      
+      flex-basis: 30%;
+    }
+  }
+}
+
+
+
+@media screen and (min-width: 768px){
+  .Basket{
+
+      &--title{
+      margin-top: 3rem;
+      font-size: vars.$fontSize*2.5;
+    }
+  }
+  .BasketCard{
+    width: 90%;
+    margin-top: 1rem;
+    border-radius: 1.5rem;
+    flex-direction: row;
+
+    &-none{
+      display: block;
+    }
+
+    &--form{
+      font-size: vars.$fontSize *1.2;
+      padding: 1.5rem;
+      width: 100%;
+      
+      padding-top: 1.25rem;
+      display: flex;
+      
+
+      &-flex{
+        width: 100%;
+        margin: auto;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-direction: row;
+        gap: 2rem;
+        
+        &-ammount{
+
+        border: vars.$borderColor 2px solid;     
+        text-align: center;
+        width: 30%;
+        border-radius: 0.5rem;
+        padding-top: 0.2rem;
+        margin: auto;
+        }
+        &-button{
+          font-size: vars.$fontSize *1.2;
+          width: 30%;
+          margin: auto;
+          border-radius: 0.5rem;
+          color: vars.$secondColor;
+          background-color: vars.$mainColor;
+          padding: 0.3rem;
+          border: vars.$mainColor 2px solid;
+          transition: border color background-color 0.2s;
+
+          &:hover{
+
+          border: vars.$mainColor 2px solid;
+          color: vars.$mainColor;
+          background-color: vars.$secondColor;
+          }
+        }
+      }
+    }
+    &--listing{
+      
+      &-product{
+
+        flex-basis: 50%;
+      }
+      &-price{
+
+        flex-basis: 17%;
+      }
+      &-quantity{
+
+        flex-basis: 17%;
+      }
+      &-total{
+
+        flex-basis: 17%;
+      }
+    }
+  }
+}
