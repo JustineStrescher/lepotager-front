@@ -2,11 +2,11 @@ import {
   CHANGE_INPUT_VALUE,
 } from 'src/actions/productDetail';
 
-import ProductData from 'src/ProductDetailData';
+import { FETCH_PRODUCTS } from '../actions/product';
 import HighlightData from '../HighlightData';
 
 export const initialState = {
-  ProductData,
+  ProductData: [],
   HighlightData,
   quantity: 0,
 };
@@ -17,6 +17,11 @@ const ProductReducer = (state = initialState, action = {}) => {
       return {
         ...state,
         quantity: action.newValue,
+      };
+
+    case FETCH_PRODUCTS:
+      return {
+        ...state,
       };
 
     default:

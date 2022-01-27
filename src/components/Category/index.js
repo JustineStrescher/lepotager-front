@@ -8,7 +8,7 @@ import { useSelector } from 'react-redux';
 import CategoryCard from './CategoryCard';
 
 const Category = () => {
-  const categoryList = useSelector((state) => state.category.CategoryData);
+  const categoryList = useSelector((state) => state.category.category);
 
   return (
     <section className="Category__container">

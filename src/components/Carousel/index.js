@@ -26,9 +26,9 @@ const CustomSlider = () => {
 
   return (
     <div className="Carousel">
-      <Slider {...settings}>
+      <Slider {...settings} key="carousel">
         {data.map((carousel) => (
-          <div className="Carousel--div">
+          <div className="Carousel--div" key={carousel.id}>
             <h3>{carousel.caption}</h3>
             <img src={carousel.image} alt="" />
           </div>
