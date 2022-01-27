@@ -3,6 +3,7 @@ import './SearchBarModal.scss';
 import { AiOutlineClose } from 'react-icons/ai';
 import '../NavBar.scss';
 import { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 
 const SearchBarModal = ({ open, children, onClose }) => {
   if (!open) return null;
@@ -17,6 +18,13 @@ const SearchBarModal = ({ open, children, onClose }) => {
     </div>,
     document.getElementById('portal'),
   );
+};
+
+SearchBarModal.PropTypes = {
+  open: PropTypes.bool.isRequired,
+  onClose: PropTypes.func.isRequired,
+  children: PropTypes.string,
+
 };
 
 export default SearchBarModal;
