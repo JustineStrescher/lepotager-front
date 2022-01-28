@@ -13,7 +13,7 @@ export const initialState = {
   subCategory: [],
   subCategoryId: 0,
   subCategoryName: '',
-  categoryId: '0',
+  categoryId: 0,
   categoryApi: 'http://lepotagerdesculsfouettes.fr/api/category/',
   categoryName: '',
 };
@@ -41,7 +41,6 @@ const categoryReducer = (state = initialState, action = {}) => {
       return {
         ...state,
         categoryId: action.CategoryId,
-        categoryName: action.CategoryName,
 
       };
     default:

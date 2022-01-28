@@ -7,9 +7,6 @@ import {
 } from '../actions/categories';
 
 const middleware = (store) => (next) => (action) => {
-  const categoryUrl = store.getState().category.categoryApi;
-  const id = store.getState().category.categoryId;
-  const iyear = id;
   switch (action.type) {
     case FETCH_CATEGORIES:
       // on appelle l'api pour récupérer les produits
@@ -27,16 +24,14 @@ const middleware = (store) => (next) => (action) => {
 
     case FETCH_SUB_CATEGORIES:
       // on appelle l'api pour récupérer les subcategories
-      axios.get(categoryUrl + iyear)
+      axios.get('http://lepotagerdesculsfouettes.fr/api/category/1')
         .then((response) => {
           // une fois récupérées
           const subCategories = response.data;
-          console.log(categoryUrl + id.tostring());
           store.dispatch(saveSubCategories(subCategories.categories));
         })
         .catch((error) => {
           console.error(error);
-          console.log(categoryUrl + id.tostring());
         });
 
       break;

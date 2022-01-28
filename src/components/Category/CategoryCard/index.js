@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 
 import { Link } from 'react-router-dom';
@@ -8,15 +9,16 @@ import '../Category.scss';
 
 const CategoryCard = ({ name, slug, id }) => {
   const dispatch = useDispatch();
+  const categoryId = useSelector((state) => state.category.categoryId);
   return (
     <div className="CategoryCard">
       <Link
         to={`/${slug}`}
         className="card-link"
         onClick={() => {
-          dispatch(setCategories(id));
-          console.log(id);
-          setTimeout(dispatch(fetchSubCategories()), 1000);
+          dispatch(setCategories(1));
+          console.log(categoryId);
+          dispatch(fetchSubCategories());
         }}
       >
         <div className="CategoryCard--button">
@@ -32,7 +34,7 @@ const CategoryCard = ({ name, slug, id }) => {
 CategoryCard.propTypes = {
   name: PropTypes.string.isRequired,
   slug: PropTypes.string.isRequired,
-  id: PropTypes.number.isRequired,
+  id: PropTypes.string.isRequired,
 };
 
 export default CategoryCard;
