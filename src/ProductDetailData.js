@@ -73,7 +73,7 @@ export default [
     picture: 'https://media.istockphoto.com/photos/bunch-of-radishes-picture-id471245003?k=20&m=471245003&s=612x612&w=0&h=J_43NSZFYxVze33sPgvJiXVghqzl9m8aA2exEH0Fifk=',
     description: 'Délicieuse pomme de terre de saison',
     longDescription: 'Délicieuse pomme de terre de saison du jardin',
-    available: false,
+    available: true,
     quantity: 6,
     stock: 45,
     price: 3.50,

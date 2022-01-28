@@ -8,7 +8,7 @@ import { useSelector } from 'react-redux';
 import FamillyCard from './FamillyCard';
 
 const Familly = () => {
-  const categoryList = useSelector((state) => state.familly.FamillyData);
+  const categoryList = useSelector((state) => state.category.subCategory);
 
   return (
     <section className="Family__container">
@@ -20,7 +20,6 @@ const Familly = () => {
       </div>
       <Highlight />
     </section>
-
   );
 };
 
