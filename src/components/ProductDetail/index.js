@@ -9,6 +9,7 @@ import { useSelector } from 'react-redux';
 import { findVegetable } from 'src/selectors/vegetables';
 
 import ProductDetailCard from './ProductDetailCard';
+import ScrollToTop from '../ScrollToTop';
 
 const ProductDetail = () => {
   const parameters = useParams();
@@ -19,11 +20,12 @@ const ProductDetail = () => {
 
   return (
     <section className="ProductDetail__container">
-      <Carousel />
+      <ScrollToTop />
       <div className="ProductDetail">
         <ProductDetailCard key={product.id} {...product} />
       </div>
       <Highlight />
+      <Carousel />
     </section>
   );
 };

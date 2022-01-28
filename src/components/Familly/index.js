@@ -6,19 +6,21 @@ import Carousel from 'src/components/Carousel';
 import { useSelector } from 'react-redux';
 
 import FamillyCard from './FamillyCard';
+import ScrollToTop from '../ScrollToTop';
 
 const Familly = () => {
   const categoryList = useSelector((state) => state.category.subCategory);
 
   return (
     <section className="Family__container">
-      <Carousel />
+      <ScrollToTop />
       <div className="Familly">
         {categoryList.map((category) => (
           <FamillyCard key={category.id} {...category} />
         ))}
       </div>
       <Highlight />
+      <Carousel />
     </section>
   );
 };

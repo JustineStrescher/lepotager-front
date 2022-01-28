@@ -16,12 +16,15 @@ import AboutConcept from 'src/components/AboutConcept';
 import Acount from '../Acount';
 
 import './styles.scss';
+import { fetchAllProducts, fetchHighlight } from '../../actions/product';
 
 function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(fetchCategories());
+    dispatch(fetchHighlight());
+    dispatch(fetchAllProducts());
   }, []);
 
   return (

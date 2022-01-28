@@ -2,12 +2,12 @@ import {
   CHANGE_INPUT_VALUE,
 } from 'src/actions/productDetail';
 
-import { SAVE_PRODUCTS } from '../actions/product';
-import HighlightData from '../HighlightData';
+import { SAVE_HIGHLIGHT, SAVE_PRODUCTS, SAVE_ALL_PRODUCTS } from '../actions/product';
 
 export const initialState = {
   ProductData: [],
-  HighlightData,
+  allProduct: [],
+  highlight: [],
   quantity: 0,
 };
 
@@ -24,7 +24,16 @@ const ProductReducer = (state = initialState, action = {}) => {
         ...state,
         ProductData: action.products,
       };
-
+    case SAVE_ALL_PRODUCTS:
+      return {
+        ...state,
+        allProduct: action.AllProducts,
+      };
+    case SAVE_HIGHLIGHT:
+      return {
+        ...state,
+        highlight: action.highlight,
+      };
     default:
       return state;
   }
