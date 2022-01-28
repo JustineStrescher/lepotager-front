@@ -10,3 +10,9 @@ export const saveProducts = (products) => ({
   type: SAVE_PRODUCTS,
   products: products,
 });
+
+export const FETCH_PRODUCTS_BY_CATEGORY = 'FETCH_PRODUCTS_BY_CATEGORY';
+
+export const fetchProductsByCategory = () => ({
+  type: FETCH_PRODUCTS_BY_CATEGORY,
+});

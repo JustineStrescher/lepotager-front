@@ -19,7 +19,23 @@ export const fetchSubCategories = () => ({
 
 export const SAVE_SUB_CATEGORIES = 'SAVE_SUB_CATEGORIES';
 
-export const saveSubCategories = (products) => ({
+export const saveSubCategories = (subCategory) => ({
   type: SAVE_SUB_CATEGORIES,
-  products: products,
+  subCategory: subCategory,
+});
+
+export const SET_SUB_CATEGORIES = 'SET_SUB_CATEGORIES';
+
+export const setSubCategories = (subCategoryId, subCategoryName) => ({
+  type: SET_SUB_CATEGORIES,
+  subCategoryId: subCategoryId,
+  subCategoryName: subCategoryName,
+});
+
+export const SET_CATEGORIES = 'SET_CATEGORIES';
+
+export const setCategories = (categoryId, categoryName) => ({
+  type: SET_CATEGORIES,
+  categoryId: categoryId,
+  categoryName: categoryName,
 });

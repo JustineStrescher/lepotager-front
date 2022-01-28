@@ -18,8 +18,10 @@ import './styles.scss';
 import { fetchCategories } from 'src/actions/categories';
 
 function App() {
+  const dispatch = useDispatch();
+
   useEffect(() => {
-    useDispatch(fetchCategories());
+    dispatch(fetchCategories());
   }, []);
 
   return (
@@ -31,11 +33,9 @@ function App() {
         <Route exact path="/a-propos" element={<AboutConcept />} />
         <Route exact path="/concept" element={<AboutConcept />} />
         <Route exact path="/nos-produits" element={<Product />} />
-        <Route exact path="/legumes" element={<Familly />} />
-        <Route exact path="/legumes/:slug" element={<Product />} />
-        <Route exact path="/legumes/:slug/:slug" element={<ProductDetail />} />
-        <Route exact path="/viande" element={<Product />} />
-        <Route exact path="/legumes/:slug" element={<ProductDetail />} />
+        <Route exact path="/:slug" element={<Familly />} />
+        <Route exact path="/:slug/:slug" element={<Product />} />
+        <Route exact path="/:slug/:slug/:slug" element={<ProductDetail />} />
         <Route path="*" element={<Error />} />
       </Routes>
       <Footer />

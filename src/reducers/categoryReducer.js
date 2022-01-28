@@ -1,11 +1,21 @@
 // import CategoryData from 'src/CategoryData';
 // import subCategory from 'src/FamillyData';
 
-import { SAVE_CATEGORIES, FETCH_SUB_CATEGORIES } from '../actions/categories';
+import {
+  SAVE_CATEGORIES,
+  SAVE_SUB_CATEGORIES,
+  SET_SUB_CATEGORIES,
+  SET_CATEGORIES,
+} from '../actions/categories';
 
 export const initialState = {
   category: [],
   subCategory: [],
+  subCategoryId: 0,
+  subCategoryName: '',
+  categoryId: '0',
+  categoryApi: 'http://lepotagerdesculsfouettes.fr/api/category/',
+  categoryName: '',
 };
 
 const categoryReducer = (state = initialState, action = {}) => {
@@ -15,9 +25,24 @@ const categoryReducer = (state = initialState, action = {}) => {
         ...state,
         category: action.category,
       };
-    case FETCH_SUB_CATEGORIES:
+    case SAVE_SUB_CATEGORIES:
       return {
         ...state,
+        subCategory: action.subCategory,
+      };
+    case SET_SUB_CATEGORIES:
+      return {
+        ...state,
+        subCategoryId: action.subCategoryId,
+        subCategoryName: action.subCategoryName,
+
+      };
+    case SET_CATEGORIES:
+      return {
+        ...state,
+        categoryId: action.CategoryId,
+        categoryName: action.CategoryName,
+
       };
     default:
       return state;
