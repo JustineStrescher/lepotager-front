@@ -14,6 +14,7 @@ const Familly = () => {
   return (
     <section className="Family__container">
       <ScrollToTop />
+      <div className="titlePage">Legumes</div>
       <div className="Familly">
         {categoryList.map((category) => (
           <FamillyCard key={category.id} {...category} />

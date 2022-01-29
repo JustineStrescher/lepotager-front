@@ -1,11 +1,31 @@
 @use 'src/styles/vars';
 body{
   background-color: vars.$backColor;
+
 }
 .app {
   margin: auto;
   font-family: vars.$fontFamily;
 
 }
+
+.titlePage{
+    margin-top: 2rem;
+    margin-bottom: -2.5rem;
+    font-weight: bold;
+    text-align: center;
+    font-size: vars.$fontSize*2;
+    color: vars.$mainColor;
+}
+
+@media screen and (min-width: 768px){
+
+  .titlePage{
+      margin-top: 3rem;
+      font-size: vars.$fontSize*2.5;
+  }
+}
+  
+
 
 

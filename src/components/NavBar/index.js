@@ -3,9 +3,13 @@ import { Link } from 'react-router-dom';
 import './NavBar.scss';
 import { AiOutlineClose, AiOutlineMenu, AiOutlineSearch } from 'react-icons/ai';
 // import { FaUserAlt } from 'react-icons/fa';
+import { useDispatch } from 'react-redux';
+
 import logo from './logo.jpg';
+import { setWho } from '../../actions/product';
 
 const NavBar = () => {
+  const dispatch = useDispatch();
   const [isMobile, setIsMobile] = useState(false);
   return (
     <section className="container__header">
@@ -31,7 +35,13 @@ const NavBar = () => {
             <Link to="/legumes" className="navbar__links--products">
               <li>Categories</li>
             </Link>
-            <Link to="/a-propos" className="navbar__links--about">
+            <Link
+              to="/a-propos"
+              className="navbar__links--about"
+              onClick={() => {
+                dispatch(setWho());
+              }}
+            >
               <li>A propos</li>
             </Link>
             <Link to="/se-connecter" className="navbar__links--account">

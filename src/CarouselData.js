@@ -12,6 +12,6 @@ export default [
   {
     id: 3,
     image: 'https://www.h-auteurs.com/wp-content/uploads/2019/04/1-bio.jpg',
-    caption: 'Nous sommes également sur les marcher d\'a coter le vendredi et le samedi',
+    caption: 'Nous sommes également sur les marchés d\'a coté le vendredi et le samedi',
   },
 ];

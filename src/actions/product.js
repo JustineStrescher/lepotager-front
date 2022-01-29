@@ -11,6 +11,13 @@ export const saveProducts = (products) => ({
   products: products,
 });
 
+export const SAVE_PRODUCT = 'SAVE_PRODUCT';
+
+export const saveProduct = (product) => ({
+  type: SAVE_PRODUCT,
+  product: product,
+});
+
 export const FETCH_ALL_PRODUCTS = 'FETCH_ALL_PRODUCTS';
 
 export const fetchAllProducts = () => ({
@@ -40,4 +47,19 @@ export const SAVE_HIGHLIGHT = 'SAVE_HIGHLIGHT';
 export const saveHighlight = (highlight) => ({
   type: SAVE_HIGHLIGHT,
   highlight: highlight,
+});
+
+// set Qui sommes nous sur true pour l'affichage
+export const SET_WHO = 'SET_WHO';
+
+export const setWho = () => ({
+  type: SET_WHO,
+  who: true,
+});
+// set Qui sommes nous sur false pour l'affichage
+export const SET_CONCEPT = 'SET_CONCEPT';
+
+export const setConcept = () => ({
+  type: SET_CONCEPT,
+  who: false,
 });

@@ -4,23 +4,30 @@ import Highlight from 'src/components/Highlight';
 import Carousel from 'src/components/Carousel';
 
 import { useParams } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { useEffect } from 'react';
 
 import { findVegetable } from 'src/selectors/vegetables';
 
 import ProductDetailCard from './ProductDetailCard';
 import ScrollToTop from '../ScrollToTop';
+import { saveProduct } from '../../actions/product';
 
 const ProductDetail = () => {
+  const dispatch = useDispatch();
   const parameters = useParams();
   const currentSlug = parameters.slug;
-  // ici on utilise useSelector pour récuperé la recette actuelle en fonction de la liste
-  // des recettes présentes dans le state
-  const product = useSelector((state) => findVegetable(state.product.ProductData, currentSlug));
+  const product = useSelector((state) => findVegetable(state.product.allProduct, currentSlug));
+  useEffect(() => {
+    dispatch(saveProduct(product));
+  });
 
   return (
     <section className="ProductDetail__container">
       <ScrollToTop />
+      <div className="titlePage">
+        <p>{product.name}</p>
+      </div>
       <div className="ProductDetail">
         <ProductDetailCard key={product.id} {...product} />
       </div>
