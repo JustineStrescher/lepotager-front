@@ -1,5 +1,5 @@
 const SignUpForm = () => {
-  <form autoComplete="off" className="login-form-element" onSubmit={handleSubmit}>
+  <form autoComplete="off" className="login-form-element">
     <input
       name="email"
       type="text"

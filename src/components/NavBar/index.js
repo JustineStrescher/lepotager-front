@@ -1,18 +1,16 @@
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import './NavBar.scss';
-import { AiOutlineClose, AiOutlineMenu, AiOutlineSearch } from 'react-icons/ai';
+import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
 // import { FaUserAlt } from 'react-icons/fa';
-import { useSelector, useDispatch } from 'react-redux';
+
 import logo from './logo.jpg';
 import SearchBar from './SearchBar';
-import { updateLoginField, logIn } from '../../actions/user';
-import LoginForm from '../Authentification/LoginForm';
+
+import Login from '../Authentification/Login/Login';
 
 const NavBar = () => {
-  const dispatch = useDispatch();
   const [isMobile, setIsMobile] = useState(false);
-  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <>
@@ -42,12 +40,10 @@ const NavBar = () => {
               <NavLink to="/a-propos" className="navbar__links--about">
                 <li>A propos</li>
               </NavLink>
-              <LoginForm />
+              <Login />
             </>
           </ul>
-          <button type="submit" className="navbar__search">
-            <AiOutlineSearch />
-          </button>
+
           <SearchBar />
         </nav>
       </section>
