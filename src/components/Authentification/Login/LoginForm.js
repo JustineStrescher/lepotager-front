@@ -10,7 +10,6 @@ const LoginForm = ({
   email,
   password,
   logged,
-  onChange,
   handleLogin,
 }) => {
   const dispatch = useDispatch();
@@ -18,8 +17,9 @@ const LoginForm = ({
   const [isOpenModal, setIsOpenModal] = useState(false);
 
   if (logged) return null;
-  const handleSubmit = (e) => {
-    e.preventDefault();
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
     handleLogin();
   };
   // eslint-disable-next-line no-shadow
@@ -50,18 +50,20 @@ const LoginForm = ({
       <LoginFormModal openModal={isOpenModal} onClose={() => setIsOpenModal(false)} logged={logged}>
         <div className="modal__container">
           <div ref={ref}>
-            <form autoComplete="off" className="search__modal" onSubmit={(e) => handleSubmit(e)}>
+            <form autoComplete="off" className="search__modal" onSubmit={handleSubmit}>
               <input
-                name="email"
+                name="_username"
                 type="text"
                 value={email}
                 placeholder="Email"
+                id="username"
                 onChange={(event) => {
                   dispatch(updateLoginField(event.target.value, 'email'));
                 }}
               />
               <input
-                name="password"
+                name="_password"
+                id="password"
                 type="password"
                 placeholder="Mot de passe"
                 value={password}

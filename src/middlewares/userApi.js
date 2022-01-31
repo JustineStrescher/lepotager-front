@@ -11,8 +11,8 @@ const middleware = (store) => (next) => (action) => {
       axios.post(
         'http://lepotagerdesculsfouettes.fr/api/login_check',
         {
-          _username: store.getState().user.email,
-          _password: store.getState().user.password,
+          username: store.getState().user.email,
+          password: store.getState().user.password,
         },
       )
         .then((response) => {
