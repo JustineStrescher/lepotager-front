@@ -1,0 +1,114 @@
+@use 'src/styles/vars';
+
+.field-label{
+  margin-top: 0.5rem;
+  display: block;
+  text-align: center;
+}
+.field-input{
+  width: 90%;
+  margin: 0.3rem auto;
+  margin-left: 1rem;
+  padding: 0.3rem 0.2rem;
+  padding-left: 0.5rem;
+  font-size: vars.$fontSize*0.7;
+  border-radius: 0.4rem;
+  border: vars.$borderColor 2px solid;
+}
+.field-form{
+  width: 100%;
+  margin: auto;
+  
+  display: flex;
+  flex-direction: column;
+}
+
+.acount__container{
+  max-width: 1200px;
+  margin: auto;
+  width: 100%;
+}
+.acountCard{
+  font-weight: bold;
+  color: vars.$mainColor;
+  max-width: 1200px;
+  margin: auto;
+  width: 100%;
+  
+  
+  &--content{
+    font-size: vars.$fontSize*1.2;
+    background-color: vars.$secondColor;
+    border-radius: 3rem;
+    margin: auto;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    padding: 1rem 0 ;
+    width: 90%;
+
+    &__validation{
+      font-family: vars.$fontFamily;
+
+    }
+    & h3{
+      text-align: center;
+      font-size: vars.$fontSize*2;
+    }
+    &__validation{
+      margin: auto;
+      margin-top: 1rem;
+      font-size: vars.$fontSize*0.8;
+      background-color: vars.$mainColor;
+      border: vars.$mainColor 2px solid;
+      padding: 0.2rem 1rem;
+      color: vars.$secondColor;
+      border-radius: 0.5rem;
+      transition: all 0.3s;
+      &:hover{
+        background-color: vars.$secondColor;
+        color: vars.$mainColor;
+      }
+    }
+  }
+}
+@media screen and (min-width: 768px){
+  .field-label{
+    margin-top: 0.7rem;
+  }
+  .field-input{
+    margin: 0.5rem auto;
+    padding: 0.3rem 0.2rem;
+    padding-left: 1rem;
+  }
+  .field-form{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .acountCard{
+    margin-top: 4rem;
+    &--content{
+      
+      &__lastName,&__name,&__email,&__tel,&__town,&__CP{
+        margin: auto;
+        flex-basis: 50%;
+      }
+      &__adress,&__MP{
+
+        margin: auto;
+        flex-basis: 80%;
+        & label{
+
+          margin-left: -3rem;
+        }
+      }
+      &__validation{
+
+        font-size: vars.$fontSize*1.2;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}

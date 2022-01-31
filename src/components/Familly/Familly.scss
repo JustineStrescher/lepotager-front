@@ -1,3 +1,5 @@
+
+
 @use 'src/styles/vars';
 
 .Familly{
@@ -6,9 +8,9 @@
   max-width: 1200px;
   width: 90%;
   margin: auto;
-  margin-top: 2rem;
+  margin-top: 1rem;
   flex-basis: 50%;
-  align-items: center;
+  align-items: stretch;
 }
 
 .FamillyCard{
@@ -56,48 +58,55 @@
 
     &-title{
       text-transform: uppercase;
-      color: vars.$titleColor;
+      color: vars.$mainColor;
       margin: auto ;
-      padding: 1.5rem ;
+      padding: 0.5rem 0 ;
       width: 90%;
       text-align: center;
-      font-size: 1rem;
+      font-size: vars.$fontSize * 1.2;
       transition: color 1.5s;
     }  
   }
 }
 
-@media screen and (min-width: 600px){
-
- 
+@media screen and (min-width: 768px){
+  .Familly{
+   
+    margin-top: 2rem;
+}
 .FamillyCard{
   margin: auto;
   width: 25%;
     
     &--button{
-      height: 90%;
+      min-height: 16rem;
       width: 90%;
       margin: auto;
       position: relative;
-      
       border-radius: 1rem;
   
       &-title{
+        padding-top: 2rem;
         text-align: center;
-        width:80%;
-        font-size: 1rem;
+        width:95%;
         
       }
     }
     &--image{
-       padding-top: 1rem;
-       
-      
-      & img{
+
+      &-effect{
+        height: 8rem;
+        overflow: hidden;
         
+        & img{
+        max-height: 8rem;
         border-radius: 1rem;
       }
+      }
+      
+      
     }
     
   }
 }
+

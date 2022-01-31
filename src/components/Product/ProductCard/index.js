@@ -6,12 +6,19 @@ const ProductCard = ({
   picture,
   available,
   slug,
-  categorySlug,
+  category,
+  price,
+  unitType,
 }) => (
 
   <div className="ProductCard">
     <div className="ProductCard--button">
-      <Link to={`Légume/${categorySlug}/${slug}`}>
+      <Link
+        to={`/legumes/${category.id}/${slug}`}
+        onClick={() => {
+          window.scrollTo(0, 0);
+        }}
+      >
         <div className="ProductCard--image">
           <div className="ProductCard--image-effect">
             <img src={picture} alt="" />
@@ -20,7 +27,7 @@ const ProductCard = ({
         <div className="ProductCard--button-title">
           <h1 className="ProductCard--button-title-title">{name}
           </h1>
-          <p className="ProductCard--button-title-price">15.23 €/kg </p>
+          <p className="ProductCard--button-title-price">{price} €/{!unitType ? 'Kg' : 'unité'} </p>
         </div>
         <p className={!available ? 'ProductCard--button-available' : 'ProductCard--button-available_none'}>Indisponible</p>
       </Link>
@@ -30,10 +37,14 @@ const ProductCard = ({
 
 ProductCard.propTypes = {
   name: PropTypes.string.isRequired,
+  unitType: PropTypes.string.isRequired,
   picture: PropTypes.string.isRequired,
   slug: PropTypes.string.isRequired,
-  categorySlug: PropTypes.string.isRequired,
+  category: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+  }).isRequired,
   available: PropTypes.bool.isRequired,
+  price: PropTypes.number.isRequired,
 };
 
 export default ProductCard;

@@ -1,9 +1,12 @@
 @use 'src/styles/vars';
-.container{
+.Footer__container{
   margin-top: 2rem;
 }
 .footer {
+  font-size:vars.$fontSize;
+  line-height: vars.$fontSize*1.2;
   padding-top: 1rem;
+  padding-bottom: 1rem;
   margin: auto;
   width: 100%;
   display: flex;
@@ -12,32 +15,34 @@
   background-color: vars.$mainColor;
   color: #fff;
   &--contact{
-    width: 80%;
-    font-size: 3vw;
+    width: 90%;
+    
     flex-basis: 50%;
     margin: auto;
     height: 80%;
     text-align: center;
     & h2{
-      font-size: 0.8rem;
+      text-decoration: underline 1px;
       padding-bottom: 0.5rem;
       text-transform: uppercase;
       font-weight: bold;
     }    
     &-contact{
-      font-size: 0.8rem;
-      margin: 1.2rem ;
+      
+      font-size: vars.$fontSize* 0.8;
       
       &__list{
-        font-size: 0.8rem;
+        
         width: 100%;
         & img {
-          width: 0.8rem;
+          width: vars.$fontSize;
+          padding-right: 0.3rem;
         }
       }
     }
     &-reseaux{
       margin: 1.2rem;
+      font-size: vars.$fontSize* 0.8;
       & a{
         transition: color 0.5s;
         &:hover{
@@ -49,14 +54,14 @@
   }
 }
 
-@media screen and (min-width: 600px){
-.container{
+@media screen and (min-width: 768px){
+.Footer__container{
   width: 100%;
   background-color: vars.$mainColor;
 }
 
   .footer {
-    
+    background-color: vars.$mainColor;
     margin: auto;
     max-width: 1200px;
     display: block;
@@ -67,26 +72,33 @@
     &--contact{
       text-align: left;
       display: flex;
-      font-size: 1rem;
-      line-height: 1rem;
       background-color: vars.$mainColor;
-      border-radius: 3vw;
+      
       width: 100%;
+      margin: 1.2rem ;
+      
+      
       &-contact{
+        font-size: vars.$fontSize* 1.1;
+        padding-left: 1rem;
         margin: 0.5rem;
         width: 100%;
         flex-basis: 40%;
         
         &__list{
           margin-top: 0.5rem;
-          font-size: 0.8rem;
+          & li {
+            margin-top: 0.2rem;
+          }
+          
           width: 90%;
           & img {
-            width: 0.8rem;
+            width: vars.$fontSize;
           }
         }
       }
       &-reseaux{
+        font-size: vars.$fontSize* 1.2;
         border-left: #fff 0.6px solid;
         padding-left: 1rem;
         width:100%;
@@ -95,8 +107,9 @@
         
         &__list{
           margin-top: 0.5rem;
-          font-size: 0.8rem;
-          
+          & li {
+            margin-top: 0.2rem;
+          }
         }
       }
     }
