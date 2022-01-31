@@ -1,3 +1,9 @@
+export const initialState = {
+  email: '',
+  password: '',
+  name: '',
+};
+
 export const UPDATE_LOGIN_FIELD = 'UPDATE_LOGIN_FIELD';
 
 export const updateLoginField = (newValue, identifier) => ({
@@ -20,3 +26,5 @@ export const saveUserData = (isLogged, nickname, token) => ({
   nickname: nickname,
   token: token,
 });
+
+

@@ -23,10 +23,13 @@
 }
 
 .login__form{
+display: block;
+align-items: center;
+@media screen and (min-width:768px){
 display: flex;
 justify-content: space-between;
 
-}
+}}
 .login__form--button{
   padding: 0.7rem 2rem;
   background-color: black;
