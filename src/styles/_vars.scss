@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap');
-
+// @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Ubuntu+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Ubuntu+Mono&display=swap');
 // Generic
-$primary-color: #1E6C5B;
-$alt-color: #75B2B8;
-$dark-color: #AB7341;
-$light-color: #F3EFE1;
-$gutter: 2rem;
+// $primary-color: #1E6C5B;
+// $alt-color: #75B2B8;
+// $dark-color: #AB7341;
+// $light-color: #F3EFE1;
+// $gutter: 2rem;
 
 
 // Title
@@ -17,28 +17,21 @@ $title-color: #000;
 $post-text-color: #666;
 $post-hover-color: #f7f7f7;
 
-// https://www.local.bio/
 
+// Colors
 $mainColor: #1E6C5B;
 $titleColor: #09270b;
 $secondColor : #ffffff;
-$backColor : #e4e1cd;
+$backColor : #d6f0e5;
 $borderColor: rgb(194, 193, 193);
+$dark-color: #AB7341;
+$alt-color: #75B2B8;
 
-// https://lacavedelaria.com/collections/vins-bio/products/en-passant
-// https://rennes.lesfermiersducoin.fr/fruits-legumes/
-
-// $mainColor: #6C321C;
-// $titleColor: #3a1b0f;
-// $secondColor : #fff;
-// $backColor : #F5F4ED;
-// $borderColor: #D2D2D2;
+$gutter: 2rem;
 
 $fontColor: #fff;
 $fontSize: 1.6rem;
 
 $fontFamily: 'Amatic SC' , cursive ;
-
-// $gutter: 1rem;
 
 $maxWidth: 1200px;

@@ -1,21 +1,30 @@
+@use 'src/styles/vars';
+
 .container__header{
+  height: 9.9vh;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: #1E6C5B;
+  background-color: vars.$mainColor;
+  position:relative;
 }
 
 .navbar{
-  height:5rem;
+  background-color: vars.$mainColor;
+  position: fixed;
+  height:10vh;
+  width: 100%;
+  z-index: 4;
   display: flex;
   justify-content: space-around;
   align-items: center;
   color: #F3EFE1;
   font-family: 'Amatic SC', cursive;
   font-size: 2rem;
+  border-bottom: #fff 0.1px solid;
 
   &__logo{
-    width: 1.75em;
+    width: 11vh;
     border-radius: 1em;
     text-align: center;
     margin-left:-1em;
@@ -27,7 +36,7 @@
     font-size: 30px;
     border: none;
     outline: none;
-    background-color: #1E6C5B;
+    background-color: vars.$mainColor;
     color: #F3EFE1;
   }
 
@@ -43,7 +52,7 @@
       display: block;
       background-color: #75B2B8;
       left: 0;
-      top: 5rem;
+      top: 10vh;
       transition: all 0.5 ease-out;
       width: 100%;
     }
@@ -65,17 +74,21 @@
     outline: none;
     top: 15px;
     right: 25px;
-    background-color: #1E6C5B;
+    background-color: vars.$mainColor;
     color: #F3EFE1;
   }
 
 }
 
 @media screen and (min-width:768px) {
-  .container{
+  .container__header{
     width: 100%;
+    height: 6rem;
   }
   .navbar{
+    height: 6rem;
+    border-bottom: vars.$mainColor 0.5px solid;
+    position: relative;
     justify-content: space-around;
     align-items: center;
     margin: auto;
@@ -83,6 +96,7 @@
     
 
     &__logo{
+      width: 7rem;
       display: flex;
     }
     &__links{

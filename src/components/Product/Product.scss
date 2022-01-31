@@ -15,16 +15,16 @@
     margin-bottom: -2.5rem;
     font-weight: bold;
     text-align: center;
-    font-size: vars.$fontSize*2;
+    font-size: vars.$fontSize*1.8;
     color: vars.$mainColor;
   }
 }
 
 .ProductCard{
   width: 50%;
-  font-size: vars.$fontSize*1.2;
+  font-size: vars.$fontSize*1;
+  margin: auto;
   margin-top: 2rem;
-  
 
   &--image{
     width: 75%;
@@ -34,23 +34,26 @@
     padding-top: 2rem;
     
     &-effect{
+      position:relative;
       overflow: hidden;
       border-radius: 1rem;
-      
+      height: 9rem;
       
       & img{
       border-radius: 1rem;
       width: 100%;
-      max-height: 9rem;
+      margin-top: -2rem;
+      padding-top: 1rem;
+      max-height: 18rem;
       transition: transform 1s;
       &:hover{
         -ms-transform: scale(1.1) translate(0px); /* IE 9 */
         -webkit-transform: scale(1.1) translate(0px); /* Safari 3-8 */
-        transform: scale(1.1) translate(0px);
+        transform: scale(1.05) translate(0px);
         }
     }
   }
-    }
+  }
       
     
 
@@ -71,8 +74,8 @@
       border-radius: 1rem;
       border: none;
       text-align: center;
-      width: 90%;
-      margin: 0.5rem auto;
+      width: 100%;
+      margin: auto;
       background-color: vars.$borderColor;
       border: vars.$borderColor 1.5px solid;
       transition: border 1s ;
@@ -87,7 +90,7 @@
       
       &-title{
         color: vars.$mainColor;
-        padding: 1rem;
+        padding: 0.5rem;
         text-transform: uppercase;
       }
       &-price{

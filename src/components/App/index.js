@@ -14,14 +14,18 @@ import Basket from 'src/components/Basket';
 import Error from 'src/components/Error';
 import AboutConcept from 'src/components/AboutConcept';
 import Acount from '../Acount';
+import Devs from '../Devs';
 
 import './styles.scss';
+import { fetchAllProducts, fetchHighlight } from '../../actions/product';
 
 function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(fetchCategories());
+    dispatch(fetchHighlight());
+    dispatch(fetchAllProducts());
   }, []);
 
   return (
@@ -29,11 +33,15 @@ function App() {
       <NavBar />
       <Routes>
         <Route exact path="/" element={<Category />} />
+        <Route exact path="/les-devs" element={<Devs />} />
         <Route exact path="/acount" element={<Acount />} />
         <Route exact path="/panier" element={<Basket />} />
         <Route exact path="/a-propos" element={<AboutConcept />} />
         <Route exact path="/concept" element={<AboutConcept />} />
-        <Route exact path="/:slug" element={<Familly />} />
+        <Route exact path="/legumes" element={<Familly />} />
+        <Route exact path="/viandes" element={<Familly />} />
+        <Route exact path="/epicerie" element={<Familly />} />
+        <Route exact path="/semences" element={<Familly />} />
         <Route exact path="/:slug/:slug" element={<Product />} />
         <Route exact path="/:slug/:slug/:slug" element={<ProductDetail />} />
         <Route path="*" element={<Error />} />

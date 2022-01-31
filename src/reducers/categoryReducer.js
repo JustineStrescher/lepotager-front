@@ -14,7 +14,6 @@ export const initialState = {
   subCategoryId: 0,
   subCategoryName: '',
   categoryId: 0,
-  categoryApi: 'http://lepotagerdesculsfouettes.fr/api/category/',
   categoryName: '',
 };
 

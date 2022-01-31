@@ -6,17 +6,18 @@ import Carousel from 'src/components/Carousel';
 import { useSelector } from 'react-redux';
 
 import ProductCard from './ProductCard';
+import ScrollToTop from '../ScrollToTop';
 
 const Product = () => {
   // ici on utilise useSelector pour récuperé la recette actuelle en fonction de la liste
-  // des recettes présentes dans le state
+  // des produits présentes dans le state
   const productList = useSelector((state) => state.product.ProductData);
 
-  const category = useSelector((state) => state.category.categoryName);
+  const category = useSelector((state) => state.category.subCategoryName);
 
   return (
     <section className="Product__container">
-      <Carousel />
+      <ScrollToTop />
       <div className="Product--title">
         <p>{category}</p>
       </div>
@@ -26,6 +27,7 @@ const Product = () => {
         ))}
       </div>
       <Highlight />
+      <Carousel />
     </section>
   );
 };

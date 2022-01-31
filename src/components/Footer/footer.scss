@@ -15,21 +15,21 @@
   background-color: vars.$mainColor;
   color: #fff;
   &--contact{
-    width: 80%;
+    width: 90%;
     
     flex-basis: 50%;
     margin: auto;
     height: 80%;
     text-align: center;
     & h2{
-      
+      text-decoration: underline 1px;
       padding-bottom: 0.5rem;
       text-transform: uppercase;
       font-weight: bold;
     }    
     &-contact{
       
-      // margin: 1.2rem ;
+      font-size: vars.$fontSize* 0.8;
       
       &__list{
         
@@ -42,6 +42,7 @@
     }
     &-reseaux{
       margin: 1.2rem;
+      font-size: vars.$fontSize* 0.8;
       & a{
         transition: color 0.5s;
         &:hover{
@@ -60,7 +61,7 @@
 }
 
   .footer {
-    
+    background-color: vars.$mainColor;
     margin: auto;
     max-width: 1200px;
     display: block;
@@ -72,11 +73,13 @@
       text-align: left;
       display: flex;
       background-color: vars.$mainColor;
-      border-radius: 3vw;
+      
       width: 100%;
       margin: 1.2rem ;
       
+      
       &-contact{
+        font-size: vars.$fontSize* 1.1;
         padding-left: 1rem;
         margin: 0.5rem;
         width: 100%;
@@ -84,6 +87,9 @@
         
         &__list{
           margin-top: 0.5rem;
+          & li {
+            margin-top: 0.2rem;
+          }
           
           width: 90%;
           & img {
@@ -92,6 +98,7 @@
         }
       }
       &-reseaux{
+        font-size: vars.$fontSize* 1.2;
         border-left: #fff 0.6px solid;
         padding-left: 1rem;
         width:100%;
@@ -100,6 +107,9 @@
         
         &__list{
           margin-top: 0.5rem;
+          & li {
+            margin-top: 0.2rem;
+          }
         }
       }
     }
