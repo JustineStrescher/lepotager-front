@@ -1,0 +1,31 @@
+.search__container{
+  position: fixed;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.search__modal{
+  position: fixed;
+  top: 50%;
+  right: 50%;
+  transform: translate(-50%, -50%);
+  padding: 50px;
+  z-index: 50;
+}
+.search__icon--close{
+    display: block;
+    position: absolute;
+    font-size: 30px;
+    border: none;
+    border-radius: 2rem;
+    outline: none;
+    top: 15px;
+    right: 25px;
+    background-color: none;
+    color: #F3EFE1;
+    cursor: pointer;
+}

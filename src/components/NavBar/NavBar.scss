@@ -20,8 +20,12 @@
   align-items: center;
   color: #F3EFE1;
   font-family: 'Amatic SC', cursive;
-  font-size: 2rem;
+
+  font-size: 2em;
+  position: relative;
+  height: 5rem;
   border-bottom: #fff 0.1px solid;
+
 
   &__logo{
     width: 11vh;
@@ -41,6 +45,7 @@
   }
 
   &__links{
+    top: 0px;
     display: none;
     & a:hover{
       color: #AB7341;
@@ -106,10 +111,14 @@
       & a:hover{
         color: #AB7341;
       }
+      &--mobile{
+        display: none;
+      }
       
       &--account{
         border: 1px solid #AB7341;
         border-radius: 5px;
+        cursor: pointer;
         &:hover{
           background-color: #F3EFE1;
           color: #AB7341;
