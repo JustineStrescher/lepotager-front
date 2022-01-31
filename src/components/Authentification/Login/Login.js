@@ -5,7 +5,6 @@ import LoginForm from './LoginForm';
 const Login = () => {
   const [isLogged, setIsLogged] = useState(true);
 
-
   return (
     <div>
       {isLogged && (

@@ -39,6 +39,7 @@ const middleware = (store) => (next) => (action) => {
       axios.get('http://lepotagerdesculsfouettes.fr/api/product')
         .then((response) => {
           const products = response.data;
+          // eslint-disable-next-line arrow-body-style
           const productByCategory = products.filter((testedVege) => {
             return testedVege.category.id === store.getState().category.subCategoryId;
           });

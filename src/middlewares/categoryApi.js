@@ -24,11 +24,13 @@ const middleware = (store) => (next) => (action) => {
 
     case FETCH_SUB_CATEGORIES:
       // on appelle l'api pour récupérer les subcategories
-      axios.get('http://lepotagerdesculsfouettes.fr/api/category/1')
+      axios.get('http://lepotagerdesculsfouettes.fr/api/subcategory')
         .then((response) => {
           // une fois récupérées
           const subCategories = response.data;
-          store.dispatch(saveSubCategories(subCategories.categories));
+          const subCategoryByCategory = subCategories.filter((testedVege) => {
+            return testedVege.arborescence.Category === store.getState().category.categoryName;
+          });
         })
         .catch((error) => {
           console.error(error);
