@@ -11,6 +11,7 @@ const FamillyCard = ({
   name,
   picture,
   slug,
+  arborescence,
   id,
 }) => {
   const dispatch = useDispatch();
@@ -20,7 +21,7 @@ const FamillyCard = ({
     <div className="FamillyCard">
       <div className="FamillyCard--button">
         <Link
-          to={`/legumes/${slug}`}
+          to={`/${arborescence.Category}/${arborescence.SubCategory}`}
           className="card-link"
           onClick={() => {
             dispatch(setSubCategories(id, name));

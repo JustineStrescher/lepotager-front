@@ -6,7 +6,7 @@ const ProductCard = ({
   picture,
   available,
   slug,
-  category,
+  arborescence,
   price,
   unitType,
 }) => (
@@ -14,7 +14,7 @@ const ProductCard = ({
   <div className="ProductCard">
     <div className="ProductCard--button">
       <Link
-        to={`/legumes/${category.id}/${slug}`}
+        to={`/${arborescence.Category}/${arborescence.SubCategory}/${slug}`}
         onClick={() => {
           window.scrollTo(0, 0);
         }}
@@ -37,13 +37,17 @@ const ProductCard = ({
 
 ProductCard.propTypes = {
   name: PropTypes.string.isRequired,
-  unitType: PropTypes.string.isRequired,
+  unitType: PropTypes.number.isRequired,
   picture: PropTypes.string.isRequired,
   slug: PropTypes.string.isRequired,
   category: PropTypes.shape({
     id: PropTypes.number.isRequired,
   }).isRequired,
-  available: PropTypes.bool.isRequired,
+  arborescence: PropTypes.shape({
+    Category: PropTypes.string.isRequired,
+    SubCategory: PropTypes.string.isRequired,
+  }).isRequired,
+  available: PropTypes.number.isRequired,
   price: PropTypes.number.isRequired,
 };
 

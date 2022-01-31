@@ -62,7 +62,7 @@ ProductDetailCard.propTypes = {
   price: PropTypes.number.isRequired,
   description: PropTypes.string.isRequired,
   available: PropTypes.number.isRequired,
-  unitType: PropTypes.string.isRequired,
+  unitType: PropTypes.number.isRequired,
 };
 
 export default ProductDetailCard;

@@ -34,7 +34,7 @@ export const setSubCategories = (subCategoryId, subCategoryName) => ({
 
 export const SET_CATEGORIES = 'SET_CATEGORIES';
 
-export const setCategories = (categoryId) => ({
+export const setCategories = (categoryName) => ({
   type: SET_CATEGORIES,
-  categoryId: categoryId,
+  categoryName: categoryName,
 });

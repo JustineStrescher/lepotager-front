@@ -31,6 +31,7 @@ const middleware = (store) => (next) => (action) => {
           const subCategoryByCategory = subCategories.filter((testedVege) => {
             return testedVege.arborescence.Category === store.getState().category.categoryName;
           });
+          store.dispatch(saveSubCategories(subCategoryByCategory));
         })
         .catch((error) => {
           console.error(error);
