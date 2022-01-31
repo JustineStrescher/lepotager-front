@@ -1,18 +1,15 @@
-import './login.scss';
 import './modal.scss';
-import PropTypes from 'prop-types';
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
 import LoginForm from './LoginForm';
-import { updateLoginField, logIn } from '../../../actions/user';
 
 const Login = () => {
-  const [isLogged, setIsLogged] = useState(false);
+  const [isLogged, setIsLogged] = useState(true);
+
 
   return (
-    <div className="login__form">
+    <div>
       {isLogged && (
-        <div className="login__form--logged">
+        <div className="login__form">
           <span className="login__form--logged">
             Mon compte
           </span>

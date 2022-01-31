@@ -21,11 +21,33 @@
   color: black;
   
 }
+
+.login__form{
+display: flex;
+justify-content: space-between;
+
+}
 .login__form--button{
   padding: 0.7rem 2rem;
   background-color: black;
   border-radius: 0.5rem;
   color: white;
+}
+
+.log__button{
+color: white;
+font-family: 'Amatic SC', cursive;
+border-radius: 0.5rem;
+margin-left: 2rem;
+font-size: 2rem;
+background-color: transparent;
+border: 1px solid #AB7341;
+ border-radius: 5px;
+cursor: pointer;
+  &:hover{
+  background-color: #F3EFE1;
+  color: #AB7341;
+}
 }
 .modal__icon--close{
   display: block;
