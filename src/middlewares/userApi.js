@@ -9,10 +9,10 @@ const middleware = (store) => (next) => (action) => {
   switch (action.type) {
     case LOG_IN:
       axios.post(
-        'http://lepotagerdesculsfouettesapi/user',
+        'http://lepotagerdesculsfouettes.fr/api/login_check',
         {
-          email: store.getState().user.email,
-          password: store.getState().user.password,
+          _username: store.getState().user.email,
+          _password: store.getState().user.password,
         },
       )
         .then((response) => {

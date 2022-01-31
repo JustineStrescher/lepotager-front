@@ -1,9 +1,9 @@
 export const UPDATE_LOGIN_FIELD = 'UPDATE_LOGIN_FIELD';
 
-export const updateLoginField = (searchValue, targetField) => ({
+export const updateLoginField = (newValue, identifier) => ({
   type: UPDATE_LOGIN_FIELD,
-  searchValue: searchValue,
-  targetField: targetField,
+  newValue: newValue,
+  identifier: identifier,
 });
 
 export const LOG_IN = 'LOG_IN';

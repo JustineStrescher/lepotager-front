@@ -3,20 +3,24 @@ import { useState, useEffect, useRef } from 'react';
 import SignUpForm from '../SignUpForm';
 import LoginFormModal from './LoginFormModal';
 import './modal.scss';
+import { useDispatch } from 'react-redux';
+import { updateLoginField, logIn } from '../../../actions/user';
 
 const LoginForm = ({
   email,
-  setEmailValue,
   password,
-  setPasswordValue,
   logged,
+  onChange,
+  handleLogin,
 }) => {
+  const dispatch = useDispatch();
   const ref = useRef();
   const [isOpenModal, setIsOpenModal] = useState(false);
 
   if (logged) return null;
   const handleSubmit = (e) => {
     e.preventDefault();
+    handleLogin();
   };
   // eslint-disable-next-line no-shadow
   function useOnClickOutside(ref, handler) {
@@ -53,19 +57,17 @@ const LoginForm = ({
                 value={email}
                 placeholder="Email"
                 onChange={(event) => {
-                  const newValue = event.target.value;
-                  setEmailValue(newValue);
+                  dispatch(updateLoginField(event.target.value, 'email'));
                 }}
               />
               <input
                 name="password"
                 type="password"
                 placeholder="Mot de passe"
-                onChange={(event) => {
-                  const newValue = event.target.value;
-                  setPasswordValue(newValue);
-                }}
                 value={password}
+                onChange={(event) => {
+                  dispatch(updateLoginField(event.target.value, 'password'));
+                }}
               />
               <button
                 type="submit"
