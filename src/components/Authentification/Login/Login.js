@@ -2,7 +2,7 @@ import './modal.scss';
 import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import LoginForm from './LoginForm';
-import { updateLoginField, logIn } from '../../../actions/user';
+import { updateLoginField, logIn, logOut } from '../../../actions/user';
 
 const Login = ({ handleLogin }) => {
   const dispatch = useDispatch();
@@ -23,7 +23,7 @@ const Login = ({ handleLogin }) => {
         <button
           type="button"
           className="log__button"
-          onClick={() => setIsLogged(false)}
+          onClick={() => dispatch(logOut())}
         >
           Déconnexion
         </button>
