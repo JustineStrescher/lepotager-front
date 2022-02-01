@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import BasketListing from './BasketListing';
 
 const BasketCard = () => {
-  const BasketProdut = useSelector((state) => state.cart.cart);
+  const BasketProduct = useSelector((state) => state.cart.cartList);
 
   return (
     <div className="BasketCard">
@@ -21,7 +21,7 @@ const BasketCard = () => {
           <h2>Total</h2>
         </div>
       </div>
-      {BasketProdut.map((product) => (
+      {BasketProduct.map((product) => (
         <BasketListing key={product.id} {...product} />
       ))}
 

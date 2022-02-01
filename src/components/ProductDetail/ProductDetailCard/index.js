@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { useSelector, useDispatch } from 'react-redux';
 
 import { changeInputValue } from 'src/actions/productDetail';
-import { addToCart } from '../../../actions/cart';
+import { addProduct } from '../../../actions/cart';
 
 const ProductDetailCard = ({
   picture,
@@ -14,7 +14,6 @@ const ProductDetailCard = ({
   unitType,
 }) => {
   const quantity = useSelector((state) => state.product.quantity);
-  const product = useSelector((state) => state.product.product);
   const dispatch = useDispatch();
 
   return (
@@ -32,7 +31,6 @@ const ProductDetailCard = ({
             action="submit"
             onSubmit={(event) => {
               event.preventDefault();
-              dispatch(addToCart(product));
             }}
           >
             <div className="ProductDetailCard--form-flex">
@@ -52,6 +50,9 @@ const ProductDetailCard = ({
             <button
               type="submit"
               className={!available ? 'ProductDetailCard--form-button none' : 'ProductDetailCard--form-button'}
+              onClick={() => {
+                dispatch(addProduct());
+              }}
             >
               Ajouter au panier
             </button>

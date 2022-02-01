@@ -1,8 +1,7 @@
 export const ADD_PRODUCT = 'ADD_PRODUCT';
 
-export const addToCart = (product) => ({
+export const addProduct = () => ({
   type: ADD_PRODUCT,
-  product: product,
 });
 
 export const REMOVE_PRODUCT = 'REMOVE_PRODUCT';
