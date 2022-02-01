@@ -21,7 +21,7 @@ const middleware = (store) => (next) => (action) => {
           console.log(response);
 
           const newAction = saveUserData(
-            response.data.logged,
+            response.data.isLogged,
             response.data.username,
             response.data.token,
           );
@@ -46,8 +46,12 @@ const middleware = (store) => (next) => (action) => {
         },
       )
         .then((response) => {
-          store.dispatch(saveUserData(response.data.token));
+          store.dispatch(saveUserData(
+            response.data,
+            console.log(response.data),
+          ));
         })
+
         .catch((error) => {
           console.warn(error);
         });

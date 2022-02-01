@@ -1,10 +1,12 @@
 import { UPDATE_LOGIN_FIELD, SAVE_USER_DATA } from 'src/actions/user';
 
 export const initialState = {
-  logged: false,
+  isLogged: 0,
   email: '',
   password: '',
-  nickname: '',
+  adress: '',
+  firstname: '',
+  lastname: '',
   token: '',
 };
 
@@ -19,11 +21,10 @@ const reducer = (state = initialState, action = {}) => {
     case SAVE_USER_DATA:
       return {
         ...state,
-        logged: action.isLogged,
-        nickname: action.nickname,
+        isLogged: action.isLogged,
+        lastname: action.lastname,
         token: action.token,
-        email: '',
-        password: '',
+        //
       };
 
     default:

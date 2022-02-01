@@ -10,14 +10,14 @@ import { AiFillMail, AiFillLock } from 'react-icons/ai';
 const LoginForm = ({
   email,
   password,
-  logged,
+  isLogged,
   handleLogin,
 }) => {
   const dispatch = useDispatch();
   const ref = useRef();
   const [isOpenModal, setIsOpenModal] = useState(false);
 
-  if (logged) return null;
+  if (isLogged === 1) return null;
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -48,7 +48,7 @@ const LoginForm = ({
   return (
     <><div onClick={() => setIsOpenModal(true)}> Se connecter</div>
 
-      <LoginFormModal openModal={isOpenModal} onClose={() => setIsOpenModal(false)} logged={logged}>
+      <LoginFormModal openModal={isOpenModal} onClose={() => setIsOpenModal(false)} isLogged={isLogged}>
         <div className="modal__container">
           <div ref={ref}>
             <form autoComplete="off" className="search__modal" onSubmit={handleSubmit}>

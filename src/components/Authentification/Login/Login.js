@@ -8,14 +8,14 @@ const Login = ({ handleLogin }) => {
   const dispatch = useDispatch();
   const email = useSelector((state) => state.user.email);
   const password = useSelector((state) => state.user.password);
-  const isLogged = useSelector((state) => state.user.logged);
+  const isLogged = useSelector((state) => state.user.isLogged);
   const handleSubmit = (evt) => {
     evt.preventDefault();
     handleLogin();
   };
   return (
     <div>
-      {isLogged && (
+      {isLogged === 1 && (
       <div className="login__form">
         <span className="login__form--logged">
           Mon compte
@@ -29,10 +29,10 @@ const Login = ({ handleLogin }) => {
         </button>
       </div>
       )}
-      {!isLogged && (
+      {isLogged === 0 && (
 
       <LoginForm
-        logged={isLogged}
+        isLogged={isLogged}
         email={email}
         password={password}
         handleLogin={() => {
@@ -47,7 +47,6 @@ const Login = ({ handleLogin }) => {
 };
 
 Login.defaultProps = {
-  isLogged: false,
   loggedMessage: 'Connecté',
 };
 
