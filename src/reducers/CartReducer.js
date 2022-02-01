@@ -12,14 +12,12 @@ export const initialState = {
 const CartReducer = (state = initialState, action = {}) => {
   switch (action.type) {
     case ADD_PRODUCT:
-      //Vérification de l'existence ou non du produit dans le panier
-     
-      const inCart = state.cart.find((product) => product.id === action.product.id)
+      // //Vérification de l'existence ou non du produit dans le panier
+      // const inCart = state.cart.find((product) => product.id === action.product.id)
       return {
-        ...state,
         ...state.cart,
-        product: product,
-        quantity: 1,
+        cart: action.product,
+        quantity:2,
       };
     case REMOVE_PRODUCT:
       return {};

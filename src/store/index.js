@@ -1,7 +1,9 @@
 import { createStore, applyMiddleware, compose } from 'redux';
-import { persistStore } from 'redux-persist';
+import { persistStore, persistReducer } from 'redux-persist';
+import storage from 'redux-persist/lib/storage';// defaults to localStorage for web
+// import reducer from 'src/reducers';
+import rootReducer from 'src/reducers';
 
-import reducer from 'src/reducers';
 import productApiMiddleware from 'src/middlewares/productApi';
 import categoryApiMiddleware from 'src/middlewares/categoryApi';
 
@@ -11,7 +13,15 @@ const enhancers = composeEnhancers(
   applyMiddleware(productApiMiddleware, categoryApiMiddleware),
 );
 
-const store = createStore(reducer, enhancers);
-persistStore(store);
+const persistConfig = {
+  key: 'root',
+  storage,
+};
+
+const persistedReducer = persistReducer(persistConfig, rootReducer);
+
+const store = createStore(persistedReducer, enhancers);
+
+export const persistor = persistStore(store);
 
 export default store;

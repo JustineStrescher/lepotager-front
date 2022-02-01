@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import BasketListing from './BasketListing';
 
 const BasketCard = () => {
-  const BasketProdut = useSelector((state) => state.product.ProductData);
+  const BasketProdut = useSelector((state) => state.cart.cart);
 
   return (
     <div className="BasketCard">

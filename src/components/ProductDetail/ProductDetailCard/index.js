@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { useSelector, useDispatch } from 'react-redux';
 
 import { changeInputValue } from 'src/actions/productDetail';
+import { addToCart } from '../../../actions/cart';
 
 const ProductDetailCard = ({
   picture,
@@ -13,6 +14,7 @@ const ProductDetailCard = ({
   unitType,
 }) => {
   const quantity = useSelector((state) => state.product.quantity);
+  const product = useSelector((state) => state.product.product);
   const dispatch = useDispatch();
 
   return (
@@ -25,7 +27,14 @@ const ProductDetailCard = ({
         <p className="ProductDetailCard--detail-description">{description}</p>
         <p className="ProductDetailCard--detail-price">Prix / {!unitType ? 'Kg' : 'unité'} : {price} €</p>
         <div className="ProductDetailCard--form">
-          <form action="submit">
+          {available && (
+          <form
+            action="submit"
+            onSubmit={(event) => {
+              event.preventDefault();
+              dispatch(addToCart(product));
+            }}
+          >
             <div className="ProductDetailCard--form-flex">
               <input
                 type="number"
@@ -40,16 +49,17 @@ const ProductDetailCard = ({
               />
               <p className="ProductDetailCard--form-ammount">Total : {price * quantity} €</p>
             </div>
-            {available && (
-              <button
-                type="button"
-                className={!available ? 'ProductDetailCard--form-button none' : 'ProductDetailCard--form-button'}
-              >
-                Ajouter au panier
-              </button>
-            )}
-            <p className={!available ? 'ProductDetailCard--detail-available' : 'ProductDetailCard--detail-available_none'}>Produit non disponible</p>
+            <button
+              type="submit"
+              className={!available ? 'ProductDetailCard--form-button none' : 'ProductDetailCard--form-button'}
+            >
+              Ajouter au panier
+            </button>
           </form>
+          )}
+          {!available && (
+            <p className="ProductDetailCard--detail-available">Produit non disponible</p>
+          )}
         </div>
       </div>
     </div>
