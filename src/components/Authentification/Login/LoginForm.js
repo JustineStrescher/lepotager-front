@@ -5,6 +5,7 @@ import LoginFormModal from './LoginFormModal';
 import './modal.scss';
 import { useDispatch } from 'react-redux';
 import { updateLoginField, logIn } from '../../../actions/user';
+import { AiFillMail, AiFillLock } from 'react-icons/ai';
 
 const LoginForm = ({
   email,
@@ -51,16 +52,19 @@ const LoginForm = ({
         <div className="modal__container">
           <div ref={ref}>
             <form autoComplete="off" className="search__modal" onSubmit={handleSubmit}>
-              <input
-                name="_username"
-                type="text"
-                value={email}
-                placeholder="Email"
-                id="username"
-                onChange={(event) => {
-                  dispatch(updateLoginField(event.target.value, 'email'));
-                }}
-              />
+              <div className="input__container">
+                <input
+                  name="_username"
+                  type="text"
+                  value={email}
+                  placeholder="Email"
+                  id="username"
+                  onChange={(event) => {
+                    dispatch(updateLoginField(event.target.value, 'email'));
+                  }}
+                />
+                <AiFillMail className="modal__icon" />
+              </div>
               <input
                 name="_password"
                 id="password"
@@ -71,6 +75,7 @@ const LoginForm = ({
                   dispatch(updateLoginField(event.target.value, 'password'));
                 }}
               />
+              <AiFillLock className="modal__icon--password" />
               <button
                 type="submit"
                 className="login__form--button"
