@@ -15,7 +15,7 @@ const Login = ({ handleLogin }) => {
   };
   return (
     <div>
-      {isLogged === 1 && (
+      {isLogged && (
       <div className="login__form">
         <span className="login__form--logged">
           Mon compte
@@ -29,7 +29,7 @@ const Login = ({ handleLogin }) => {
         </button>
       </div>
       )}
-      {isLogged === 0 && (
+      {isLogged === '' && (
 
       <LoginForm
         isLogged={isLogged}
