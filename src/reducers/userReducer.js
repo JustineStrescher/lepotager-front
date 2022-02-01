@@ -1,30 +1,41 @@
+import { UPDATE_LOGIN_FIELD, SAVE_USER_DATA } from 'src/actions/user';
+import { LOG_OUT } from '../actions/user';
+
 export const initialState = {
+  isLogged: '',
   email: '',
   password: '',
-  name: '',
+  adress: '',
+  firstname: '',
+  lastname: '',
+  token: '',
 };
 
-export const UPDATE_LOGIN_FIELD = 'UPDATE_LOGIN_FIELD';
+const reducer = (state = initialState, action = {}) => {
+  switch (action.type) {
+    case UPDATE_LOGIN_FIELD:
+      return {
+        ...state,
+        [action.identifier]: action.newValue,
+      };
 
-export const updateLoginField = (newValue, identifier) => ({
-  type: UPDATE_LOGIN_FIELD,
-  newValue: newValue,
-  identifier: identifier,
-});
+    case SAVE_USER_DATA:
+      return {
+        ...state,
+        isLogged: action.isLogged,
+        lastname: action.lastname,
+        token: action.token,
+        email: '',
+        password: '',
+      };
+    case LOG_OUT:
+      return {
+        ...state,
+        isLogged: '',
+      };
+    default:
+      return state;
+  }
+};
 
-export const LOG_IN = 'LOG_IN';
-
-export const logIn = () => ({
-  type: LOG_IN,
-});
-
-export const SAVE_USER_DATA = 'SAVE_USER_DATA';
-
-export const saveUserData = (isLogged, nickname, token) => ({
-  type: SAVE_USER_DATA,
-  isLogged: isLogged,
-  nickname: nickname,
-  token: token,
-});
-
-
+export default reducer;
