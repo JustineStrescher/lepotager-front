@@ -1,4 +1,5 @@
 import { createStore, applyMiddleware, compose } from 'redux';
+import { persistStore } from 'redux-persist';
 
 import reducer from 'src/reducers';
 import productApiMiddleware from 'src/middlewares/productApi';
@@ -11,5 +12,6 @@ const enhancers = composeEnhancers(
 );
 
 const store = createStore(reducer, enhancers);
+persistStore(store);
 
 export default store;

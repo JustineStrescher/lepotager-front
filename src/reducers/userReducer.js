@@ -26,5 +26,3 @@ export const saveUserData = (isLogged, nickname, token) => ({
   nickname: nickname,
   token: token,
 });
-
-

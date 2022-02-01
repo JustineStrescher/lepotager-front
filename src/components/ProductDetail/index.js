@@ -14,13 +14,13 @@ import ScrollToTop from '../ScrollToTop';
 import { saveProduct } from '../../actions/product';
 
 const ProductDetail = () => {
+  useEffect(() => {
+  }, []);
+
   const dispatch = useDispatch();
   const parameters = useParams();
   const currentSlug = parameters.slug;
   const product = useSelector((state) => findVegetable(state.product.allProduct, currentSlug));
-  useEffect(() => {
-    dispatch(saveProduct(product));
-  });
 
   return (
     <section className="ProductDetail__container">
