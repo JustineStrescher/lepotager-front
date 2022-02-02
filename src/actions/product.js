@@ -6,9 +6,10 @@ export const fetchProducts = () => ({
 
 export const SAVE_PRODUCTS = 'SAVE_PRODUCTS';
 
-export const saveProducts = (products) => ({
+export const saveProducts = (products, productId = 0) => ({
   type: SAVE_PRODUCTS,
   products: products,
+  productId: productId,
 });
 
 export const SAVE_PRODUCT = 'SAVE_PRODUCT';

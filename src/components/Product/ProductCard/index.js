@@ -22,7 +22,7 @@ const ProductCard = ({
           to={`/${arborescence.Category}/${arborescence.SubCategory}/${slug}`}
           onClick={() => {
             window.scrollTo(0, 0);
-            dispatch(saveProduct(product));
+            dispatch(saveProduct(product, product.id));
           }}
         >
           <div className="ProductCard--image">

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { useSelector, useDispatch } from 'react-redux';
 
 import { changeInputValue } from 'src/actions/productDetail';
-import { addProduct } from '../../../actions/cart';
+import { addProduct } from 'src/actions/cart';
 
 const ProductDetailCard = ({
   picture,
