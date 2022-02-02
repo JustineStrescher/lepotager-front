@@ -23,10 +23,8 @@ const CartReducer = (state = initialState, action = {}) => {
         product: action.product,
       };
     case ADD_PRODUCT: {
-      
-  
       return {
-        cartList: { ...state.cartList, ( product: state.product  state.quantity )},
+        cartList: { ...state.cartList },
         quantity: 0,
         product: [],
       };

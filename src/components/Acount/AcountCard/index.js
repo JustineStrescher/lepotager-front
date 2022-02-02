@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { updateAcountField } from '../../../actions/user';
 
 const AcountCard = () => {
-  const user = useSelector((state) => state.user);
+  const user = useSelector((state) => state.user.isLogged);
   const dispatch = useDispatch();
   return (
     <div className="acountCard--content">
@@ -13,9 +13,9 @@ const AcountCard = () => {
             Nom :
           </label>
           <input
-            value={user.lastName}
+            value={user.lastname}
             onChange={(event) => {
-              dispatch(updateAcountField(event.target.value, 'lastName'));
+              dispatch(updateAcountField(event.target.value, 'lastname'));
             }}
             id="lastName"
             type="text"
@@ -29,9 +29,9 @@ const AcountCard = () => {
             Prénom :
           </label>
           <input
-            value={user.name}
+            value={user.firstname}
             onChange={(event) => {
-              dispatch(updateAcountField(event.target.value, 'name'));
+              dispatch(updateAcountField(event.target.value, 'firstname'));
             }}
             id="name"
             type="text"
@@ -45,9 +45,9 @@ const AcountCard = () => {
             E-mail :
           </label>
           <input
-            value={user.eMail}
+            value={user.email}
             onChange={(event) => {
-              dispatch(updateAcountField(event.target.value, 'eMail'));
+              dispatch(updateAcountField(event.target.value, 'email'));
             }}
             id="e-mail"
             type="e-mail"
@@ -61,7 +61,7 @@ const AcountCard = () => {
             N° de téléphone :
           </label>
           <input
-            value={user.tel}
+            value={user.phone}
             onChange={(event) => {
               dispatch(updateAcountField(event.target.value, 'tel'));
             }}
@@ -77,7 +77,7 @@ const AcountCard = () => {
             Adresse :
           </label>
           <input
-            value={user.adress}
+            value={user.address}
             onChange={(event) => {
               dispatch(updateAcountField(event.target.value, 'adress'));
             }}
@@ -93,7 +93,7 @@ const AcountCard = () => {
             Ville :
           </label>
           <input
-            value={user.town}
+            value={user.city}
             onChange={(event) => {
               dispatch(updateAcountField(event.target.value, 'town'));
             }}
@@ -109,7 +109,7 @@ const AcountCard = () => {
             Code postal :
           </label>
           <input
-            value={user.CP}
+            value={user.zip}
             onChange={(event) => {
               dispatch(updateAcountField(event.target.value, 'CP'));
             }}
@@ -125,7 +125,7 @@ const AcountCard = () => {
             Mot de passe :
           </label>
           <input
-            value={user.MP}
+            value=""
             onChange={(event) => {
               dispatch(updateAcountField(event.target.value, 'MP'));
             }}
