@@ -8,6 +8,7 @@ import { useSelector } from 'react-redux';
 
 import { findVegetable } from 'src/selectors/vegetables';
 
+import CategoryNav from '../CategoryNav';
 import ProductDetailCard from './ProductDetailCard';
 import ScrollToTop from '../ScrollToTop';
 
@@ -18,6 +19,7 @@ const ProductDetail = () => {
 
   return (
     <section className="ProductDetail__container">
+      <CategoryNav />
       <ScrollToTop />
       <div className="titlePage">
         <p>{product.name}</p>

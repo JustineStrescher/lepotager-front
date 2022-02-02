@@ -1,12 +1,12 @@
 import { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import './NavBar.scss';
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
 // import { FaUserAlt } from 'react-icons/fa';
 
 import { useDispatch } from 'react-redux';
 
-import SearchBar from './SearchBar';
+// import SearchBar from './SearchBar';
 
 import Login from '../Authentification/Login/Login';
 
@@ -21,40 +21,37 @@ const NavBar = () => {
     <>
       <section className="container__header">
         <nav className="navbar">
-          <NavLink to="/">
-            <img src={logo} alt="logo" className="navbar__logo" />
-          </NavLink>
           <div
             className="navbar__mobile--icon"
             onClick={() => setIsMobile(!isMobile)}
           >
             {isMobile ? <AiOutlineClose /> : <AiOutlineMenu />}
           </div>
+          <Link
+            to="/"
+            className="navbar__logo"
+          >
+            <img src={logo} alt="logo" />
+          </Link>
           <ul
             className={isMobile ? 'navbar__links--mobile' : 'navbar__links'}
             onClick={() => setIsMobile(false)}
           >
-            <>
-              <NavLink to="/" className="navbar__links--home">
-                <li>Accueil</li>
-              </NavLink>
-
-              <NavLink to="/nos-produits" className="navbar__links--products">
-                <li>Nos produits</li>
-              </NavLink>
-              <NavLink
-                to="/a-propos"
-                className="navbar__links--about"
-                onClick={() => {
-                  dispatch(setWho());
-                }}
-              >
-                <li>A propos</li>
-              </NavLink>
-              <Login />
-            </>
+            <NavLink to="/" className="navbar__links--home">
+              <li>Accueil</li>
+            </NavLink>
+            <NavLink
+              to="/a-propos"
+              className="navbar__links--about"
+              onClick={() => {
+                dispatch(setWho());
+              }}
+            >
+              <li>A propos</li>
+            </NavLink>
+            <Login />
           </ul>
-          <SearchBar />
+          {/* <SearchBar /> */}
         </nav>
       </section>
     </>

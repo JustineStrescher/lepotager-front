@@ -1,9 +1,11 @@
 /* eslint-disable react/prop-types */
+import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 import { useState, useEffect, useRef } from 'react';
 import SignUpForm from '../SignUpForm';
 import LoginFormModal from './LoginFormModal';
 import './modal.scss';
-import { useDispatch } from 'react-redux';
+
 import { updateLoginField, logIn } from '../../../actions/user';
 import { AiFillMail, AiFillLock } from 'react-icons/ai';
 
@@ -46,16 +48,25 @@ const LoginForm = ({
   useOnClickOutside(ref, () => setIsOpenModal(false));
 
   return (
-    <><div onClick={() => setIsOpenModal(true)}> Se connecter</div>
-
-      <LoginFormModal openModal={isOpenModal} onClose={() => setIsOpenModal(false)} isLogged={isLogged}>
+    <>
+      <div
+        className="navbar--connect"
+        onClick={() => setIsOpenModal(true)}
+      >Se connecter
+      </div>
+      <LoginFormModal
+        openModal={isOpenModal}
+        onClose={() => setIsOpenModal(false)}
+        isLogged={isLogged}
+      >
         <div className="modal__container">
           <div ref={ref}>
             <form autoComplete="off" className="search__modal" onSubmit={handleSubmit}>
               <div className="input__container">
+                <label htmlFor="username">E-mail</label>
                 <input
                   name="_username"
-                  type="text"
+                  type="eMail"
                   value={email}
                   placeholder="Email"
                   id="username"
@@ -63,28 +74,29 @@ const LoginForm = ({
                     dispatch(updateLoginField(event.target.value, 'email'));
                   }}
                 />
-                <AiFillMail className="modal__icon" />
-              </div>
-              <input
-                name="_password"
-                id="password"
-                type="password"
-                placeholder="Mot de passe"
-                value={password}
-                onChange={(event) => {
-                  dispatch(updateLoginField(event.target.value, 'password'));
-                }}
-              />
-              <AiFillLock className="modal__icon--password" />
-              <button
-                type="submit"
-                className="login__form--button"
-              >
-                Valider
-              </button>
-              <div onClick={() => setIsOpenModal(true)}>
-                <div>
-                  Créer un compte
+                {/* <AiFillMail className="modal__icon" /> */}
+                <label htmlFor="password">Mot de passe</label>
+                <input
+                  name="_password"
+                  id="password"
+                  type="password"
+                  placeholder="Mot de passe"
+                  value={password}
+                  onChange={(event) => {
+                    dispatch(updateLoginField(event.target.value, 'password'));
+                  }}
+                />
+                {/* <AiFillLock className="modal__icon--password" /> */}
+                <button
+                  type="submit"
+                  className="login__form--button"
+                >
+                  Valider
+                </button>
+                <div className="login__form--subscribe">
+                  <Link to="/">
+                    S'inscrire
+                  </Link>
                 </div>
               </div>
             </form>

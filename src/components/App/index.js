@@ -50,7 +50,7 @@ function App() {
         <Footer />
       </div>
       <>
-        <div id="portal" />;
+        <div id="portal" />
       </>
     </>
   );
