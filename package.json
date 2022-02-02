@@ -50,6 +50,7 @@
     "@fortawesome/fontawesome-free": "^5.15.4",
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
+    "@fortawesome/react-fontawesome": "^0.1.17",
     "axios": "^0.25.0",
     "hamburger-react": "^2.4.1",
     "infinite-react-carousel": "^1.2.11",

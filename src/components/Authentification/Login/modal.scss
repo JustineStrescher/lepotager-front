@@ -66,3 +66,17 @@ cursor: pointer;
   color: #F3EFE1;
   cursor: pointer;
 }
+
+
+.input__container{
+position: relative;
+display: flex;
+justify-content: flex-end;
+
+}
+.modal__icon{
+  position: absolute;
+  margin-left: 2rem;
+  font-size: 2rem;
+   top: 3rem;
+}
