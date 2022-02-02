@@ -47,7 +47,6 @@ function App() {
           <Route exact path="/:slug/:slug/:slug" element={<ProductDetail />} />
           <Route path="*" element={<Error />} />
         </Routes>
-
         <Footer />
       </div>
       <>

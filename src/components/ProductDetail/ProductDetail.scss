@@ -7,15 +7,18 @@
   margin-top: 3rem;
 }
 .ProductDetailCard{
+
   font-size: vars.$fontSize *1.2;
   background-color: vars.$secondColor;
   border-radius: 3rem;
   display:flex;
   flex-direction: column;
   align-items: center;
-
-
+  
   &--form{
+    & input{
+    max-width: 30% ;
+    }
     border-top: black 1px solid;
     padding-top: 1.25rem;
     display: flex;

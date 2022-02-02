@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 import { Link } from 'react-router-dom';
 import { setSubCategories } from '../../../actions/categories';
@@ -10,21 +10,19 @@ import '../Familly.scss';
 const FamillyCard = ({
   name,
   picture,
-  slug,
+  arborescence,
   id,
 }) => {
   const dispatch = useDispatch();
-  const categoryId = useSelector((state) => state.category.categoryId);
 
   return (
     <div className="FamillyCard">
       <div className="FamillyCard--button">
         <Link
-          to={`/legumes/${slug}`}
+          to={`/${arborescence.Category}/${arborescence.SubCategory}`}
           className="card-link"
           onClick={() => {
             dispatch(setSubCategories(id, name));
-            console.log(categoryId);
             dispatch(fetchProductsByCategory());
           }}
         >
@@ -44,7 +42,10 @@ const FamillyCard = ({
 
 FamillyCard.propTypes = {
   name: PropTypes.string.isRequired,
-  slug: PropTypes.string.isRequired,
+  arborescence: PropTypes.shape({
+    Category: PropTypes.string.isRequired,
+    SubCategory: PropTypes.string.isRequired,
+  }).isRequired,
   picture: PropTypes.string.isRequired,
   id: PropTypes.number.isRequired,
 };

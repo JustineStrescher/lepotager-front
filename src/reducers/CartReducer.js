@@ -5,22 +5,32 @@ import {
   FETCH_CURRENT_PRODUCT,
 } from '../actions/cart';
 
+import { SAVE_PRODUCT } from '../actions/product';
+
 export const initialState = {
-  cart: [],
-  currentProduct: null,
+  cartList: [],
+  product: [],
+  quantity: 0,
 };
+// //Vérification de l'existence ou non du produit dans le panier
+// const inCart = state.cart.find((product) => product.id === action.product.id)
+
 const CartReducer = (state = initialState, action = {}) => {
   switch (action.type) {
-    case ADD_PRODUCT:
-      //Vérification de l'existence ou non du produit dans le panier
-     
-      const inCart = state.cart.find((product) => product.id === action.product.id)
+    case SAVE_PRODUCT:
       return {
         ...state,
-        ...state.cart,
-        product: product,
-        quantity: 1,
+        product: action.product,
       };
+    case ADD_PRODUCT: {
+      
+  
+      return {
+        cartList: { ...state.cartList, ( product: state.product  state.quantity )},
+        quantity: 0,
+        product: [],
+      };
+    }
     case REMOVE_PRODUCT:
       return {};
     case CHANGE_QUANTITY:

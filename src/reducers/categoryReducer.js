@@ -13,7 +13,6 @@ export const initialState = {
   subCategory: [],
   subCategoryId: 0,
   subCategoryName: '',
-  categoryId: 0,
   categoryName: '',
 };
 
@@ -39,7 +38,7 @@ const categoryReducer = (state = initialState, action = {}) => {
     case SET_CATEGORIES:
       return {
         ...state,
-        categoryId: action.CategoryId,
+        categoryName: action.categoryName,
 
       };
     default:

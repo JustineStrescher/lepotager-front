@@ -9,10 +9,8 @@ import ProductCard from './ProductCard';
 import ScrollToTop from '../ScrollToTop';
 
 const Product = () => {
-  // ici on utilise useSelector pour récuperé la recette actuelle en fonction de la liste
-  // des produits présentes dans le state
+  // localStorage.setItem('products', JSON.stringify(productList));
   const productList = useSelector((state) => state.product.ProductData);
-
   const category = useSelector((state) => state.category.subCategoryName);
 
   return (
@@ -23,7 +21,7 @@ const Product = () => {
       </div>
       <div className="Product">
         {productList.map((product) => (
-          <ProductCard key={product.id} {...product} />
+          <ProductCard key={product.id} {...product} product={product} />
         ))}
       </div>
       <Highlight />
