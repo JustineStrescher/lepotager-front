@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import BasketListing from './BasketListing';
 
 const BasketCard = () => {
-  const BasketProduct = useSelector((state) => state.cart.cartList.product);
+  const BasketProduct = useSelector((state) => state.cart.cartList.newItem.product);
 
   return (
     <div className="BasketCard">
@@ -21,10 +21,10 @@ const BasketCard = () => {
           <h2>Total</h2>
         </div>
       </div>
-      {BasketProduct.map((product) => (
-        <BasketListing key={product.id} {...product} />
-      ))}
-
+      {/* {BasketProduct.map((product) => ( */}
+      <BasketListing key={BasketProduct.id} {...BasketProduct} />
+      {/* ))} */}
+      {console.log(BasketProduct)}
       <form action="submit" className="BasketCard--form">
         <div className="BasketCard--form-flex">
           <p className="BasketCard--form-flex-ammount">Total :  0 €</p>

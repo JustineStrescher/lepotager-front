@@ -23,7 +23,7 @@ const ProductDetailCard = ({
       </div>
       <div className="ProductDetailCard--detail">
         <h1 className="ProductDetailCard--detail-title">{name}</h1>
-        <p className="ProductDetailCard--detail-description">{description}</p>
+        <p className="ProductDetailCard--detail-description text">{description}</p>
         <p className="ProductDetailCard--detail-price">Prix / {!unitType ? 'Kg' : 'unité'} : {price} €</p>
         <div className="ProductDetailCard--form">
           {available && (
@@ -38,8 +38,8 @@ const ProductDetailCard = ({
                 type="number"
                 className="ProductDetailCard--form-input"
                 placeholder="Quantité"
-                value={!unitType ? Math.round(quantity) : quantity}
-                pattern={!unitType ? ' 0+\\.[0-9]*[1-9][0-9]*$' : ''}
+                value={unitType ? Math.round(quantity) : quantity}
+                pattern={unitType ? ' 0+\\.[0-9]*[1-9][0-9]*$' : ''}
                 onChange={(event) => {
                   // on dispatch une action en envoyant la nouvelle valeur
                   dispatch(changeInputValue(event.target.value));

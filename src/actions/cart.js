@@ -26,3 +26,9 @@ export const fetchCurrentProduct = (product) => ({
   type: FETCH_CURRENT_PRODUCT,
   product: product,
 });
+
+export const SEND_CART = 'SEND_CART';
+
+export const sendCart = () => ({
+  type: SEND_CART,
+});

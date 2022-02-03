@@ -1,12 +1,18 @@
 @use 'src/styles/vars';
 body{
-  background-color: vars.$backColor;
+  background-color: vars.$dark-color-back;
 
 }
 .app {
   margin: auto;
   font-family: vars.$fontFamily;
 
+}
+
+.text{
+  font-family: vars.$fontFamilyText;
+  font-size: vars.$fontSize*0.6;
+  line-height: 1.3rem;
 }
 
 .titlePage{

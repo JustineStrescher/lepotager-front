@@ -3,6 +3,7 @@ import {
   REMOVE_PRODUCT,
   CHANGE_QUANTITY,
   FETCH_CURRENT_PRODUCT,
+  SEND_CART,
 } from '../actions/cart';
 
 import { SAVE_PRODUCT } from '../actions/product';
@@ -35,6 +36,11 @@ const CartReducer = (state = initialState, action = {}) => {
         cartList: [...state.cartList, newItem],
       };
     }
+    case SEND_CART:
+      return {
+        cartList: [],
+      };
+
     case REMOVE_PRODUCT:
       return {};
     case CHANGE_QUANTITY:

@@ -1,7 +1,7 @@
 import '../aboutConcept.scss';
 
 const Concept = () => (
-  <div className="concept--content">
+  <div className="concept--content text">
     <p>
       hcbjhbvchbsfvbskfbvqsvkbfqksjvbksfjnbkjsnfkjnbsfkjnb<br />
       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id quibusdam
