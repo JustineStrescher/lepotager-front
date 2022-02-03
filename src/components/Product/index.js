@@ -4,7 +4,7 @@ import Highlight from 'src/components/Highlight';
 import Carousel from 'src/components/Carousel';
 
 import { useSelector } from 'react-redux';
-
+import CategoryNav from '../CategoryNav';
 import ProductCard from './ProductCard';
 import ScrollToTop from '../ScrollToTop';
 
@@ -15,6 +15,7 @@ const Product = () => {
 
   return (
     <section className="Product__container">
+      <CategoryNav />
       <ScrollToTop />
       <div className="Product--title">
         <p>{category}</p>

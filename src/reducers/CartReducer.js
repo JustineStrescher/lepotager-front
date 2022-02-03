@@ -10,6 +10,7 @@ import { SAVE_PRODUCT } from '../actions/product';
 export const initialState = {
   cartList: [],
   product: [],
+  productId: 0,
   quantity: 0,
 };
 // //Vérification de l'existence ou non du produit dans le panier
@@ -21,12 +22,17 @@ const CartReducer = (state = initialState, action = {}) => {
       return {
         ...state,
         product: action.product,
+        productId: action.productId,
       };
     case ADD_PRODUCT: {
+      const newItem = {
+        id: state.productId,
+        product: state.product,
+        quantity: state.quantity,
+      };
+
       return {
-        cartList: { ...state.cartList },
-        quantity: 0,
-        product: [],
+        cartList: [...state.cartList, newItem],
       };
     }
     case REMOVE_PRODUCT:

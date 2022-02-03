@@ -1,0 +1,47 @@
+@use 'src/styles/vars';
+
+ 
+
+.CategoryNav__container{
+  max-width: 1200px;
+  margin: auto;
+  margin-top: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  width: 90%;
+  gap:1rem;
+  
+  &-link {
+    color: white;
+    font-size: vars.$fontSize*0.8;
+    text-align: center;
+    flex-basis: 45%;
+    background-color: vars.$mainColor;
+    padding:   0.3rem 0;
+    border-radius: 0.5rem;
+
+    &:active{
+      
+      color: vars.$dark-color;
+      
+    }
+
+  }
+}
+.active{
+  color: vars.$dark-color;
+}
+
+@media screen and (min-width: 350px){
+  
+}
+
+@media screen and (min-width: 768px){
+  .CategoryNav__container{
+    flex-wrap: nowrap;
+  
+  & a {
+    font-size: vars.$fontSize*1.2;
+  }
+}
+}

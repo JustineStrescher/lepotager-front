@@ -11,7 +11,7 @@ const middleware = (store) => (next) => (action) => {
   switch (action.type) {
     case LOG_IN:
       axios.post(
-        'http://lepotagerdesculsfouettes.fr/api/login_check',
+        'http://api.lepotagerdesculsfouettes.fr/api/login_check',
         {
           username: store.getState().user.email,
           password: store.getState().user.password,
@@ -37,7 +37,7 @@ const middleware = (store) => (next) => (action) => {
     case FETCH_USER_DATA:
       axios.get(
 
-        'http://lepotagerdesculsfouettes.fr/api/client/info',
+        'http://api.lepotagerdesculsfouettes.fr/api/client/info',
 
         {
           headers: {
