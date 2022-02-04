@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/label-has-associated-control */
 /* eslint-disable react/prop-types */
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
@@ -7,7 +8,7 @@ import LoginFormModal from './LoginFormModal';
 import './modal.scss';
 
 import { updateLoginField, logIn } from '../../../actions/user';
-import { AiFillMail, AiFillLock } from 'react-icons/ai';
+// import { AiFillMail, AiFillLock } from 'react-icons/ai';
 
 const LoginForm = ({
   email,

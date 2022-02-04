@@ -56,10 +56,12 @@ const CartReducer = (state = initialState, action = {}) => {
     case SEND_CART:
       return {
         ...state,
-        // cartList: [],
+        cartList: [],
       };
     case REMOVE_PRODUCT: {
-      const filteredArray = state.cartList.filter((item) => item.product.id !== state.deleteProductId);
+      const filteredArray = (
+        state.cartList.filter((item) => item.product.id !== state.deleteProductId)
+      );
 
       return {
         ...state,

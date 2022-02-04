@@ -34,10 +34,24 @@
       &__list{
         
         width: 100%;
+        & li{
+          
+          font-family: vars.$fontFamilyText;
+          font-size: vars.$fontSize*0.4;
+          &:last-of-type {
+            padding-top:0.2rem ;
+            & img {
+              display: inline;
+            padding-top: 0.2rem ;
+            }
+            
+          }
+        }
         & img {
           display: none;
           width: vars.$fontSize;
           padding-right: 0.3rem;
+          
         }
       }
     }
@@ -47,11 +61,11 @@
       font-size: vars.$fontSize* 0.8;
       & p {
         font-family: vars.$fontFamilyText;
-        font-size: vars.$fontSize*0.5;
+        font-size: vars.$fontSize*0.4;
       }
       & a{
         font-family: vars.$fontFamilyText;
-        font-size: vars.$fontSize*0.5;
+        font-size: vars.$fontSize*0.4;
         transition: color 0.5s;
         &:hover{
           text-decoration: underline;

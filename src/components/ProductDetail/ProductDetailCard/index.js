@@ -62,13 +62,13 @@ const ProductDetailCard = ({
                     dispatch(setAdd(!add));
                     window.setTimeout(() => {
                       dispatch(setAdd(false));
-                    }, 5000);
+                    }, 2500);
                   }
                   else {
                     dispatch(setNotAdd(!notAdd));
                     window.setTimeout(() => {
                       dispatch(setNotAdd(false));
-                    }, 5000);
+                    }, 2500);
                   }
                 }}
               >

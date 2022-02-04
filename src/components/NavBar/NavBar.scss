@@ -54,7 +54,7 @@
     color: white;
     width: 50%;
     margin: auto;
-    margin-bottom: 0.6rem;
+    // margin-bottom: 0.6rem;
     transition: all 0.5s ;
     text-align: center;
     
@@ -108,7 +108,7 @@
       display: block;
       background-color: #75B2B8;
       left: 0;
-      top: 11vh;
+      top: 15vh;
       transition: all 0.5 ease-out;
       width: 100%;
     }
@@ -116,10 +116,11 @@
     
     &--home, &--products, &--account, &--about{
 
-      padding: 10px;
       text-align: center;
       width: 100%;
       transition: all 0.5 ease-out;
+      margin-top: 1.5rem;
+      padding-bottom: 0.5rem;
     }
     
   }
@@ -205,9 +206,10 @@
     &__links{
       display: block;
       display: flex;
-      justify-content: flex-end;
+      
       align-items: center;
       width: 80%;
+      padding-bottom: 0.5rem;
 
       & a:hover{
 
@@ -215,6 +217,7 @@
       }
 
       &--home, &--about { 
+        padding-bottom: 1.5rem;
         flex-basis:  25%;
         transition: all 0.5s;
       }
