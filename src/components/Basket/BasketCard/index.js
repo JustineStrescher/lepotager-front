@@ -35,7 +35,8 @@ const BasketCard = () => {
             onClick={() => {
               dispatch(sendCart());
             }}
-          >Passer la commande
+          >
+            Passer la commande
           </button>
         </div>
       </form>

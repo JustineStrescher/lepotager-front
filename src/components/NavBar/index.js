@@ -9,7 +9,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import Login from '../Authentification/Login/Login';
 
-import logo from './logo.jpg';
+import logo from './logo.png';
 import panier from './panier.png';
 import { setWho } from '../../actions/product';
 

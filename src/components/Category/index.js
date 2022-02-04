@@ -14,6 +14,7 @@ const Category = () => {
   return (
     <section className="Category__container">
       <ScrollToTop />
+      <p className="Category__container-title">Le potager des culs fouettés</p>
       <Carousel />
       <div className="Category">
         {categoryList.map((category) => (

@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { removeProduct, setDeletedProduct } from '../../../../actions/cart';
 
 const BasketListing = ({
@@ -42,8 +42,8 @@ const BasketListing = ({
         <h3>{(product.price * quantity).toFixed(2)} €</h3>
       </div>
     </div>
-  )
-}
+  );
+};
 
 BasketListing.propTypes = {
   picture: PropTypes.string.isRequired,

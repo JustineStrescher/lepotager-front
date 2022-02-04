@@ -55,7 +55,8 @@ const CartReducer = (state = initialState, action = {}) => {
     }
     case SEND_CART:
       return {
-        cartList: [],
+        ...state,
+        // cartList: [],
       };
     case REMOVE_PRODUCT: {
       const filteredArray = state.cartList.filter((item) => item.product.id !== state.deleteProductId);

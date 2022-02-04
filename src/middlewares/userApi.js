@@ -11,10 +11,19 @@ import {
 } from '../actions/user';
 
 const middleware = (store) => (next) => (action) => {
+  const basket = store.getState().cart.cartList;
+  const basketToJSON = basket.map((item) => (
+    {
+      id: item.product.id,
+      quantity: item.quantity,
+    }
+  ));
+  const basketToApi = JSON.stringify(basketToJSON);
+
   switch (action.type) {
     case LOG_IN:
       axios.post(
-        'http://api.lepotagerdesculsfouettes.fr/api/login_check',
+        'https://api.lepotagerdesculsfouettes.fr/api/login_check',
         {
           username: store.getState().user.email,
           password: store.getState().user.password,
@@ -41,7 +50,7 @@ const middleware = (store) => (next) => (action) => {
     case FETCH_USER_DATA:
       axios.get(
 
-        'http://api.lepotagerdesculsfouettes.fr/api/client/info',
+        'https://api.lepotagerdesculsfouettes.fr/api/client/info',
 
         {
           headers: {
@@ -65,10 +74,9 @@ const middleware = (store) => (next) => (action) => {
     case SEND_CART:
       axios.post(
 
-        'http://api.lepotagerdesculsfouettes.fr/api/client/basket',
+        'https://api.lepotagerdesculsfouettes.fr/api/client/basket',
         {
-          id: 1,
-          quantity: 2,
+          data: basketToApi,
         },
         {
           headers: {
@@ -81,7 +89,7 @@ const middleware = (store) => (next) => (action) => {
         })
         .catch((error) => {
           console.warn(error);
-          console.log(store.getState().user.token);
+          console.log(basketToApi);
         });
 
       break;

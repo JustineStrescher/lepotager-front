@@ -1,12 +1,10 @@
 import './basket.scss';
-import { useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import Highlight from 'src/components/Highlight';
 import BasketCard from './BasketCard';
 import ScrollToTop from '../ScrollToTop';
-import { useSelector } from 'react-redux';
 
 const Basket = () => {
-  const dispatch = useDispatch();
   const isLogged = useSelector((state) => state.user.isLogged);
   return (
     <section className="basket__container">
