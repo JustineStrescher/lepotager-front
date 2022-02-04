@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 
 import { useSelector, useDispatch } from 'react-redux';
 
-import { changeInputValue } from 'src/actions/productDetail';
+import { changeInputValue, setAdd, setNotAdd } from 'src/actions/product';
 import { addProduct } from 'src/actions/cart';
 
 const ProductDetailCard = ({
@@ -13,7 +13,10 @@ const ProductDetailCard = ({
   available,
   unitType,
 }) => {
-  const quantity = useSelector((state) => state.product.quantity);
+  const quantity = useSelector((state) => state.cart.quantity);
+  const add = useSelector((state) => state.cart.add);
+  const notAdd = useSelector((state) => state.cart.notAdd);
+  const isLogged = useSelector((state) => state.user.isLogged);
   const dispatch = useDispatch();
 
   return (
@@ -38,6 +41,7 @@ const ProductDetailCard = ({
                 type="number"
                 className="ProductDetailCard--form-input"
                 placeholder="Quantité"
+                min="0"
                 value={unitType ? Math.round(quantity) : quantity}
                 pattern={unitType ? ' 0+\\.[0-9]*[1-9][0-9]*$' : ''}
                 onChange={(event) => {
@@ -45,17 +49,42 @@ const ProductDetailCard = ({
                   dispatch(changeInputValue(event.target.value));
                 }}
               />
-              <p className="ProductDetailCard--form-ammount">Total : {price * quantity} €</p>
+              <p className="ProductDetailCard--form-ammount">Total : {(price * quantity).toFixed(2)} €</p>
             </div>
-            <button
-              type="submit"
-              className={!available ? 'ProductDetailCard--form-button none' : 'ProductDetailCard--form-button'}
-              onClick={() => {
-                dispatch(addProduct());
-              }}
+            {!isLogged && (<p className="unLogged text">Vous ne pouvez pas ajouter de produit au panier non connecté.</p>)}
+            {isLogged && (
+              <button
+                type="submit"
+                className={!available ? 'ProductDetailCard--form-button none' : 'ProductDetailCard--form-button'}
+                onClick={() => {
+                  if (quantity > 0) {
+                    dispatch(addProduct());
+                    dispatch(setAdd(!add));
+                    window.setTimeout(() => {
+                      dispatch(setAdd(false));
+                    }, 5000);
+                  }
+                  else {
+                    dispatch(setNotAdd(!notAdd));
+                    window.setTimeout(() => {
+                      dispatch(setNotAdd(false));
+                    }, 5000);
+                  }
+                }}
+              >
+                Ajouter au panier
+              </button>
+            )}
+            <p
+              className={!add ? 'ProductDetailCard--form-add-none text ' : 'ProductDetailCard--form-add text'}
             >
-              Ajouter au panier
-            </button>
+              Votre produit a bien été ajouté au panier.
+            </p>
+            <p
+              className={!notAdd ? 'ProductDetailCard--form-notAdd-none text ' : 'ProductDetailCard--form-notAdd text'}
+            >
+              La quantité n'est pas suffisante.
+            </p>
           </form>
           )}
           {!available && (

@@ -26,35 +26,30 @@
   margin: auto;
   margin-top: 2rem;
 
-  &--image{
-    width: 75%;
-    margin: auto;
-    margin-top: 1rem;
-    overflow: hidden;
-    padding-top: 2rem;
-    
-    &-effect{
-      position:relative;
-      overflow: hidden;
-      
-      height: 9rem;
-      
-      & img{
-      
-      width: 100%;
+    &--image{
+      width: 75%;
+      height: 11rem;
       margin: auto;
-      margin-top: -0.5rem;
-      padding-top: 1rem;
-      max-height: 18rem;
-      transition: transform 1s;
-      &:hover{
-        -ms-transform: scale(1.1) translate(0px); /* IE 9 */
-        -webkit-transform: scale(1.1) translate(0px); /* Safari 3-8 */
-        transform: scale(1.05) translate(0px);
+      overflow: hidden;
+      padding-top: 2rem;
+      border-radius: 1rem;
+
+      &-effect{
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        overflow: hidden;
+        border-radius: 1rem;
+        transition: transform 1.5s;
+        &:hover{
+          -ms-transform: scale(1.1) translate(0px); /* IE 9 */
+          -webkit-transform: scale(1.1) translate(0px); /* Safari 3-8 */
+          transform: scale(1.06) translate(0px);
         }
+      }
+    
     }
-  }
-  }
+  
       
     
 
@@ -66,6 +61,7 @@
     position: relative;
     background-color: vars.$secondColor;
     border-radius: 1.5rem;
+    
     transition: box-shadow 1.5s;
     &:hover{
       box-shadow: rgb(0, 0, 0) 0px 20px 30px -10px;
@@ -173,3 +169,4 @@
     }
   }
 }
+

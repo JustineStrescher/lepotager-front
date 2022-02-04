@@ -24,6 +24,12 @@
   background-color: vars.$secondColor;
   border-radius: 1.5rem;
 
+  &--unLogged{
+    text-align: center;
+    padding: 3rem;
+    font-family: vars.$fontFamilyText;
+    font-size: vars.$fontSize*0.5;
+  }
   &-none{
     display: none;
   }
@@ -76,6 +82,18 @@
     display: flex;
     width: 100%;
     align-items: center;
+    &-total{
+      margin-left: 1rem;
+      margin: auto;
+    }
+    &-quantity{
+      margin: auto;
+      min-width: 20%;
+      text-align: center;
+      & h2{
+        margin-right: 1rem;
+      }
+    }
     & h2 {
        font-weight: bold;
         }

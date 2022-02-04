@@ -12,6 +12,8 @@ const CategoryNav = () => {
     <div className="CategoryNav__container">
       {categoryList.map((category) => (
         <NavLink
+          style={{ backgroundImage: `url(${category.picture})` }}
+          key={category.id}
           className="CategoryNav__container-link"
           to={`/${category.slug}`}
           onClick={() => {

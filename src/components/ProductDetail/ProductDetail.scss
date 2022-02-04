@@ -1,5 +1,8 @@
 @use 'src/styles/vars';
-
+.unLogged{
+  padding-top: 0.7rem;
+  border-top: black 1px solid;
+}
 .ProductDetail{
   max-width: 1200px;
   width: 90%;
@@ -16,6 +19,23 @@
   align-items: center;
   
   &--form{
+
+    &-add{
+      margin-top: -0.2rem;
+      display: block;
+      transition: all 0.5s;
+      &-none{
+        display: none;
+      }
+    }
+    &-notAdd{
+      margin-top: -0.5rem;
+      display: block;
+      transition: all 0.5s;
+      &-none{
+        display: none;
+      }
+    }
     & input{
     max-width: 30% ;
     }

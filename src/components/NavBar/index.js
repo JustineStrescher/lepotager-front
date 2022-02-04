@@ -3,24 +3,39 @@ import { Link, NavLink } from 'react-router-dom';
 import './NavBar.scss';
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
 // import { FaUserAlt } from 'react-icons/fa';
-
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 // import SearchBar from './SearchBar';
 
 import Login from '../Authentification/Login/Login';
 
 import logo from './logo.jpg';
+import panier from './panier.png';
 import { setWho } from '../../actions/product';
 
 const NavBar = () => {
   const dispatch = useDispatch();
   const [isMobile, setIsMobile] = useState(false);
+  const isLogged = useSelector((state) => state.user.isLogged);
+  const cart = useSelector((state) => state.cart.cartList);
+  const cartLength = cart.length;
 
   return (
     <>
       <section className="container__header">
         <nav className="navbar">
+          {isLogged && (
+            <>
+              <NavLink
+                className="login__form-link"
+                to="/panier"
+              >
+                <img className="login__form-link-panier" src={panier} alt="" />
+                <p className="login__form-link-nbPanier">{cartLength}</p>
+              </NavLink>
+
+            </>
+          )}
           <div
             className="navbar__mobile--icon"
             onClick={() => setIsMobile(!isMobile)}

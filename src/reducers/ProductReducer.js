@@ -1,6 +1,3 @@
-import {
-  CHANGE_INPUT_VALUE,
-} from 'src/actions/productDetail';
 import Devs from 'src/DevsData';
 import {
   SAVE_HIGHLIGHT,
@@ -23,12 +20,6 @@ export const initialState = {
 
 const ProductReducer = (state = initialState, action = {}) => {
   switch (action.type) {
-    case CHANGE_INPUT_VALUE:
-      return {
-        ...state,
-        quantity: action.newValue,
-      };
-
     case SAVE_PRODUCTS:
       return {
         ...state,

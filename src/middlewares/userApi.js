@@ -1,6 +1,9 @@
 import axios from 'axios';
 
+import { SEND_CART } from '../actions/cart';
+
 import {
+
   LOG_IN,
   saveUserData,
   FETCH_USER_DATA,
@@ -25,8 +28,9 @@ const middleware = (store) => (next) => (action) => {
             response.data.username,
             response.data.token,
           );
-          store.dispatch(newAction);
           store.dispatch(fetchUserData());
+          store.dispatch(newAction);
+          console.log(store.getState().user.token);
         })
         .catch((error) => {
           console.warn(error);
@@ -54,6 +58,30 @@ const middleware = (store) => (next) => (action) => {
 
         .catch((error) => {
           console.warn(error);
+        });
+
+      break;
+
+    case SEND_CART:
+      axios.post(
+
+        'http://api.lepotagerdesculsfouettes.fr/api/client/basket',
+        {
+          id: 1,
+          quantity: 2,
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${store.getState().user.token}`,
+          },
+        },
+      )
+        .then((response) => {
+          console.log(response);
+        })
+        .catch((error) => {
+          console.warn(error);
+          console.log(store.getState().user.token);
         });
 
       break;

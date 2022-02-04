@@ -1,7 +1,7 @@
 import './footer.scss';
 
 import { Link } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import mail from './Logo/envelope.png';
 import fb from './Logo/facebook (2).png';
@@ -11,6 +11,7 @@ import { setWho } from '../../actions/product';
 
 const Footer = () => {
   const dispatch = useDispatch();
+  const isLogged = useSelector((state) => state.user.isLogged);
 
   return (
     <section className="Footer__container">
@@ -30,9 +31,17 @@ const Footer = () => {
             <div className="footer--contact-reseaux__list">
               <ul>
                 <Link to="/"><li>Accueil</li></Link>
-                <Link to="/acount"><li>Mon compte</li></Link>
-                <Link to="/panier"><li>Mon panier</li></Link>
-                {/* <Link to="/command"><li>Mes commandes</li></Link> */}
+                {isLogged && (
+                  <>
+                    <Link to="/acount"><li>Mon compte</li></Link>
+                    <Link to="/panier"><li>Mon panier</li></Link>
+                  </>
+                )}
+                {!isLogged && (
+                  <>
+                    <p>Se connecter</p>
+                  </>
+                )}
               </ul>
             </div>
           </div>

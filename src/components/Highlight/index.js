@@ -16,7 +16,7 @@ const Highlight = () => {
       </div>
       <div className="Highlight">
         {productList.map((product) => (
-          <ProductCard key={product.name} {...product} />
+          <ProductCard key={product.name} {...product} product={product} />
         ))}
       </div>
     </div>

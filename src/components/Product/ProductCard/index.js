@@ -26,9 +26,10 @@ const ProductCard = ({
           }}
         >
           <div className="ProductCard--image">
-            <div className="ProductCard--image-effect">
-              <img src={picture} alt="" />
-            </div>
+            <div
+              className="ProductCard--image-effect"
+              style={{ backgroundImage: `url(${picture})` }}
+            />
           </div>
           <div className="ProductCard--button-title">
             <h1 className="ProductCard--button-title-title">{name}

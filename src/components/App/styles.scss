@@ -1,6 +1,6 @@
 @use 'src/styles/vars';
 body{
-  background-color: vars.$dark-color-back;
+  background-color: vars.$backColor;
 
 }
 .app {
@@ -8,7 +8,9 @@ body{
   font-family: vars.$fontFamily;
 
 }
-
+.active{
+  color: vars.$dark-color;
+}
 .text{
   font-family: vars.$fontFamilyText;
   font-size: vars.$fontSize*0.6;

@@ -10,9 +10,10 @@ const DevsCard = ({
   <div className="ProductCard">
     <div className="ProductCard--button height">
       <div className="ProductCard--image">
-        <div className="ProductCard--image-effect heightpicture">
-          <img src={picture} alt="" />
-        </div>
+        <div
+          className="ProductCard--image-effect"
+          style={{ backgroundImage: `url(${picture})` }}
+        />
       </div>
       <div className="ProductCard--button-title">
         <h1 className="ProductCard--button-title-title">{name}
