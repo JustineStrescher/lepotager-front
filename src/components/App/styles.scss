@@ -8,6 +8,14 @@ body{
   font-family: vars.$fontFamily;
 
 }
+.active{
+  color: vars.$dark-color;
+}
+.text{
+  font-family: vars.$fontFamilyText;
+  font-size: vars.$fontSize*0.6;
+  line-height: 1.3rem;
+}
 
 .titlePage{
     margin-top: 2rem;

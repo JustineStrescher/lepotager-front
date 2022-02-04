@@ -17,27 +17,36 @@
   width: 40%;
   margin: auto;
   color: vars.$secondColor;
-  & a:hover{
-    color: vars.$backColor;
-    }
+  background-size: contain;
   
   &--button{
     width: 100%;
     margin: auto;
-    background-color: vars.$mainColor;
     border-radius: 3rem;
-    transition: box-shadow 1.5s;
+    transition: all 1.5s;
+    background-size: cover;
+    background-position: center;
+    
+    &:hover{
+      -ms-transform: scale(1.1) translate(0px); /* IE 9 */
+      -webkit-transform: scale(1.1) translate(0px); /* Safari 3-8 */
+      transform: scale(1.03) translate(0px);
+      }
     &:hover{
       box-shadow: rgb(0, 0, 0) 0px 20px 60px -10px;
     }
-   
+    & h2{
+      background-color: rgba(255, 251, 251, 0.068);
+    }
     &-title{
       font-size: vars.$fontSize * 1.2;
       padding: 3.5rem 0 ;
       text-align: center;
       margin: auto;
       transition: color 1.5s;
+      
     }
+    
   }
 }
 

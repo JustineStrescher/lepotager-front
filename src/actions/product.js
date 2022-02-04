@@ -64,3 +64,24 @@ export const setConcept = () => ({
   type: SET_CONCEPT,
   who: false,
 });
+
+export const CHANGE_INPUT_VALUE = 'CHANGE_INPUT_VALUE';
+
+export const changeInputValue = (inputValue) => ({
+  type: CHANGE_INPUT_VALUE,
+  newValue: inputValue,
+});
+
+export const SET_ADD = 'SET_ADD';
+
+export const setAdd = (newValue) => ({
+  type: SET_ADD,
+  newValue: newValue,
+});
+
+export const SET_NOT_ADD = 'SET_NOT_ADD';
+
+export const setNotAdd = (newValue) => ({
+  type: SET_NOT_ADD,
+  newValue: newValue,
+});

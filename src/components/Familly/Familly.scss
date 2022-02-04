@@ -8,46 +8,48 @@
   max-width: 1200px;
   width: 90%;
   margin: auto;
+  margin-top: 2rem;
   margin-top: 1rem;
   flex-basis: 50%;
   align-items: stretch;
 }
 
 .FamillyCard{
+  margin-top: 2rem;
   margin: auto;
   width: 50%;
 
   &--image{
     width: 75%;
+    height: 11rem;
     margin: auto;
-    margin-top: 2rem;
     overflow: hidden;
-    padding-top: 1rem;
+    padding-top: 2rem;
+    border-radius: 1rem;
+
     &-effect{
+      height: 100%;
+      background-size: cover;
+      background-position: center;
       overflow: hidden;
       border-radius: 1rem;
-    }
-      
-    & img{
-      width: 100%;
-      border-radius: 1em;
-      width: 100%;
-      min-height: 100%;
-      transition: transform 1s;
+      transition: transform 1.5s;
       &:hover{
         -ms-transform: scale(1.1) translate(0px); /* IE 9 */
         -webkit-transform: scale(1.1) translate(0px); /* Safari 3-8 */
         transform: scale(1.1) translate(0px);
-        }
-      
+      }
     }
+    
   }
 
 
   &--button{
+    
     height: 90%;
     width: 90%;
     margin: auto;
+    margin-top: 2rem;
     position: relative;
     background-color:vars.$secondColor;
     border-radius: 1rem;
@@ -61,7 +63,7 @@
       text-transform: uppercase;
       color: vars.$mainColor;
       margin: auto ;
-      padding: 0.5rem 0 ;
+      padding: 0.7rem 0 ;
       width: 90%;
       text-align: center;
       font-size: vars.$fontSize * 1.2;
@@ -78,7 +80,7 @@
 .FamillyCard{
   margin: auto;
   width: 25%;
-    
+  margin-top: 2rem;
     &--button{
       min-height: 16rem;
       width: 90%;
@@ -98,10 +100,6 @@
       &-effect{
         height: 8rem;
         overflow: hidden;
-        
-        & img{
-        max-height: 8rem;
-        border-radius: 1rem;
       }
       }
       
@@ -109,5 +107,5 @@
     }
     
   }
-}
+
 

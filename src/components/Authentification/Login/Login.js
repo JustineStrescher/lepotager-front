@@ -1,8 +1,9 @@
 import './modal.scss';
+import { NavLink } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import LoginForm from './LoginForm';
 import { logIn, logOut } from '../../../actions/user';
-import { Link } from 'react-router-dom';
+
 import { setWho } from '../../../actions/product';
 
 const Login = ({ handleLogin }) => {
@@ -18,14 +19,14 @@ const Login = ({ handleLogin }) => {
     <>
       {isLogged && (
       <div className="login__form">
-        <Link
+        <NavLink
           to="/acount"
           onClick={() => dispatch(setWho(true))}
         >
           <div className="login__form--logged">
             Mon compte
           </div>
-        </Link>
+        </NavLink>
         <button
           type="button"
           className="log__button"

@@ -6,7 +6,7 @@ import { fetchSubCategories, setCategories } from '../../../actions/categories';
 
 import '../Category.scss';
 
-const CategoryCard = ({ name, slug }) => {
+const CategoryCard = ({ name, slug, picture }) => {
   const dispatch = useDispatch();
   return (
     <div className="CategoryCard">
@@ -18,7 +18,10 @@ const CategoryCard = ({ name, slug }) => {
           dispatch(fetchSubCategories());
         }}
       >
-        <div className="CategoryCard--button">
+        <div
+          className="CategoryCard--button"
+          style={{ backgroundImage: `url(${picture})` }}
+        >
           <h2 className="CategoryCard--button-title">
             {name}
           </h2>
@@ -31,6 +34,7 @@ const CategoryCard = ({ name, slug }) => {
 CategoryCard.propTypes = {
   name: PropTypes.string.isRequired,
   slug: PropTypes.string.isRequired,
+  picture: PropTypes.string.isRequired,
 };
 
 export default CategoryCard;

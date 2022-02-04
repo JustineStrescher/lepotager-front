@@ -103,6 +103,7 @@
   display: flex;
   justify-content: space-between;
   min-width: 50%;
+  
   & a {
     width: 50%;
   }
@@ -113,6 +114,7 @@
     width: 100%;
     margin: auto;
     margin-left: 1.7rem;
+    transition: all 0.5s;
     &:hover{
       
       color: #AB7341;
@@ -124,16 +126,21 @@
 
 .log__button{
 
-  color: white;
   font-family: 'Amatic SC', cursive;
   border-radius: 0.5rem;
   margin-left: 2rem;
   font-size: 2rem;
   background-color: transparent;
-  border: 1px solid #AB7341;
+  border: 1px solid vars.$secondColor;
+  color: vars.$secondColor;
   border-radius: 5px;
   cursor: pointer;
-
+  transition: all 0.5s;
+  &:hover{
+    color: vars.$dark-color;
+    background-color: vars.$secondColor;
+    border: vars.$mainColor 1px solid;
+  }
     
 }
 .search__modal {

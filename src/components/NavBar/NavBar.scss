@@ -1,5 +1,26 @@
 @use 'src/styles/vars';
-
+.login__form-link{
+  position: absolute;
+  width: 4rem;
+  right: 1rem;
+  top: 1rem;
+  &-panier{
+    width: 60%;
+  }
+  &-nbPanier{
+    position: absolute;
+    font-family: vars.$fontFamilyText;
+    top: 2rem;
+    left: 1.5rem;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: #EFEFEF;
+    background-color: vars.$mainColor;
+    padding: 0.2rem;
+    border-radius: 50px;
+    text-align: center;
+  }
+}
 .container__header{
 
   height: 9.9vh;
@@ -19,16 +40,30 @@
   z-index: 4;
   justify-content: space-between;
   align-items: center;
-  color: #F3EFE1;
+  color: vars.$secondColor;
   font-family: 'Amatic SC', cursive;
   font-size: 2em;
-  position: relative;
   height: 5rem;
   border-bottom: #fff 0.1px solid;
 
   &--connect{
+    
+    background-color: vars.$mainColor;
+    border-radius: 0.5rem;
+    border: vars.$mainColor 2px solid;
+    color: white;
+    width: 50%;
+    margin: auto;
+    margin-bottom: 0.6rem;
+    transition: all 0.5s ;
     text-align: center;
-    margin-bottom: 1rem;
+    
+    &:hover{
+      background-color: white;
+      color: vars.$mainColor;
+      border: vars.$mainColor 2px solid;
+      
+    }
   }
 
   
@@ -73,7 +108,7 @@
       display: block;
       background-color: #75B2B8;
       left: 0;
-      top: 10vh;
+      top: 11vh;
       transition: all 0.5 ease-out;
       width: 100%;
     }
@@ -96,14 +131,42 @@
     border: none;
     outline: none;
     top: 15px;
-    right: 25px;
+    left: 25px;
     background-color: vars.$mainColor;
     color: #F3EFE1;
+
   }
 
 }
 
 @media screen and (min-width:768px) {
+
+  .login__form-link{
+    position: fixed;
+    width: 2.5rem;
+    right: 2rem;
+    transform: translate(0%,0%);
+    top: 1.5rem;
+    padding: 0 0.2rem;
+    padding-top: 0.3rem;
+    background-color: vars.$mainColor;
+    border-radius: 50px;
+    &-panier{
+      width: 100%;
+    }
+    &-nbPanier{
+      font-family: vars.$fontFamilyText;
+      top: 1.90rem;
+      right:0rem;
+      position: fixed;
+      font-size: 0.8rem;
+      font-weight: bold;
+      color: #EFEFEF;
+      background-color: vars.$mainColor;
+      padding: 0.2rem;
+      border-radius: 50px;
+    }
+  }
   .container__header{
 
     width: 100%;
@@ -124,6 +187,7 @@
       width: 50%;
       margin-top: 1rem;
       text-align: center;
+      transition: all 1s;
 
       &:hover{
         color: #AB7341;
@@ -139,6 +203,7 @@
       
     }
     &__links{
+      display: block;
       display: flex;
       justify-content: flex-end;
       align-items: center;
@@ -151,10 +216,11 @@
 
       &--home, &--about { 
         flex-basis:  25%;
-
+        transition: all 0.5s;
       }
       &--about {
         margin-right: 10%;
+        transition: all 0.5s;
       }
       &--mobile{
 
@@ -166,6 +232,7 @@
         border: 1px solid #AB7341;
         border-radius: 5px;
         cursor: pointer;
+        transition: all 2s;
         &:hover{
 
           background-color: #F3EFE1;

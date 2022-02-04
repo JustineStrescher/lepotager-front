@@ -1,5 +1,6 @@
 // @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Ubuntu+Mono&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Ubuntu+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Short+Stack&display=swap');
 // Generic
 // $primary-color: #1E6C5B;
 // $alt-color: #75B2B8;
@@ -22,10 +23,11 @@ $post-hover-color: #f7f7f7;
 $mainColor: #1E6C5B;
 $titleColor: #09270b;
 $secondColor : #ffffff;
-$backColor : #d6f0e5;
+$backColor : #fde1c6;
 $borderColor: rgb(194, 193, 193);
-$dark-color: #bb9472;
+$dark-color: #AB7341;
 $alt-color: #75B2B8;
+$dark-color-back: #AB7341;
 
 $gutter: 2rem;
 
@@ -33,5 +35,6 @@ $fontColor: #fff;
 $fontSize: 1.6rem;
 
 $fontFamily: 'Amatic SC' , cursive ;
+$fontFamilyText: 'Short Stack', cursive;
 
 $maxWidth: 1200px;

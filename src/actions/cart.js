@@ -4,11 +4,17 @@ export const addProduct = () => ({
   type: ADD_PRODUCT,
 });
 
+export const SET_DELETED_PRODUCT = 'SET_DELETED_PRODUCT';
+
+export const setDeletedProduct = (product) => ({
+  type: SET_DELETED_PRODUCT,
+  product: product,
+});
+
 export const REMOVE_PRODUCT = 'REMOVE_PRODUCT';
 
-export const removeFromCart = (productId) => ({
+export const removeProduct = () => ({
   type: REMOVE_PRODUCT,
-  itemId: productId,
 });
 
 export const CHANGE_QUANTITY = 'CHANGE_QUANTITY';
@@ -25,4 +31,10 @@ export const FETCH_CURRENT_PRODUCT = 'FETCH_CURRENT_PRODUCT';
 export const fetchCurrentProduct = (product) => ({
   type: FETCH_CURRENT_PRODUCT,
   product: product,
+});
+
+export const SEND_CART = 'SEND_CART';
+
+export const sendCart = () => ({
+  type: SEND_CART,
 });

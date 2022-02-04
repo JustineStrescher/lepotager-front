@@ -27,9 +27,10 @@ const FamillyCard = ({
           }}
         >
           <div className="FamillyCard--image">
-            <div className="FamillyCard--image-effect">
-              <img src={picture} alt="" />
-            </div>
+            <div
+              className="FamillyCard--image-effect"
+              style={{ backgroundImage: `url(${picture})` }}
+            />
           </div>
           <h2 className="FamillyCard--button-title">
             {name}
