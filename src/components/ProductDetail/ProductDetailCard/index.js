@@ -1,9 +1,11 @@
 import PropTypes from 'prop-types';
 
+import { findVegetableInCart } from 'src/selectors/vegetables';
+
 import { useSelector, useDispatch } from 'react-redux';
 
 import { changeInputValue, setAdd, setNotAdd } from 'src/actions/product';
-import { addProduct } from 'src/actions/cart';
+import { addProduct, setAlreadyIn } from 'src/actions/cart';
 
 const ProductDetailCard = ({
   picture,
@@ -12,11 +14,16 @@ const ProductDetailCard = ({
   description,
   available,
   unitType,
+  id
 }) => {
   const quantity = useSelector((state) => state.cart.quantity);
   const add = useSelector((state) => state.cart.add);
   const notAdd = useSelector((state) => state.cart.notAdd);
+  // look if the current product is already in the cartList;
+  const cartList = useSelector((state) => state.cart.cartList);
+  const recipe = findVegetableInCart(cartList, id);
   const isLogged = useSelector((state) => state.user.isLogged);
+  const alreadyIn = useSelector((state) => state.cart.alreadyIn);
   const dispatch = useDispatch();
 
   return (
@@ -58,14 +65,28 @@ const ProductDetailCard = ({
                 className={!available ? 'ProductDetailCard--form-button none' : 'ProductDetailCard--form-button'}
                 onClick={() => {
                   if (quantity > 0) {
-                    dispatch(addProduct());
-                    dispatch(setAdd(!add));
-                    window.setTimeout(() => {
+                    if (recipe === true) {
+                      dispatch(addProduct());
+                      dispatch(setAdd(!add));
+                      dispatch(setAlreadyIn(false));
+                      dispatch(setNotAdd(false));
+                      window.setTimeout(() => {
+                        dispatch(setAdd(false));
+                      }, 2500);
+                    }
+                    else {
+                      dispatch(setAlreadyIn(!notAdd));
                       dispatch(setAdd(false));
-                    }, 2500);
+                      dispatch(setNotAdd(false));
+                      window.setTimeout(() => {
+                        dispatch(setAlreadyIn(false));
+                      }, 2500);
+                    }
                   }
                   else {
                     dispatch(setNotAdd(!notAdd));
+                    dispatch(setAdd(false));
+                    dispatch(setAlreadyIn(false));
                     window.setTimeout(() => {
                       dispatch(setNotAdd(false));
                     }, 2500);
@@ -83,7 +104,12 @@ const ProductDetailCard = ({
             <p
               className={!notAdd ? 'ProductDetailCard--form-notAdd-none text ' : 'ProductDetailCard--form-notAdd text'}
             >
-              La quantité n'est pas suffisante.
+              Echec : La quantité n'est pas suffisante.
+            </p>
+            <p
+              className={!alreadyIn ? 'ProductDetailCard--form-notAdd-none text ' : 'ProductDetailCard--form-notAdd text'}
+            >
+              Echec : Le produit existe déjà dans le panier.
             </p>
           </form>
           )}

@@ -16,19 +16,30 @@
   }
 }
 
-.empty-basket{
-  color: black;
-  display: block;
+.empty--basket{
+  margin: 1.5rem 0 ;
+  text-align: center;
+  padding-bottom: 1.5rem;
+  border-bottom: vars.$borderColor 1px solid;
+  
+}
+.empty-basket-add{
+  color: rgb(114, 148, 46);
+  display: inline;
+  float: right;
   margin: auto;
   text-align: center;
   margin-top: -1rem;
   
 }
-.empty--basket{
-  margin: 1.5rem 0 ;
+.empty-basket-notAdd{
+  color: brown;
+  display: inline;
+  float: right;
+  margin: auto;
   text-align: center;
-  padding-bottom: 1.5rem;
-  border-bottom: vars.$borderColor 1px solid;;
+  margin-top: -1rem;
+  
 }
 .BasketCard{
   color: vars.$mainColor;
@@ -166,6 +177,15 @@
 
 
 @media screen and (min-width: 768px){
+  .empty-basket-notAdd{
+    color: brown;
+    margin-right: 5rem;
+    
+  }
+  .empty-basket-add{
+    margin-right: 5rem;
+    
+  }
   .Basket{
 
       &--title{

@@ -21,3 +21,13 @@ export function findVegetableByFamilly(vegetablesList, searchedSlug) {
   });
   return vegetables;
 }
+
+export function findVegetableInCart(vegetablesList, searchedId) {
+  const vegetable = vegetablesList.find((testedVege) => {
+    return testedVege.product.id === searchedId;
+  });
+  if (vegetable) {
+    return false;
+  }
+  return true;
+}

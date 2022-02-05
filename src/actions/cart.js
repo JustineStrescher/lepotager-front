@@ -45,3 +45,10 @@ export const setEmptyBasket = (newValue) => ({
   type: SEND_CART,
   newValue: newValue,
 });
+
+export const SET_ALREADY_IN = 'SET_ALREADY_IN';
+
+export const setAlreadyIn = (newValue) => ({
+  type: SET_ALREADY_IN,
+  newValue: newValue,
+});

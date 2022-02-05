@@ -56,7 +56,7 @@ const BasketCard = () => {
         </div>
       </form>
       {notAdd && (
-        <div className="empty-basket text">Votre panier est vide, vous devez ajouter des produits.</div>
+        <div className="empty-basket-notAdd text">Votre panier est vide, vous devez ajouter des produits.</div>
       )}
       {add && (
         <div className="empty-basket-add text">Votre panier nous a été transmis avec succés. </div>

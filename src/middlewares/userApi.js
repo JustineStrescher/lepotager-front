@@ -92,7 +92,6 @@ const middleware = (store) => (next) => (action) => {
           window.setTimeout(() => {
             store.dispatch(setAdd(false));
           }, 4000);
-          console.log(response);
         })
         .catch((error) => {
           store.dispatch(setNotAdd(!add));

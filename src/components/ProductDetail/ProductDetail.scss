@@ -21,6 +21,7 @@
   &--form{
 
     &-add{
+      color: rgb(114, 148, 46);
       margin-top: -0.2rem;
       display: block;
       transition: all 0.5s;
@@ -29,6 +30,7 @@
       }
     }
     &-notAdd{
+      color: brown;
       margin-top: -0.5rem;
       display: block;
       transition: all 0.5s;

@@ -49,7 +49,7 @@ const Footer = () => {
             <h2>A propos </h2>
             <div className="footer--contact-reseaux__list">
               <ul>
-                <Link to="/les-devs"><li>Les developpeurs</li> </Link>
+                <Link to="/les-devs"><li>Les développeurs</li> </Link>
                 <Link
                   to="/a-propos"
                   onClick={() => {
