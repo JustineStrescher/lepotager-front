@@ -12,6 +12,15 @@ const BasketCard = () => {
   const notAdd = useSelector((state) => state.cart.notAdd);
   const add = useSelector((state) => state.cart.add);
 
+  const total = BasketProduct.map((product) => (
+    product.quantity * product.product.price
+  ));
+  let sum = 0;
+  for (let i = 0; i < total.length; i++) {
+    sum += total[i];
+  }
+  console.log(BasketProduct);
+
   return (
     <div className="BasketCard">
       <div className="BasketCard--listing">
@@ -37,7 +46,7 @@ const BasketCard = () => {
       <p className="BasketCard--listing-disclaimer text">Les prix mentionnés sont uniquement a titre indicatif et peuvent varier au retrait de la commande</p>
       <form action="submit" className="BasketCard--form">
         <div className="BasketCard--form-flex">
-          <p className="BasketCard--form-flex-ammount">Total :  0 €</p>
+          <p className="BasketCard--form-flex-ammount">Total :  {sum} €</p>
           <button
             type="button"
             className="BasketCard--form-flex-button"

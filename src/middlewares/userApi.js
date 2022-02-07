@@ -17,7 +17,7 @@ const middleware = (store) => (next) => (action) => {
   const basket = store.getState().cart.cartList;
   const basketToJSON = basket.map((item) => (
     {
-      id: item.product.id,
+      id: item.id,
       quantity: item.quantity,
     }
   ));
@@ -87,6 +87,7 @@ const middleware = (store) => (next) => (action) => {
         },
       )
         .then((response) => {
+          console.log(response);
           store.dispatch(setEmptyBasket());
           store.dispatch(setAdd(!add));
           window.setTimeout(() => {

@@ -1,5 +1,30 @@
 @use 'src/styles/vars';
+.margin-top{
+  padding-top: 1rem;
+}
 
+.concept{
+  
+  &-flex{
+    display: flex;
+    margin: auto;
+    width: 80%;
+    border-bottom: rgb(156, 156, 156) 1px solid;
+    &:last-child{
+      border-bottom: none;
+    }
+
+    & p{
+      flex-basis: 100%;
+      padding-bottom: 2rem !important;
+      padding-top: 2rem !important;
+    }
+    
+  }
+  &-numero{
+      display: none;
+    }
+}
 .about--container{
   margin: auto;
   position: relative;
@@ -131,6 +156,44 @@
     }
 }
 @media screen and (min-width: 768px){
+.Main{
+  background-color: vars.$mainColor;
+}
+.alt{
+  background-color: vars.$alt-color;
+}
+.title{
+  background-color: vars.$titleColor;
+}
+.dark{
+  background-color: vars.$dark-color;
+}
+.concept{
+
+  &-numero{
+      display: inline;
+      color: vars.$secondColor;
+      font-size: vars.$fontSize;
+      
+      width: 10rem;
+      height: 2rem;
+      border-radius: 5rem / 3rem; 
+      margin: 2rem;
+      padding-bottom: 3rem;
+      padding-top: 3rem;
+    }
+
+  &-flex{
+    
+    & p {
+      flex-basis: 65%;
+
+    }
+    
+}
+}
+  
+
 .inverse1{
   order: 2;
 }

@@ -32,7 +32,7 @@ const BasketListing = ({
         <h3>{product.price} €/{!product.unitType ? 'Kg' : 'Unité'}</h3>
       </div>
       <div className="BasketCard--listing-quantity">
-        <h3>{quantity}</h3>
+        <h3>{quantity} {!product.unitType ? 'Kg' : 'Unité'}</h3>
       </div>
       <div className="BasketCard--listing-total">
         <h3>{(product.price * quantity).toFixed(2)} €</h3>

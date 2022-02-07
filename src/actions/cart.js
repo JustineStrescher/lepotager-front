@@ -42,7 +42,7 @@ export const sendCart = () => ({
 export const SET_EMPTY_BASKET = 'SET_EMPTY_BASKET';
 
 export const setEmptyBasket = (newValue) => ({
-  type: SEND_CART,
+  type: SET_EMPTY_BASKET,
   newValue: newValue,
 });
 

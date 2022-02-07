@@ -14,16 +14,23 @@ const ProductDetailCard = ({
   description,
   available,
   unitType,
-  id
+  id,
 }) => {
+  // quantity of current product
   const quantity = useSelector((state) => state.cart.quantity);
+
+  // Gestion des message d'errreur
   const add = useSelector((state) => state.cart.add);
   const notAdd = useSelector((state) => state.cart.notAdd);
+  const alreadyIn = useSelector((state) => state.cart.alreadyIn);
+
   // look if the current product is already in the cartList;
   const cartList = useSelector((state) => state.cart.cartList);
   const recipe = findVegetableInCart(cartList, id);
+
+  // Utilisateur connecté
   const isLogged = useSelector((state) => state.user.isLogged);
-  const alreadyIn = useSelector((state) => state.cart.alreadyIn);
+
   const dispatch = useDispatch();
 
   return (
@@ -58,7 +65,7 @@ const ProductDetailCard = ({
               />
               <p className="ProductDetailCard--form-ammount">Total : {(price * quantity).toFixed(2)} €</p>
             </div>
-            {!isLogged && (<p className="unLogged text">Vous ne pouvez pas ajouter de produit au panier non connecté.</p>)}
+            {!isLogged && (<p className="unLogged text">Veuillez vous connecter pour ajouter un produit au panier.</p>)}
             {isLogged && (
               <button
                 type="submit"
