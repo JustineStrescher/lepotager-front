@@ -1,31 +1,36 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 /* eslint-disable react/prop-types */
 import { Link } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useState, useEffect, useRef } from 'react';
 import SignUpForm from '../SignUpForm';
 import LoginFormModal from './LoginFormModal';
+import LoginFormContent from './LoginFormContent';
 import './modal.scss';
 
-import { updateLoginField, logIn } from '../../../actions/user';
-// import { AiFillMail, AiFillLock } from 'react-icons/ai';
+import { updateLoginField, signUp, emptyFields } from '../../../actions/user';
 
 const LoginForm = ({
   email,
   password,
   isLogged,
+  handleSignUp,
   handleLogin,
 }) => {
   const dispatch = useDispatch();
   const ref = useRef();
   const [isOpenModal, setIsOpenModal] = useState(false);
+  const [isAddingUser, setIsAddingUser] = useState(false);
+  const country = useSelector((state) => state.user.country);
+  const zip = useSelector((state) => state.user.zip);
+  const address = useSelector((state) => state.user.address);
+  const phone = useSelector((state) => state.user.phone);
+  const firstname = useSelector((state) => state.user.firstname);
+  const lastname = useSelector((state) => state.user.lastname);
+  const city = useSelector((state) => state.user.city);
 
   if (isLogged === 1) return null;
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    handleLogin();
-  };
   // eslint-disable-next-line no-shadow
   function useOnClickOutside(ref, handler) {
     useEffect(
@@ -46,7 +51,20 @@ const LoginForm = ({
       [ref, handler],
     );
   }
-  useOnClickOutside(ref, () => setIsOpenModal(false));
+  const handleClickOutside = () => {
+    setIsAddingUser(false);
+    setIsOpenModal(false);
+    dispatch(emptyFields());
+  };
+  useOnClickOutside(ref, handleClickOutside);
+  const handleSubmitSignUp = (event) => {
+    event.preventDefault();
+    handleSignUp();
+  };
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    handleLogin();
+  };
 
   return (
     <>
@@ -55,52 +73,45 @@ const LoginForm = ({
         onClick={() => setIsOpenModal(true)}
       >Se connecter
       </div>
+
       <LoginFormModal
         openModal={isOpenModal}
-        onClose={() => setIsOpenModal(false)}
+        onClose={() => setIsOpenModal(false) }
         isLogged={isLogged}
       >
         <div className="modal__container">
           <div ref={ref}>
-            <form autoComplete="off" className="search__modal" onSubmit={handleSubmit}>
+            <form autoComplete="off" className="search__modal" onSubmit={isAddingUser ? handleSubmitSignUp : handleSubmit}>
               <div className="input__container">
-                <label htmlFor="username">E-mail</label>
-                <input
-                  name="_username"
-                  type="eMail"
-                  value={email}
-                  placeholder="Email"
-                  id="username"
-                  onChange={(event) => {
-                    dispatch(updateLoginField(event.target.value, 'email'));
-                  }}
-                />
-                {/* <AiFillMail className="modal__icon" /> */}
-                <label htmlFor="password">Mot de passe</label>
-                <input
-                  name="_password"
-                  id="password"
-                  type="password"
-                  placeholder="Mot de passe"
-                  value={password}
-                  onChange={(event) => {
-                    dispatch(updateLoginField(event.target.value, 'password'));
-                  }}
-                />
-                {/* <AiFillLock className="modal__icon--password" /> */}
-                <button
-                  type="submit"
-                  className="login__form--button"
-                >
-                  Valider
-                </button>
-                <div className="login__form--subscribe">
-                  <Link to="/">
-                    S'inscrire
-                  </Link>
-                </div>
+                {isAddingUser
+                  ? (
+                    <SignUpForm
+                      email={email}
+                      password={password}
+                      firstname={firstname}
+                      lastname={lastname}
+                      zip={zip}
+                      address={address}
+                      city={city}
+                      phone={phone}
+                      country={country}
+                // onSubmit={handleSubmitSignUp}
+                      isAddingUser={isAddingUser}
+                      handleSignUp={() => {
+                        dispatch(signUp());
+                      }}
+                    />
+                  )
+                  : (
+                    <LoginFormContent
+                      email={email}
+                      password={password}
+                      setIsAddingUser={setIsAddingUser}
+                    />
+                  )}
               </div>
             </form>
+
           </div>
         </div>
       </LoginFormModal>

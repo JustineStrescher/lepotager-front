@@ -51,10 +51,6 @@ ProductCard.propTypes = {
   category: PropTypes.shape({
     id: PropTypes.number.isRequired,
   }).isRequired,
-  arborescence: PropTypes.shape({
-    Category: PropTypes.string.isRequired,
-    SubCategory: PropTypes.string.isRequired,
-  }).isRequired,
   available: PropTypes.number.isRequired,
   price: PropTypes.number.isRequired,
   product: PropTypes.shape({
