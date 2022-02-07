@@ -1,13 +1,20 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import { useDispatch, useSelector } from 'react-redux';
-import { updateAcountField } from '../../../actions/user';
+import { updateAcount, updateLoginField } from '../../../actions/user';
 
 const AcountCard = () => {
-  const user = useSelector((state) => state.user.user);
+  const user = useSelector((state) => state.user);
   const dispatch = useDispatch();
   return (
     <div className="acountCard--content">
-      <form action="" className="field-form">
+      <form
+        onSubmit={(event) => {
+          event.preventDefault();
+          dispatch(updateAcount());
+        }}
+        action=""
+        className="field-form"
+      >
         <div className="field acountCard--content__lastName">
           <label htmlFor="lastName" className="field-label">
             Nom :
@@ -15,7 +22,7 @@ const AcountCard = () => {
           <input
             value={user.lastname}
             onChange={(event) => {
-              dispatch(updateAcountField(event.target.value, 'lastname'));
+              dispatch(updateLoginField(event.target.value, 'lastname'));
             }}
             id="lastName"
             type="text"
@@ -31,7 +38,7 @@ const AcountCard = () => {
           <input
             value={user.firstname}
             onChange={(event) => {
-              dispatch(updateAcountField(event.target.value, 'firstname'));
+              dispatch(updateLoginField(event.target.value, 'firstname'));
             }}
             id="name"
             type="text"
@@ -45,9 +52,9 @@ const AcountCard = () => {
             E-mail :
           </label>
           <input
-            value={user.email}
+            value={user.eMail}
             onChange={(event) => {
-              dispatch(updateAcountField(event.target.value, 'email'));
+              dispatch(updateLoginField(event.target.value, 'eMail'));
             }}
             id="e-mail"
             type="e-mail"
@@ -63,7 +70,7 @@ const AcountCard = () => {
           <input
             value={user.phone}
             onChange={(event) => {
-              dispatch(updateAcountField(event.target.value, 'tel'));
+              dispatch(updateLoginField(event.target.value, 'phone'));
             }}
             id="tel"
             type="text"
@@ -79,7 +86,7 @@ const AcountCard = () => {
           <input
             value={user.address}
             onChange={(event) => {
-              dispatch(updateAcountField(event.target.value, 'adress'));
+              dispatch(updateLoginField(event.target.value, 'address'));
             }}
             id="adresse"
             type="text"
@@ -95,7 +102,7 @@ const AcountCard = () => {
           <input
             value={user.city}
             onChange={(event) => {
-              dispatch(updateAcountField(event.target.value, 'town'));
+              dispatch(updateLoginField(event.target.value, 'city'));
             }}
             id="ville"
             type="text"
@@ -111,7 +118,7 @@ const AcountCard = () => {
           <input
             value={user.zip}
             onChange={(event) => {
-              dispatch(updateAcountField(event.target.value, 'CP'));
+              dispatch(updateLoginField(event.target.value, 'zip'));
             }}
             id="CP"
             type="text"
@@ -125,9 +132,9 @@ const AcountCard = () => {
             Mot de passe :
           </label>
           <input
-            value=""
+            value={user.passWord}
             onChange={(event) => {
-              dispatch(updateAcountField(event.target.value, 'MP'));
+              dispatch(updateLoginField(event.target.value, 'passWord'));
             }}
             id="MP"
             type="password"
