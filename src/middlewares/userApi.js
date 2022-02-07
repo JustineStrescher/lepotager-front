@@ -8,6 +8,8 @@ import {
   saveUserData,
   FETCH_USER_DATA,
   fetchUserData,
+  SIGN_UP,
+  signUp,
 } from '../actions/user';
 
 const middleware = (store) => (next) => (action) => {
@@ -21,6 +23,7 @@ const middleware = (store) => (next) => (action) => {
       quantity: item.quantity,
     }
   ));
+  const basketToApi = JSON.stringify(basketToJSON);
 
   switch (action.type) {
     case LOG_IN:
@@ -41,6 +44,31 @@ const middleware = (store) => (next) => (action) => {
           store.dispatch(newAction);
           store.dispatch(fetchUserData());
           // console.log(store.getState().user.token);
+        })
+        .catch((error) => {
+          console.warn(error);
+        });
+
+      break;
+    case SIGN_UP:
+      axios.post(
+        'https://api.lepotagerdesculsfouettes.fr/api/client/register',
+        {
+          email: store.getState().user.email,
+          password: store.getState().user.password,
+          firstname: store.getState().user.firstname,
+          lastname: store.getState().user.lastname,
+          address: store.getState().user.adress,
+          country: store.getState().user.country,
+          phone: store.getState().user.phone,
+          city: store.getState().user.city,
+          zip: store.getState().user.zip,
+        },
+      )
+        .then((response) => {
+          console.log(JSON.stringify(response));
+
+          store.dispatch(signUp());
         })
         .catch((error) => {
           console.warn(error);

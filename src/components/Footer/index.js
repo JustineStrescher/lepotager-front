@@ -8,6 +8,7 @@ import fb from './Logo/facebook (2).png';
 import tel from './Logo/telephone.png';
 import adresse from './Logo/adress.png';
 import { setWho } from '../../actions/product';
+import LoginForm from '../Authentification/Login/LoginForm';
 
 const Footer = () => {
   const dispatch = useDispatch();
@@ -39,7 +40,7 @@ const Footer = () => {
                 )}
                 {!isLogged && (
                   <>
-                    <p>Se connecter</p>
+                    <LoginForm />
                   </>
                 )}
               </ul>
