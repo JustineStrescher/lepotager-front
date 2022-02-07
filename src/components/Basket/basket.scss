@@ -15,6 +15,32 @@
     color: vars.$mainColor;
   }
 }
+
+.empty--basket{
+  margin: 1.5rem 0 ;
+  text-align: center;
+  padding-bottom: 1.5rem;
+  border-bottom: vars.$borderColor 1px solid;
+  
+}
+.empty-basket-add{
+  color: rgb(114, 148, 46);
+  display: inline;
+  float: right;
+  margin: auto;
+  text-align: center;
+  margin-top: -1rem;
+  
+}
+.empty-basket-notAdd{
+  color: brown;
+  display: inline;
+  float: right;
+  margin: auto;
+  text-align: center;
+  margin-top: -1rem;
+  
+}
 .BasketCard{
   color: vars.$mainColor;
   width: 90%;
@@ -23,7 +49,7 @@
   font-size: vars.$fontSize *1;
   background-color: vars.$secondColor;
   border-radius: 1.5rem;
-
+  padding-bottom: 1rem;
   &--unLogged{
     text-align: center;
     padding: 3rem;
@@ -52,11 +78,12 @@
         padding: 0.2rem 0.6rem ;
         border-radius: 0.5rem;
         padding-top: 0.2rem;
+
         }
 
         &-button{
         font-family: vars.$fontFamily;
-        font-size: vars.$fontSize *1;
+        font-size: vars.$fontSize *0.8;
         margin:  1rem auto;
         padding: 0.3rem;
         border-radius: 0.5rem;
@@ -82,6 +109,12 @@
     display: flex;
     width: 100%;
     align-items: center;
+
+    &-disclaimer {
+      text-align: center;
+      margin-top: 1rem;
+      font-size: 0.6rem !important;
+    }
     &-total{
       margin-left: 1rem;
       margin: auto;
@@ -144,6 +177,15 @@
 
 
 @media screen and (min-width: 768px){
+  .empty-basket-notAdd{
+    color: brown;
+    margin-right: 5rem;
+    
+  }
+  .empty-basket-add{
+    margin-right: 5rem;
+    
+  }
   .Basket{
 
       &--title{
@@ -156,7 +198,7 @@
     margin-top: 1rem;
     border-radius: 1.5rem;
     flex-direction: row;
-
+    padding-bottom: 0.5rem;
     &-none{
       display: block;
     }
@@ -190,7 +232,7 @@
         }
         &-button{
           font-size: vars.$fontSize *1.2;
-          width: 30%;
+          width: 35%;
           margin: auto;
           border-radius: 0.5rem;
           color: vars.$secondColor;

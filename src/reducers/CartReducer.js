@@ -5,6 +5,7 @@ import {
   FETCH_CURRENT_PRODUCT,
   SEND_CART,
   SET_DELETED_PRODUCT,
+  SET_ALREADY_IN,
 } from '../actions/cart';
 
 import {
@@ -22,6 +23,7 @@ export const initialState = {
   quantity: 0,
   add: false,
   notAdd: false,
+  alreadyIn: false,
 };
 // //Vérification de l'existence ou non du produit dans le panier
 // const inCart = state.cart.find((product) => product.id === action.product.id)
@@ -41,7 +43,7 @@ const CartReducer = (state = initialState, action = {}) => {
       };
     case ADD_PRODUCT: {
       const newItem = {
-        id: state.productId,
+        id: state.product.id,
         product: state.product,
         quantity: state.quantity,
       };
@@ -56,10 +58,12 @@ const CartReducer = (state = initialState, action = {}) => {
     case SEND_CART:
       return {
         ...state,
-        // cartList: [],
+        cartList: [],
       };
     case REMOVE_PRODUCT: {
-      const filteredArray = state.cartList.filter((item) => item.product.id !== state.deleteProductId);
+      const filteredArray = (
+        state.cartList.filter((item) => item.product.id !== state.deleteProductId)
+      );
 
       return {
         ...state,
@@ -90,6 +94,11 @@ const CartReducer = (state = initialState, action = {}) => {
       return {
         ...state,
         notAdd: action.newValue,
+      };
+    case SET_ALREADY_IN:
+      return {
+        ...state,
+        alreadyIn: action.newValue,
       };
     default:
       return state;

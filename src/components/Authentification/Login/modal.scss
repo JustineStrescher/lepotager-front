@@ -58,9 +58,9 @@
 }
 
 .login__form{
-  width: 50%;
-  display: block;
-  align-items: center;
+  width: 100%;
+  margin: auto;
+  text-align: center;
 
   &--subscribe{
 
@@ -96,15 +96,36 @@
     border: vars.$mainColor 2px solid;
   }
 }
+
+.log__button{
+
+  font-family: 'Amatic SC', cursive;
+  border-radius: 0.5rem;
+  font-size: 2rem;
+  margin: 0.5rem 0;
+  background-color: transparent;
+  border: 1px solid vars.$secondColor;
+  color: vars.$secondColor;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.5s;
+  &:hover{
+    color: vars.$dark-color;
+    background-color: vars.$secondColor;
+    border: vars.$mainColor 1px solid;
+  }
+    
+}
 @media screen and (min-width:768px){
 
 .login__form{
   
   display: flex;
   justify-content: space-between;
-  min-width: 50%;
-  
+  max-width: 50%;
   & a {
+    margin-top: 0.5rem;
+    padding-top: 0.5rem;
     width: 50%;
   }
 

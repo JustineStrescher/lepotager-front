@@ -3,6 +3,7 @@ import { EMPTY_FIELDS } from '../actions/user';
 
 export const initialState = {
   isLogged: '',
+  user: [],
   email: '',
   password: '',
   address: '',
@@ -26,7 +27,7 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         isLogged: action.isLogged,
-        lastname: action.lastname,
+        user: action.user,
         token: action.token,
         email: '',
         password: '',
@@ -34,7 +35,9 @@ const reducer = (state = initialState, action = {}) => {
     case LOG_OUT:
       return {
         ...state,
+        user: [],
         isLogged: '',
+        token: '',
       };
     case EMPTY_FIELDS:
       return {

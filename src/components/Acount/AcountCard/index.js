@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { updateAcountField } from '../../../actions/user';
 
 const AcountCard = () => {
-  const user = useSelector((state) => state.user.isLogged);
+  const user = useSelector((state) => state.user.user);
   const dispatch = useDispatch();
   return (
     <div className="acountCard--content">

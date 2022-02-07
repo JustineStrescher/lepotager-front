@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-import { SEND_CART } from '../actions/cart';
-
+import { SEND_CART, setEmptyBasket } from '../actions/cart';
+import { setAdd, setNotAdd } from '../actions/product';
 import {
 
   LOG_IN,
@@ -13,15 +13,17 @@ import {
 } from '../actions/user';
 
 const middleware = (store) => (next) => (action) => {
+  const add = store.getState().cart.add;
+  const notAdd = store.getState().cart.notAdd;
+
   const basket = store.getState().cart.cartList;
   const basketToJSON = basket.map((item) => (
     {
-      id: item.product.id,
+      id: item.id,
       quantity: item.quantity,
     }
   ));
   const basketToApi = JSON.stringify(basketToJSON);
-  //const userDataToApi = JSON.stringify(userDataToJSON);
 
   switch (action.type) {
     case LOG_IN:
@@ -37,12 +39,11 @@ const middleware = (store) => (next) => (action) => {
 
           const newAction = saveUserData(
             response.data.isLogged,
-            response.data.username,
             response.data.token,
           );
-          store.dispatch(fetchUserData());
           store.dispatch(newAction);
-          console.log(store.getState().user.token);
+          store.dispatch(fetchUserData());
+          // console.log(store.getState().user.token);
         })
         .catch((error) => {
           console.warn(error);
@@ -88,8 +89,9 @@ const middleware = (store) => (next) => (action) => {
       )
         .then((response) => {
           store.dispatch(saveUserData(
+            store.getState().user.isLogged,
+            store.getState().user.token,
             response.data,
-            console.log(response.data),
           ));
         })
 
@@ -104,7 +106,7 @@ const middleware = (store) => (next) => (action) => {
 
         'https://api.lepotagerdesculsfouettes.fr/api/client/basket',
         {
-          data: basketToApi,
+          data: basketToJSON,
         },
         {
           headers: {
@@ -114,10 +116,18 @@ const middleware = (store) => (next) => (action) => {
       )
         .then((response) => {
           console.log(response);
+          store.dispatch(setEmptyBasket());
+          store.dispatch(setAdd(!add));
+          window.setTimeout(() => {
+            store.dispatch(setAdd(false));
+          }, 4000);
         })
         .catch((error) => {
+          store.dispatch(setNotAdd(!add));
+          window.setTimeout(() => {
+            store.dispatch(setNotAdd(false));
+          }, 4000);
           console.warn(error);
-          console.log(basketToApi);
         });
 
       break;
