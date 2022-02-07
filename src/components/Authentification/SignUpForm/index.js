@@ -26,7 +26,7 @@ const SignUpForm = ({
   console.log(isAddingUser);
   return (
     <>
-    <div className="overflow">
+    <div className="input__container-overflow">
       <label htmlFor="email"> Email </label>
       <input
         name="email"
@@ -119,7 +119,7 @@ const SignUpForm = ({
       />
       <button
         type="submit"
-        className="login-form-button"
+        className="login__form--button signUp"
       >
         Valider
       </button>

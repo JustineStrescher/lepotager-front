@@ -19,7 +19,6 @@ const BasketCard = () => {
   for (let i = 0; i < total.length; i++) {
     sum += total[i];
   }
-  console.log(BasketProduct);
 
   return (
     <div className="BasketCard">
