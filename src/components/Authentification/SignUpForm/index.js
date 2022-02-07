@@ -26,7 +26,7 @@ const SignUpForm = ({
   console.log(isAddingUser);
   return (
     <>
-      <label htmlFor="email" />
+      <label htmlFor="email"> Email </label>
       <input
         name="email"
         type="text"
@@ -36,7 +36,7 @@ const SignUpForm = ({
           dispatch(updateLoginField(event.target.value, 'email'));
         }}
       />
-      <label htmlFor="password" />
+      <label htmlFor="password">Mot de passe </label>
       <input
         name="password"
         type="password"
@@ -46,7 +46,7 @@ const SignUpForm = ({
         }}
         value={password}
       />
-      <label htmlFor="firstname" />
+      <label htmlFor="firstname">Prénom</label>
       <input
         name="firstname"
         type="text"
@@ -56,7 +56,7 @@ const SignUpForm = ({
           dispatch(updateLoginField(event.target.value, 'firstname'));
         }}
       />
-      <label htmlFor="lastname" />
+      <label htmlFor="lastname">Nom</label>
       <input
         name="lastname"
         type="text"
@@ -66,7 +66,7 @@ const SignUpForm = ({
           dispatch(updateLoginField(event.target.value, 'lastname'));
         }}
       />
-      <label htmlFor="address" />
+      <label htmlFor="address">Adresse</label>
       <input
         name="address"
         type="text"
@@ -76,7 +76,7 @@ const SignUpForm = ({
           dispatch(updateLoginField(event.target.value, 'address'));
         }}
       />
-      <label htmlFor="zip" />
+      <label htmlFor="zip">Code postal</label>
       <input
         name="zip"
         type="text"
@@ -86,7 +86,7 @@ const SignUpForm = ({
           dispatch(updateLoginField(event.target.value, 'zip'));
         }}
       />
-      <label htmlFor="phone" />
+      <label htmlFor="phone">Numéro de téléphone</label>
       <input
         name="phone"
         type="text"
@@ -96,7 +96,7 @@ const SignUpForm = ({
           dispatch(updateLoginField(event.target.value, 'phone'));
         }}
       />
-      <label htmlFor="city" />
+      <label htmlFor="city">Ville </label>
       <input
         name="city"
         type="text"
@@ -106,7 +106,7 @@ const SignUpForm = ({
           dispatch(updateLoginField(event.target.value, 'city'));
         }}
       />
-      <label htmlFor="country" />
+      <label htmlFor="country">Pays</label>
       <input
         name="country"
         type="text"
@@ -115,12 +115,13 @@ const SignUpForm = ({
         onChange={(event) => {
           dispatch(updateLoginField(event.target.value, 'country'));
         }}
-      /><button
+      />
+      <button
         type="submit"
         className="login-form-button"
       >
         Valider
-        </button>
+      </button>
     </>
   );
 };

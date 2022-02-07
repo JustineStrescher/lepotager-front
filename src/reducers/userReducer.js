@@ -1,4 +1,5 @@
 import { UPDATE_LOGIN_FIELD, SAVE_USER_DATA, LOG_OUT } from 'src/actions/user';
+import { EMPTY_FIELDS } from '../actions/user';
 
 export const initialState = {
   isLogged: '',
@@ -34,6 +35,10 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         isLogged: '',
+      };
+    case EMPTY_FIELDS:
+      return {
+        initialState,
       };
     default:
       return state;
