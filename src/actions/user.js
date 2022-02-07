@@ -20,11 +20,11 @@ export const logOut = () => ({
 
 export const SAVE_USER_DATA = 'SAVE_USER_DATA';
 
-export const saveUserData = (isLogged, username, token) => ({
+export const saveUserData = (isLogged, token, user = '') => ({
   type: SAVE_USER_DATA,
   isLogged: isLogged,
   token: token,
-  username: username,
+  user: user,
 });
 
 export const FETCH_USER_DATA = 'FETCH_USER_DATA';

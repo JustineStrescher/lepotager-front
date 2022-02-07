@@ -19,7 +19,7 @@ const ProductDetailCard = ({
   // quantity of current product
   const quantity = useSelector((state) => state.cart.quantity);
 
-  // Gestion des message d'errreur
+  // Gestion des message d'erreur
   const add = useSelector((state) => state.cart.add);
   const notAdd = useSelector((state) => state.cart.notAdd);
   const alreadyIn = useSelector((state) => state.cart.alreadyIn);

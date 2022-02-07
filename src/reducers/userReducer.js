@@ -2,11 +2,9 @@ import { UPDATE_LOGIN_FIELD, SAVE_USER_DATA, LOG_OUT } from 'src/actions/user';
 
 export const initialState = {
   isLogged: '',
+  user: [],
   email: '',
   password: '',
-  adress: '',
-  firstname: '',
-  lastname: '',
   token: '',
 };
 
@@ -22,7 +20,7 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         isLogged: action.isLogged,
-        lastname: action.lastname,
+        user: action.user,
         token: action.token,
         email: '',
         password: '',
@@ -30,7 +28,9 @@ const reducer = (state = initialState, action = {}) => {
     case LOG_OUT:
       return {
         ...state,
+        user: [],
         isLogged: '',
+        token: '',
       };
     default:
       return state;

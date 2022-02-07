@@ -36,12 +36,11 @@ const middleware = (store) => (next) => (action) => {
 
           const newAction = saveUserData(
             response.data.isLogged,
-            response.data.username,
             response.data.token,
           );
-          store.dispatch(fetchUserData());
           store.dispatch(newAction);
-          console.log(store.getState().user.token);
+          store.dispatch(fetchUserData());
+          // console.log(store.getState().user.token);
         })
         .catch((error) => {
           console.warn(error);
@@ -62,8 +61,9 @@ const middleware = (store) => (next) => (action) => {
       )
         .then((response) => {
           store.dispatch(saveUserData(
+            store.getState().user.isLogged,
+            store.getState().user.token,
             response.data,
-            console.log(response.data),
           ));
         })
 
