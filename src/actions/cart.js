@@ -38,3 +38,17 @@ export const SEND_CART = 'SEND_CART';
 export const sendCart = () => ({
   type: SEND_CART,
 });
+
+export const SET_EMPTY_BASKET = 'SET_EMPTY_BASKET';
+
+export const setEmptyBasket = (newValue) => ({
+  type: SET_EMPTY_BASKET,
+  newValue: newValue,
+});
+
+export const SET_ALREADY_IN = 'SET_ALREADY_IN';
+
+export const setAlreadyIn = (newValue) => ({
+  type: SET_ALREADY_IN,
+  newValue: newValue,
+});

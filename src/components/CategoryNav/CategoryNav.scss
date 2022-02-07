@@ -14,7 +14,8 @@
   
   &-link {
     margin: auto;
-    color: white;
+    color: rgb(255, 255, 255);
+    text-shadow: rgb(8, 7, 3) 10px 10px 10px;
     font-size: vars.$fontSize*0.8;
     text-align: center;
     flex-basis: 45%;

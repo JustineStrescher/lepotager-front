@@ -36,7 +36,7 @@ const Login = ({ handleLogin }) => {
         </button>
       </div>
       )}
-      {isLogged === '' && (
+      {!isLogged && (
 
       <LoginForm
         isLogged={isLogged}

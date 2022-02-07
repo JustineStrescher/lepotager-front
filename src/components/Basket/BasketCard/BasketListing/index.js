@@ -1,13 +1,9 @@
 import PropTypes from 'prop-types';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { removeProduct, setDeletedProduct } from '../../../../actions/cart';
 
 const BasketListing = ({
-  picture,
-  name,
-  price,
   quantity,
-  unit,
   product,
 }) => {
   const dispatch = useDispatch();
@@ -36,7 +32,7 @@ const BasketListing = ({
         <h3>{product.price} €/{!product.unitType ? 'Kg' : 'Unité'}</h3>
       </div>
       <div className="BasketCard--listing-quantity">
-        <h3>{quantity}</h3>
+        <h3>{quantity} {!product.unitType ? 'Kg' : 'Unité'}</h3>
       </div>
       <div className="BasketCard--listing-total">
         <h3>{(product.price * quantity).toFixed(2)} €</h3>
@@ -46,11 +42,19 @@ const BasketListing = ({
 };
 
 BasketListing.propTypes = {
-  picture: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
-  price: PropTypes.number.isRequired,
-  quantity: PropTypes.number.isRequired,
-  unit: PropTypes.string.isRequired,
+  quantity: PropTypes.string.isRequired,
+  product: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      picture: PropTypes.string.isRequired,
+      unitType: PropTypes.number.isRequired,
+      price: PropTypes.number.isRequired,
+    }),
+  ),
+};
+
+BasketListing.defaultProps = {
+  product: null,
 };
 
 export default BasketListing;
