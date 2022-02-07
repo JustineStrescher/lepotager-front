@@ -7,6 +7,7 @@ import {
   LOG_IN,
   saveUserData,
   FETCH_USER_DATA,
+  UPDATE_ACOUNT,
   fetchUserData,
   SIGN_UP,
   signUp,
@@ -95,6 +96,36 @@ const middleware = (store) => (next) => (action) => {
           ));
         })
 
+        .catch((error) => {
+          console.warn(error);
+        });
+
+      break;
+
+    case UPDATE_ACOUNT:
+      axios.post(
+
+        'https://api.lepotagerdesculsfouettes.fr/api/client/update',
+        {
+          lastname: store.getState().user.lastname,
+          firstname: store.getState().user.firstname,
+          email: store.getState().user.eMail,
+          phone: store.getState().user.phone,
+          address: store.getState().user.address,
+          city: store.getState().user.city,
+          zip: store.getState().user.zip,
+          password: store.getState().user.passWord,
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${store.getState().user.token}`,
+          },
+        },
+      )
+        .then((response) => {
+          console.log(response);
+          store.dispatch(fetchUserData());
+        })
         .catch((error) => {
           console.warn(error);
         });

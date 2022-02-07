@@ -51,5 +51,10 @@ export const updateAcountField = (newValue, identifier) => ({
   type: UPDATE_ACOUNT_FIELD,
   newValue: newValue,
   identifier: identifier,
+});
 
+export const UPDATE_ACOUNT = 'UPDATE_ACOUNT';
+
+export const updateAcount = () => ({
+  type: UPDATE_ACOUNT,
 });

@@ -3,7 +3,6 @@ import { EMPTY_FIELDS } from '../actions/user';
 
 export const initialState = {
   isLogged: '',
-  user: [],
   email: '',
   password: '',
   address: '',
@@ -13,6 +12,7 @@ export const initialState = {
   zip: '',
   country: '',
   phone: '',
+
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -27,8 +27,14 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         isLogged: action.isLogged,
-        user: action.user,
         token: action.token,
+        firstname: action.user.firstname,
+        lastname: action.user.lastname,
+        eMail: action.user.email,
+        phone: action.user.phone,
+        address: action.user.address,
+        city: action.user.city,
+        zip: action.user.zip,
         email: '',
         password: '',
       };
