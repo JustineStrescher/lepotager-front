@@ -4,10 +4,13 @@ export const initialState = {
   isLogged: '',
   email: '',
   password: '',
-  adress: '',
+  address: '',
   firstname: '',
   lastname: '',
   token: '',
+  zip: '',
+  country: '',
+  phone: '',
 };
 
 const reducer = (state = initialState, action = {}) => {

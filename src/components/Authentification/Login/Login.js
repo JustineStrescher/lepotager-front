@@ -2,7 +2,7 @@ import './modal.scss';
 import { NavLink } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import LoginForm from './LoginForm';
-import { logIn, logOut } from '../../../actions/user';
+import { logIn, logOut, signUp } from '../../../actions/user';
 
 import { setWho } from '../../../actions/product';
 
@@ -36,7 +36,7 @@ const Login = ({ handleLogin }) => {
         </button>
       </div>
       )}
-      {isLogged === '' && (
+      {!isLogged && (
 
       <LoginForm
         isLogged={isLogged}
@@ -46,6 +46,9 @@ const Login = ({ handleLogin }) => {
           dispatch(logIn());
         }}
         onSubmit={handleSubmit}
+        handleSignUp={() => {
+          dispatch(signUp());
+        }}
       />
 
       )}

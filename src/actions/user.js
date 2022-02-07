@@ -18,6 +18,12 @@ export const logOut = () => ({
   type: LOG_OUT,
 });
 
+export const SIGN_UP = 'SIGN_UP';
+
+export const signUp = () => ({
+  type: SIGN_UP,
+});
+
 export const SAVE_USER_DATA = 'SAVE_USER_DATA';
 
 export const saveUserData = (isLogged, username, token) => ({
