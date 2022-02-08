@@ -1,5 +1,4 @@
-import { UPDATE_LOGIN_FIELD, SAVE_USER_DATA, LOG_OUT } from 'src/actions/user';
-import { EMPTY_FIELDS } from '../actions/user';
+import { UPDATE_LOGIN_FIELD, SAVE_USER_DATA, LOG_OUT, EMPTY_FIELDS} from 'src/actions/user';
 
 export const initialState = {
   isLogged: '',

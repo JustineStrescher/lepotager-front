@@ -1,19 +1,26 @@
 import './modal.scss';
 import { NavLink } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector, useDispatch, useStore } from 'react-redux';
+import { useState } from 'react';
 import LoginForm from './LoginForm';
 import { logIn, logOut, signUp } from '../../../actions/user';
 
 import { setWho } from '../../../actions/product';
+import LogoutModal from './LogoutModal';
 
-const Login = ({ handleLogin }) => {
+const Login = () => {
   const dispatch = useDispatch();
   const email = useSelector((state) => state.user.email);
   const password = useSelector((state) => state.user.password);
   const isLogged = useSelector((state) => state.user.isLogged);
+  const [isOpenLogoutModal, setIsOpenLogoutModal] = useState(false);
   const handleSubmit = (evt) => {
     evt.preventDefault();
-    handleLogin();
+  };
+  const handleLogout = (evt) => {
+    evt.preventDefault();
+    setIsOpenLogoutModal(false);
+    dispatch(logOut());
   };
   return (
     <>
@@ -27,13 +34,19 @@ const Login = ({ handleLogin }) => {
             Mon compte
           </div>
         </NavLink>
-        <button
-          type="button"
-          className="log__button"
-          onClick={() => dispatch(logOut())}
-        >
+        <div className="navbar--connect" onClick={() => setIsOpenLogoutModal(true)}>
           Déconnexion
-        </button>
+        </div>
+        <LogoutModal
+          isOpenLogoutModal={isOpenLogoutModal}
+        >
+          <p>
+            La déconnexion entraînera la suppression de votre panier, s'il existe.
+            Voulez-vous continuer ?
+          </p>
+          <button type="submit" onClick={handleLogout}>Valider</button>
+          <button type="submit" onClick={() => setIsOpenLogoutModal(false)}>Annuler</button>
+        </LogoutModal>
       </div>
       )}
       {!isLogged && (

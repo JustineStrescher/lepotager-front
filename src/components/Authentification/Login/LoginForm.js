@@ -57,6 +57,7 @@ const LoginForm = ({
     dispatch(emptyFields());
   };
   useOnClickOutside(ref, handleClickOutside);
+
   const handleSubmitSignUp = (event) => {
     event.preventDefault();
     handleSignUp();
@@ -76,7 +77,7 @@ const LoginForm = ({
 
       <LoginFormModal
         openModal={isOpenModal}
-        onClose={() => setIsOpenModal(false) }
+        onClose={() => setIsOpenModal(false)}
         isLogged={isLogged}
       >
         <div className="modal__container">
@@ -95,7 +96,6 @@ const LoginForm = ({
                       city={city}
                       phone={phone}
                       country={country}
-                // onSubmit={handleSubmitSignUp}
                       isAddingUser={isAddingUser}
                       handleSignUp={() => {
                         dispatch(signUp());
