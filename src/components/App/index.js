@@ -15,6 +15,7 @@ import Error from 'src/components/Error';
 import AboutConcept from 'src/components/AboutConcept';
 import Acount from '../Acount';
 import Devs from '../Devs';
+import LegalMention from '../LegalMention';
 
 import './styles.scss';
 import { fetchAllProducts, fetchHighlight } from '../../actions/product';
@@ -34,6 +35,7 @@ function App() {
         <NavBar />
         <Routes>
           <Route exact path="/" element={<Category />} />
+          <Route exact path="mentions-legales" element={<LegalMention />} />
           <Route exact path="/les-devs" element={<Devs />} />
           <Route exact path="/acount" element={<Acount />} />
           <Route exact path="/panier" element={<Basket />} />

@@ -1,4 +1,5 @@
 @use 'src/styles/vars';
+
 .Footer__container{
   margin-top: 2rem;
 }
@@ -77,6 +78,15 @@
 }
 
 @media screen and (min-width: 768px){
+  .login-footer{
+    font-family: vars.$fontFamilyText !important;
+    font-size: vars.$fontSize*0.55;
+    margin-left: -2.4rem;
+    margin-top: -1rem;
+    &:hover{
+      background-color: vars.$mainColor;
+    }
+  }
 .Footer__container{
   width: 100%;
   background-color: vars.$mainColor;

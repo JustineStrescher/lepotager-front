@@ -39,9 +39,9 @@ const Footer = () => {
                   </>
                 )}
                 {!isLogged && (
-                  <>
+                  <div className="login-footer">
                     <LoginForm />
-                  </>
+                  </div>
                 )}
               </ul>
             </div>
@@ -59,7 +59,7 @@ const Footer = () => {
                 >
                   <li>A propos</li>
                 </Link>
-                <Link to="/mentions-légales"><li>Mentions légales</li></Link>
+                <Link to="/mentions-legales"><li>Mentions légales</li></Link>
               </ul>
             </div>
           </div>

@@ -3,11 +3,13 @@ import { useSelector } from 'react-redux';
 import Highlight from 'src/components/Highlight';
 import BasketCard from './BasketCard';
 import ScrollToTop from '../ScrollToTop';
+import CategoryNav from '../CategoryNav';
 
 const Basket = () => {
   const isLogged = useSelector((state) => state.user.isLogged);
   return (
     <section className="basket__container">
+      <CategoryNav />
       <ScrollToTop />
       <div className="Basket--title">
         <p>Mon panier</p>

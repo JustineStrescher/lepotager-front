@@ -19,7 +19,6 @@ const BasketCard = () => {
   for (let i = 0; i < total.length; i++) {
     sum += total[i];
   }
-  console.log(BasketProduct);
 
   return (
     <div className="BasketCard">
@@ -54,10 +53,10 @@ const BasketCard = () => {
               if (BasketProduct.length > 0) {
                 dispatch(sendCart());
               }
-              dispatch(setNotAdd(!notAdd));
-              window.setTimeout(() => {
-                dispatch(setNotAdd(false));
-              }, 5000);
+              // dispatch(setNotAdd(!notAdd));
+              // window.setTimeout(() => {
+              //   dispatch(setNotAdd(false));
+              // }, 5000);
             }}
           >
             Passer la commande

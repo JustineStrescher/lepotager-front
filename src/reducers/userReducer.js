@@ -12,6 +12,8 @@ export const initialState = {
   zip: '',
   country: '',
   phone: '',
+  eMail: '',
+  passWord: '',
 
 };
 
@@ -40,10 +42,7 @@ const reducer = (state = initialState, action = {}) => {
       };
     case LOG_OUT:
       return {
-        ...state,
-        user: [],
-        isLogged: '',
-        token: '',
+        initialState,
       };
     case EMPTY_FIELDS:
       return {
