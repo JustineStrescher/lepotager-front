@@ -85,3 +85,10 @@ export const setNotAdd = (newValue) => ({
   type: SET_NOT_ADD,
   newValue: newValue,
 });
+
+export const SET_ADD_TO_API = 'SET_ADD_TO_API';
+
+export const setAddToApi = (newValue) => ({
+  type: SET_ADD_TO_API,
+  newValue: newValue,
+});

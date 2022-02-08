@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { SEND_CART, setEmptyBasket } from '../actions/cart';
-import { setAdd, setNotAdd } from '../actions/product';
+import { setAdd, setAddToApi, setNotAdd } from '../actions/product';
 import {
 
   LOG_IN,
@@ -14,6 +14,7 @@ import {
 
 const middleware = (store) => (next) => (action) => {
   const add = store.getState().cart.add;
+  const addToApi = store.getState().cart.addToApi;
   const notAdd = store.getState().cart.notAdd;
 
   const basket = store.getState().cart.cartList;
@@ -152,9 +153,9 @@ const middleware = (store) => (next) => (action) => {
         .then((response) => {
           if (response.status === 201) {
             store.dispatch(setEmptyBasket());
-            store.dispatch(setAdd(!add));
+            store.dispatch(setAddToApi(!add));
             window.setTimeout(() => {
-              store.dispatch(setAdd(false));
+              store.dispatch(setAddToApi(false));
             }, 4000);
           }
           else {

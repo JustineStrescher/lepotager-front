@@ -13,6 +13,7 @@ import {
   CHANGE_INPUT_VALUE,
   SET_ADD,
   SET_NOT_ADD,
+  SET_ADD_TO_API,
 } from '../actions/product';
 
 export const initialState = {
@@ -22,6 +23,7 @@ export const initialState = {
   deleteProductId: 0,
   quantity: 0,
   add: false,
+  addToApi: false,
   notAdd: false,
   alreadyIn: false,
 };
@@ -91,6 +93,12 @@ const CartReducer = (state = initialState, action = {}) => {
       return {
         ...state,
         add: action.newValue,
+      };
+
+    case SET_ADD_TO_API:
+      return {
+        ...state,
+        addToApi: action.newValue,
       };
 
     case SET_NOT_ADD:

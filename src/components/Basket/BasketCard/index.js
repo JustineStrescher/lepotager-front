@@ -10,7 +10,7 @@ const BasketCard = () => {
   const dispatch = useDispatch();
   const BasketProduct = useSelector((state) => state.cart.cartList);
   const notAdd = useSelector((state) => state.cart.notAdd);
-  const add = useSelector((state) => state.cart.add);
+  const add = useSelector((state) => state.cart.addToApi);
 
   const total = BasketProduct.map((product) => (
     product.quantity * product.product.price
