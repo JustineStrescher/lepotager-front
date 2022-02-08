@@ -66,11 +66,6 @@ const middleware = (store) => (next) => (action) => {
           zip: store.getState().user.zip,
         },
       )
-        .then((response) => {
-          console.log(JSON.stringify(response));
-
-          store.dispatch(signUp());
-        })
         .catch((error) => {
           console.warn(error);
         });
