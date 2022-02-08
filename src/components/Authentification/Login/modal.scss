@@ -88,6 +88,7 @@
 
   &--subscribe{
 
+    cursor: pointer;
     color: black;
     text-align: center;
     margin: auto;
@@ -124,7 +125,7 @@
   }
 }
 .signUp{
-  
+  width: 80%;
   margin: auto; 
   margin-top: 0.6rem;
 }

@@ -39,9 +39,9 @@ const Footer = () => {
                   </>
                 )}
                 {!isLogged && (
-                  <>
+                  <div className="login-footer">
                     <LoginForm />
-                  </>
+                  </div>
                 )}
               </ul>
             </div>

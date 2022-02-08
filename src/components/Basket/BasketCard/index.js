@@ -53,10 +53,10 @@ const BasketCard = () => {
               if (BasketProduct.length > 0) {
                 dispatch(sendCart());
               }
-              dispatch(setNotAdd(!notAdd));
-              window.setTimeout(() => {
-                dispatch(setNotAdd(false));
-              }, 5000);
+              // dispatch(setNotAdd(!notAdd));
+              // window.setTimeout(() => {
+              //   dispatch(setNotAdd(false));
+              // }, 5000);
             }}
           >
             Passer la commande
