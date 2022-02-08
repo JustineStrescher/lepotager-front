@@ -1,7 +1,7 @@
 import {
   ADD_PRODUCT,
   REMOVE_PRODUCT,
-  CHANGE_QUANTITY,
+  RESET_CART,
   FETCH_CURRENT_PRODUCT,
   SEND_CART,
   SET_DELETED_PRODUCT,
@@ -72,8 +72,11 @@ const CartReducer = (state = initialState, action = {}) => {
       };
     }
 
-    case CHANGE_QUANTITY:
-      return {};
+    case RESET_CART:
+      return {
+        ...state,
+        cartList: [],
+      };
 
     case FETCH_CURRENT_PRODUCT:
       return {};

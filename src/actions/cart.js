@@ -52,3 +52,9 @@ export const setAlreadyIn = (newValue) => ({
   type: SET_ALREADY_IN,
   newValue: newValue,
 });
+
+export const RESET_CART = 'RESET_CART';
+
+export const resetCart = () => ({
+  type: RESET_CART,
+});

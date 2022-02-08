@@ -1,16 +1,32 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import { useDispatch, useSelector } from 'react-redux';
+import { setNotAdd, setAdd } from '../../../actions/product';
 import { updateAcount, updateLoginField } from '../../../actions/user';
 
 const AcountCard = () => {
   const user = useSelector((state) => state.user);
+  const passWord = useSelector((state) => state.user.passWord);
+  const notAdd = useSelector((state) => state.cart.notAdd);
+  const add = useSelector((state) => state.cart.add);
   const dispatch = useDispatch();
   return (
     <div className="acountCard--content">
       <form
         onSubmit={(event) => {
           event.preventDefault();
-          dispatch(updateAcount());
+          if (passWord !== '') {
+            dispatch(updateAcount());
+            dispatch(setAdd(!add));
+            window.setTimeout(() => {
+              dispatch(setAdd(false));
+            }, 4000);
+          }
+          else {
+            dispatch(setNotAdd(!notAdd));
+            window.setTimeout(() => {
+              dispatch(setNotAdd(false));
+            }, 4000);
+          }
         }}
         action=""
         className="field-form"
@@ -147,6 +163,16 @@ const AcountCard = () => {
           Valider les modifications
         </button>
       </form>
+      {notAdd && (
+        <div>
+          <p className="error-message text">le mot de passe est vide ou les informations ne sont pas correct</p>
+        </div>
+      )}
+      {add && (
+        <div>
+          <p className="validation-message text">Vos modifications ont bien été enregistrées</p>
+        </div>
+      )}
     </div>
   );
 };
