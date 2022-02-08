@@ -1,6 +1,6 @@
 import './modal.scss';
 import { NavLink } from 'react-router-dom';
-import { useSelector, useDispatch, useStore } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { useState } from 'react';
 import LoginForm from './LoginForm';
 import { logIn, logOut, signUp } from '../../../actions/user';

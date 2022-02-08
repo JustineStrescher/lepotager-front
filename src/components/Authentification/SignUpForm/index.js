@@ -14,14 +14,9 @@ const SignUpForm = ({
   firstname,
   lastname,
   isAddingUser,
-  handleSignUp,
 
 }) => {
   const dispatch = useDispatch();
-  const handleSubmitSignUp = (event) => {
-    event.preventDefault();
-    handleSignUp();
-  };
   if (!isAddingUser) return null;
   console.log(isAddingUser);
   return (
