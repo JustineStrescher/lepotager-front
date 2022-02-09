@@ -8,7 +8,7 @@ import LoginFormModal from './LoginFormModal';
 import LoginFormContent from './LoginFormContent';
 import './modal.scss';
 
-import { updateLoginField, signUp, emptyFields } from '../../../actions/user';
+import { updateLoginField, signUp, emptyFields, signUpSuccess } from '../../../actions/user';
 
 const LoginForm = ({
   email,
@@ -28,6 +28,7 @@ const LoginForm = ({
   const firstname = useSelector((state) => state.user.firstname);
   const lastname = useSelector((state) => state.user.lastname);
   const city = useSelector((state) => state.user.city);
+  const isSignUpSuccess = useSelector((state) => state.user.isSignUpSuccess);
 
   if (isLogged === 1) return null;
 
@@ -61,6 +62,7 @@ const LoginForm = ({
   const handleSubmitSignUp = (event) => {
     event.preventDefault();
     handleSignUp();
+    signUpSuccess();
   };
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -100,6 +102,7 @@ const LoginForm = ({
                       handleSignUp={() => {
                         dispatch(signUp());
                       }}
+                      isSignUpSuccess={isSignUpSuccess}
                     />
                   )
                   : (

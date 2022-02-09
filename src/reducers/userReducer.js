@@ -1,4 +1,4 @@
-import { UPDATE_LOGIN_FIELD, SAVE_USER_DATA, LOG_OUT, EMPTY_FIELDS} from 'src/actions/user';
+import { UPDATE_LOGIN_FIELD, SAVE_USER_DATA, LOG_OUT, EMPTY_FIELDS, SIGN_UP_SUCCESS } from 'src/actions/user';
 
 export const initialState = {
   isLogged: '',
@@ -13,6 +13,7 @@ export const initialState = {
   phone: '',
   eMail: '',
   passWord: '',
+  isSignUpSuccess: false,
 
 };
 
@@ -46,6 +47,11 @@ const reducer = (state = initialState, action = {}) => {
     case EMPTY_FIELDS:
       return {
         initialState,
+      };
+    case SIGN_UP_SUCCESS:
+      return {
+        ...state,
+        isSignUpSuccess: true,
       };
     default:
       return state;
