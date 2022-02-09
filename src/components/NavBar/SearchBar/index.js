@@ -49,7 +49,7 @@ const SearchBar = () => {
                   setIsOpen(false);
                 }}
               >
-                <li key={product.id} className="search__autocomplete--link text">{product.name}</li>
+                <li key={product.id} className={product.available ? 'search__autocomplete--link green text' : ' search__autocomplete--link red text '}>{product.name}</li>
               </Link>
             ))}
           </ul>

@@ -1,5 +1,18 @@
 @use 'src/styles/vars';
 
+.green{
+  color: vars.$mainColor;
+  &:hover{
+    color: vars.$mainColor;
+  }
+}
+.red{
+  text-decoration: line-through;
+  color: maroon;
+  &:hover{
+    color: maroon;
+  }
+}
 .search{
   &__autocomplete{
     line-height: 1.5rem;
@@ -52,9 +65,10 @@
 .search__autocomplete--link{
 
   margin-top: 0.5rem;
+  
 
   &:hover{
-    color: vars.$mainColor;
+    color: black;
   }
 
 }
@@ -129,7 +143,7 @@
     
   
     &:hover{
-      color: vars.$mainColor;
+      
     }
   
   }
