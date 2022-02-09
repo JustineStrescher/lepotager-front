@@ -107,6 +107,7 @@ const middleware = (store) => (next) => (action) => {
             store.getState().user.isLogged,
             store.getState().user.token,
             response.data,
+            store.getState().user.passWord,
           ));
         })
 

@@ -45,7 +45,7 @@ const BasketCard = () => {
       <p className="BasketCard--listing-disclaimer text">Les prix mentionnés sont uniquement a titre indicatif et peuvent varier au retrait de la commande</p>
       <form action="submit" className="BasketCard--form">
         <div className="BasketCard--form-flex">
-          <p className="BasketCard--form-flex-ammount">Total :  {sum} €</p>
+          <p className="BasketCard--form-flex-ammount">Total :  {sum.toFixed(2)} €</p>
           <button
             type="button"
             className="BasketCard--form-flex-button"

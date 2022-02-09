@@ -1,9 +1,11 @@
-<<<<<<< HEAD
-import { UPDATE_LOGIN_FIELD, SAVE_USER_DATA, LOG_OUT, EMPTY_FIELDS} from 'src/actions/user';
-import { SET_ERROR_CONNECTION } from '../actions/user';
-=======
-import { UPDATE_LOGIN_FIELD, SAVE_USER_DATA, LOG_OUT, EMPTY_FIELDS, SIGN_UP_SUCCESS } from 'src/actions/user';
->>>>>>> 3546ca2bd61f578104745549795ef259c631ccfc
+import {
+  UPDATE_LOGIN_FIELD,
+  SAVE_USER_DATA,
+  LOG_OUT,
+  EMPTY_FIELDS,
+  SIGN_UP_SUCCESS,
+  SET_ERROR_CONNECTION,
+} from 'src/actions/user';
 
 export const initialState = {
   isLogged: '',
@@ -43,6 +45,7 @@ const reducer = (state = initialState, action = {}) => {
         address: action.user.address,
         city: action.user.city,
         zip: action.user.zip,
+        passWord: action.passWord,
         email: '',
         password: '',
       };

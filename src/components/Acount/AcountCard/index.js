@@ -14,7 +14,7 @@ const AcountCard = () => {
       <form
         onSubmit={(event) => {
           event.preventDefault();
-          if (passWord !== '') {
+          if (user.passWord !== '') {
             dispatch(updateAcount());
             dispatch(setAdd(!add));
             window.setTimeout(() => {

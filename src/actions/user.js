@@ -37,11 +37,12 @@ export const emptyFields = () => ({
 
 export const SAVE_USER_DATA = 'SAVE_USER_DATA';
 
-export const saveUserData = (isLogged, token, user = '') => ({
+export const saveUserData = (isLogged, token, user = '', password) => ({
   type: SAVE_USER_DATA,
   isLogged: isLogged,
   token: token,
   user: user,
+  password: password,
 });
 
 export const FETCH_USER_DATA = 'FETCH_USER_DATA';
