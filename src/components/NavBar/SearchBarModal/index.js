@@ -10,7 +10,7 @@ const SearchBarModal = ({ open, children, onClose }) => {
     <div className="search__container">
       <div className="search__modal">
         <div onClick={onClose} className="search__icon--close">
-          <AiOutlineClose />
+          <AiOutlineClose color="black" />
         </div>
         { children }
       </div>

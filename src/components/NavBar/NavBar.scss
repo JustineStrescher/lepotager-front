@@ -2,7 +2,7 @@
 .login__form-link{
   position: absolute;
   width: 4rem;
-  right: 1rem;
+  right: -0.8rem;
   top: 1rem;
   &-panier{
     width: 60%;
@@ -147,7 +147,7 @@
     width: 2.5rem;
     right: 2rem;
     transform: translate(0%,0%);
-    top: 1.5rem;
+    top: 2.6rem;
     padding: 0 0.2rem;
     padding-top: 0.3rem;
     background-color: vars.$mainColor;
@@ -174,6 +174,7 @@
     height: 6rem;
   }
   .navbar{
+    z-index: 1;
     display: flex;
     height: 6rem;
     border-bottom: vars.$mainColor 0.5px solid;

@@ -58,6 +58,7 @@ const ProductDetailCard = ({
                 min="0"
                 value={unitType ? Math.round(quantity) : quantity}
                 pattern={unitType ? ' 0+\\.[0-9]*[1-9][0-9]*$' : ''}
+                step={unitType ? '1' : '0.10'}
                 onChange={(event) => {
                   // on dispatch une action en envoyant la nouvelle valeur
                   dispatch(changeInputValue(event.target.value));
@@ -133,9 +134,13 @@ ProductDetailCard.propTypes = {
   picture: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
-  description: PropTypes.string.isRequired,
+  description: PropTypes.string,
   available: PropTypes.number.isRequired,
   unitType: PropTypes.number.isRequired,
+};
+
+ProductDetailCard.defaultProps = {
+  description: '',
 };
 
 export default ProductDetailCard;

@@ -23,6 +23,7 @@ const NavBar = () => {
   return (
     <>
       <section className="container__header">
+        <SearchBar />
         <nav className="navbar">
           {isLogged && (
             <>
@@ -66,7 +67,6 @@ const NavBar = () => {
             </NavLink>
             <Login />
           </ul>
-          <SearchBar />
         </nav>
       </section>
     </>

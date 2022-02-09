@@ -6,7 +6,7 @@ import ProductCard from 'src/components/Product/ProductCard';
 import ScrollToTop from '../ScrollToTop';
 
 const Highlight = () => {
-  const productList = useSelector((state) => state.product.highlight);
+  const productList = useSelector((state) => state.product.highlight.slice(0, 7));
 
   return (
     <div className="Highlight__container">
