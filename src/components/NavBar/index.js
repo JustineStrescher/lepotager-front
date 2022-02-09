@@ -5,7 +5,7 @@ import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
 // import { FaUserAlt } from 'react-icons/fa';
 import { useDispatch, useSelector } from 'react-redux';
 
-// import SearchBar from './SearchBar';
+import SearchBar from './SearchBar';
 
 import Login from '../Authentification/Login/Login';
 
@@ -66,7 +66,7 @@ const NavBar = () => {
             </NavLink>
             <Login />
           </ul>
-          {/* <SearchBar /> */}
+          <SearchBar />
         </nav>
       </section>
     </>

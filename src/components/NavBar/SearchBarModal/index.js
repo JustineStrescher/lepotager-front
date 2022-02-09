@@ -22,7 +22,6 @@ const SearchBarModal = ({ open, children, onClose }) => {
 SearchBarModal.propTypes = {
   open: PropTypes.bool.isRequired,
   onClose: PropTypes.func.isRequired,
-  children: PropTypes.string,
 
 };
 
