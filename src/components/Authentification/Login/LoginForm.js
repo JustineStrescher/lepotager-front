@@ -1,6 +1,5 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 /* eslint-disable react/prop-types */
-import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { useState, useEffect, useRef } from 'react';
 import SignUpForm from '../SignUpForm';
@@ -8,7 +7,7 @@ import LoginFormModal from './LoginFormModal';
 import LoginFormContent from './LoginFormContent';
 import './modal.scss';
 
-import { updateLoginField, signUp, emptyFields } from '../../../actions/user';
+import { signUp, emptyFields } from '../../../actions/user';
 
 const LoginForm = ({
   email,

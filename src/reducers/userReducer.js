@@ -1,4 +1,5 @@
 import { UPDATE_LOGIN_FIELD, SAVE_USER_DATA, LOG_OUT, EMPTY_FIELDS} from 'src/actions/user';
+import { SET_ERROR_CONNECTION } from '../actions/user';
 
 export const initialState = {
   isLogged: '',
@@ -13,6 +14,7 @@ export const initialState = {
   phone: '',
   eMail: '',
   passWord: '',
+  errorConnection: false,
 
 };
 
@@ -42,6 +44,11 @@ const reducer = (state = initialState, action = {}) => {
     case LOG_OUT:
       return {
         initialState,
+      };
+    case SET_ERROR_CONNECTION:
+      return {
+        ...state,
+        errorConnection: action.newValue,
       };
     case EMPTY_FIELDS:
       return {

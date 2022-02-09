@@ -42,12 +42,14 @@ const Login = () => {
         <LogoutModal
           isOpenLogoutModal={isOpenLogoutModal}
         >
-          <p>
+          <p className="validation-message text">
             La déconnexion entraînera la suppression de votre panier, s'il existe.
             Voulez-vous continuer ?
           </p>
-          <button type="submit" onClick={handleLogout}>Valider</button>
-          <button type="submit" onClick={() => setIsOpenLogoutModal(false)}>Annuler</button>
+          <div className="flex">
+            <button className="modal--button text" type="submit" onClick={handleLogout}>Valider</button>
+            <button className="modal--button text" type="submit" onClick={() => setIsOpenLogoutModal(false)}>Annuler</button>
+          </div>
         </LogoutModal>
       </div>
       )}

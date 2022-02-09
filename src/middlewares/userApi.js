@@ -1,3 +1,4 @@
+/* eslint-disable prefer-destructuring */
 import axios from 'axios';
 import { SEND_CART, setEmptyBasket } from '../actions/cart';
 import { setAdd, setAddToApi, setNotAdd } from '../actions/product';
@@ -10,12 +11,14 @@ import {
   fetchUserData,
   SIGN_UP,
   updateLoginField,
+  setErrorConnection,
 } from '../actions/user';
 
 const middleware = (store) => (next) => (action) => {
   const add = store.getState().cart.add;
   const addToApi = store.getState().cart.addToApi;
   const notAdd = store.getState().cart.notAdd;
+  const errorConnection = store.getState().user.errorConnection;
 
   const basket = store.getState().cart.cartList;
   const basketToJSON = basket.map((item) => (
@@ -35,18 +38,28 @@ const middleware = (store) => (next) => (action) => {
         },
       )
         .then((response) => {
-          console.log(response);
-
-          const newAction = saveUserData(
-            response.data.isLogged,
-            response.data.token,
-          );
-          store.dispatch(newAction);
-          store.dispatch(fetchUserData());
-          // console.log(store.getState().user.token);
+          console.log(response.status);
+          if (response.status === 200) {
+            const newAction = saveUserData(
+              response.data.isLogged,
+              response.data.token,
+            );
+            store.dispatch(newAction);
+            store.dispatch(fetchUserData());
+          }
+          else {
+            store.dispatch(setErrorConnection(!errorConnection));
+            window.setTimeout(() => {
+              store.dispatch(setErrorConnection(false));
+            }, 5000);
+          }
         })
         .catch((error) => {
           console.warn(error);
+          store.dispatch(setErrorConnection(!errorConnection));
+          window.setTimeout(() => {
+            store.dispatch(setErrorConnection(false));
+          }, 5000);
         });
 
       break;
@@ -153,7 +166,7 @@ const middleware = (store) => (next) => (action) => {
         .then((response) => {
           if (response.status === 201) {
             store.dispatch(setEmptyBasket());
-            store.dispatch(setAddToApi(!add));
+            store.dispatch(setAddToApi(!addToApi));
             window.setTimeout(() => {
               store.dispatch(setAddToApi(false));
             }, 4000);

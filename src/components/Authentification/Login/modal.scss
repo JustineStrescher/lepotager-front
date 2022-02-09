@@ -1,5 +1,27 @@
 @use 'src/styles/vars';
 
+.flex{
+  width: 100%;
+  display: flex;
+  gap:10%;
+  margin: 1rem auto;
+  
+}
+.modal--button{
+  width: 45%;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  color: vars.$secondColor;
+  background-color: vars.$mainColor;
+  border: vars.$secondColor 2px solid;  
+  transition: all 1s;
+  &:hover{
+    color: vars.$mainColor;
+    background-color: vars.$secondColor;
+    border: vars.$mainColor 2px solid;  
+  }
+}
+
 .input__container{
 
   color: vars.$mainColor;

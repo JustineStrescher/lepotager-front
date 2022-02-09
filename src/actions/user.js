@@ -58,3 +58,10 @@ export const UPDATE_ACOUNT = 'UPDATE_ACOUNT';
 export const updateAcount = () => ({
   type: UPDATE_ACOUNT,
 });
+
+export const SET_ERROR_CONNECTION = 'SET_ERROR_CONNECTION';
+
+export const setErrorConnection = (newValue) => ({
+  type: SET_ERROR_CONNECTION,
+  newValue: newValue,
+});
