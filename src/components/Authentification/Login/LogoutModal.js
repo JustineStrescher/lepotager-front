@@ -1,4 +1,5 @@
 import { createPortal } from 'react-dom';
+import './modal.scss';
 
 const LogoutModal = ({ isOpenLogoutModal, children, onClose, }) => {
   if (!isOpenLogoutModal) return null;

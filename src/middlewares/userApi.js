@@ -10,6 +10,9 @@ import {
   UPDATE_ACOUNT,
   fetchUserData,
   SIGN_UP,
+
+  signUp,
+  signUpSuccess,
   updateLoginField,
   setErrorConnection,
 } from '../actions/user';
@@ -19,6 +22,7 @@ const middleware = (store) => (next) => (action) => {
   const addToApi = store.getState().cart.addToApi;
   const notAdd = store.getState().cart.notAdd;
   const errorConnection = store.getState().user.errorConnection;
+
 
   const basket = store.getState().cart.cartList;
   const basketToJSON = basket.map((item) => (
@@ -71,13 +75,16 @@ const middleware = (store) => (next) => (action) => {
           password: store.getState().user.password,
           firstname: store.getState().user.firstname,
           lastname: store.getState().user.lastname,
-          address: store.getState().user.adress,
+          address: store.getState().user.address,
           country: store.getState().user.country,
           phone: store.getState().user.phone,
           city: store.getState().user.city,
           zip: store.getState().user.zip,
         },
       )
+        .then(() => {
+          store.dispatch(signUpSuccess());
+        })
         .catch((error) => {
           console.warn(error);
         });

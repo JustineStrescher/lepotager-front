@@ -1,5 +1,9 @@
+<<<<<<< HEAD
 import { UPDATE_LOGIN_FIELD, SAVE_USER_DATA, LOG_OUT, EMPTY_FIELDS} from 'src/actions/user';
 import { SET_ERROR_CONNECTION } from '../actions/user';
+=======
+import { UPDATE_LOGIN_FIELD, SAVE_USER_DATA, LOG_OUT, EMPTY_FIELDS, SIGN_UP_SUCCESS } from 'src/actions/user';
+>>>>>>> 3546ca2bd61f578104745549795ef259c631ccfc
 
 export const initialState = {
   isLogged: '',
@@ -15,6 +19,7 @@ export const initialState = {
   eMail: '',
   passWord: '',
   errorConnection: false,
+  isSignUpSuccess: false,
 
 };
 
@@ -53,6 +58,11 @@ const reducer = (state = initialState, action = {}) => {
     case EMPTY_FIELDS:
       return {
         initialState,
+      };
+    case SIGN_UP_SUCCESS:
+      return {
+        ...state,
+        isSignUpSuccess: true,
       };
     default:
       return state;
