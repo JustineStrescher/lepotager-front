@@ -46,8 +46,8 @@ const Login = () => {
             La déconnexion entraînera la suppression de votre panier, s'il existe.
             Voulez-vous continuer ?
           </p>
-          <button type="submit" onClick={handleLogout}>Valider</button>
-          <button type="submit" onClick={() => setIsOpenLogoutModal(false)}>Annuler</button>
+          <button type="submit" className="login__form--button" onClick={handleLogout}>Valider</button>
+          <button type="submit" className="login__form--button" onClick={() => setIsOpenLogoutModal(false)}>Annuler</button>
         </LogoutModal>
       </div>
       )}
