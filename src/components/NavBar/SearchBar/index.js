@@ -4,8 +4,6 @@ import { AiOutlineSearch } from 'react-icons/ai';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import SearchBarModal from '../SearchBarModal';
-import ProductDetailCard from '../../ProductDetail/ProductDetailCard';
-import ProductCard from '../../Product/ProductCard';
 
 const SearchBar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,7 +17,6 @@ const SearchBar = () => {
   useEffect(() => {
     // eslint-disable-next-line max-len
     const results = productList.filter((product) => product.name.toLowerCase().includes(searchTerm));
-    console.log(results);
     setSearchResults(results);
   }, [searchTerm]);
 
@@ -36,15 +33,19 @@ const SearchBar = () => {
             value={searchTerm}
             onChange={handleChange}
           />
+          {searchTerm.length > 0 && (
           <ul className="search__autocomplete">
+
             {searchResults.map((product) => (
               <Link
+                key={product.name}
                 to={`/${product.arborescence.Category}/${product.arborescence.SubCategory}/${product.slug}`}
               >
-                <li key={product.id}>{product.name}</li>
+                <li key={product.id} className="search__autocomplete--link">{product.name}</li>
               </Link>
             ))}
           </ul>
+          )}
         </div>
       </SearchBarModal>
     </>

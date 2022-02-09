@@ -1,7 +1,9 @@
+@use 'src/styles/vars';
+
 .search{
   &__autocomplete{
   font-family: 'Amatic SC', cursive;
-  font-size: 1.5rem;
+  font-size: 1.75rem;
   color: black;
   }
 
@@ -17,7 +19,7 @@
   min-width: 100%;
   padding: 1rem;
   border-radius: 0;
-  font-size: 2rem;
+  font-size: 1.75rem;
   margin-top: 2rem;
   background-color: transparent;
   color: black;
@@ -29,4 +31,11 @@
   
 }
 
+.search__autocomplete--link{
+
+  &:hover{
+    color: vars.$mainColor;
+  }
+
+}
 
