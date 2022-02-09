@@ -1,7 +1,6 @@
 import axios from 'axios';
-
 import { SEND_CART, setEmptyBasket } from '../actions/cart';
-import { setAdd, setNotAdd } from '../actions/product';
+import { setAdd, setAddToApi, setNotAdd } from '../actions/product';
 import {
 
   LOG_IN,
@@ -10,13 +9,17 @@ import {
   UPDATE_ACOUNT,
   fetchUserData,
   SIGN_UP,
+
   signUp,
   signUpSuccess,
+  updateLoginField,
 } from '../actions/user';
 
 const middleware = (store) => (next) => (action) => {
-  const { add } = store.getState().cart;
-  const { notAdd } = store.getState().cart;
+  const add = store.getState().cart.add;
+  const addToApi = store.getState().cart.addToApi;
+  const notAdd = store.getState().cart.notAdd;
+
 
   const basket = store.getState().cart.cartList;
   const basketToJSON = basket.map((item) => (
@@ -25,7 +28,6 @@ const middleware = (store) => (next) => (action) => {
       quantity: item.quantity,
     }
   ));
-  const basketToApi = JSON.stringify(basketToJSON);
 
   switch (action.type) {
     case LOG_IN:
@@ -121,11 +123,23 @@ const middleware = (store) => (next) => (action) => {
           },
         },
       )
-        .then(() => {
-          store.dispatch(fetchUserData());
+        .then((response) => {
+          if (response.status === 200) {
+            store.dispatch(fetchUserData());
+            store.dispatch(updateLoginField('', 'passWord'));
+          }
+          else {
+            store.dispatch(setNotAdd(!notAdd));
+            window.setTimeout(() => {
+              store.dispatch(setNotAdd(false));
+            }, 5000);
+          }
         })
         .catch((error) => {
-          console.warn(error);
+          store.dispatch(setNotAdd(!notAdd));
+          window.setTimeout(() => {
+            store.dispatch(setNotAdd(false));
+          }, 5000);
         });
 
       break;
@@ -144,18 +158,21 @@ const middleware = (store) => (next) => (action) => {
         },
       )
         .then((response) => {
-          console.log(response);
-          store.dispatch(setEmptyBasket());
-          store.dispatch(setAdd(!add));
-          window.setTimeout(() => {
-            store.dispatch(setAdd(false));
-          }, 4000);
+          if (response.status === 201) {
+            store.dispatch(setEmptyBasket());
+            store.dispatch(setAddToApi(!add));
+            window.setTimeout(() => {
+              store.dispatch(setAddToApi(false));
+            }, 4000);
+          }
+          else {
+            store.dispatch(setNotAdd(!notAdd));
+            window.setTimeout(() => {
+              store.dispatch(setNotAdd(false));
+            }, 4000);
+          }
         })
         .catch((error) => {
-          store.dispatch(setNotAdd(!add));
-          window.setTimeout(() => {
-            store.dispatch(setNotAdd(false));
-          }, 4000);
           console.warn(error);
         });
 

@@ -1,5 +1,14 @@
 @use 'src/styles/vars';
-
+.error-message{
+  text-align: center;
+  color : brown;
+  font-weight: normal;
+}
+.validation-message{
+  text-align: center;
+  color:forestgreen ;
+  font-weight: normal;
+}
 .field-label{
   margin-top: 0.5rem;
   display: block;

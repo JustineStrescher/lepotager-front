@@ -7,6 +7,7 @@ import { logIn, logOut, signUp } from '../../../actions/user';
 
 import { setWho } from '../../../actions/product';
 import LogoutModal from './LogoutModal';
+import { resetCart } from '../../../actions/cart';
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -19,6 +20,7 @@ const Login = () => {
   };
   const handleLogout = (evt) => {
     evt.preventDefault();
+    dispatch(resetCart());
     setIsOpenLogoutModal(false);
     dispatch(logOut());
   };
