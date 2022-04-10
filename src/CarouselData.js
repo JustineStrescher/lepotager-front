@@ -1,17 +1,18 @@
 export default [
   {
     id: 1,
-    image: 'https://www.lsa-conso.fr/mediatheque/6/1/7/000289716_5.jpg',
+    image: '',
     caption: ' Tous nos produits sont issus de l\'agriculture biologique ',
   },
   {
     id: 2,
-    image: 'https://scontent-cdt1-1.xx.fbcdn.net/v/t31.18172-8/19667910_1786353395028841_520046670348274816_o.jpg?_nc_cat=109&ccb=1-5&_nc_sid=973b4a&_nc_ohc=GTY58cJedloAX9kSH_L&_nc_ht=scontent-cdt1-1.xx&oh=00_AT91YS2fRbIcyDaUtgYuWFIrmvqoqfLfgnnFyBsG_rlsPw&oe=6215A16A',
-    caption: 'Retrouvez nous à la ferme le mercredi soir pour récupérer vos commandes',
+    image: '',
+    caption: 'Les commandes sont a réservé avant le mercredi 7h et sont à récupérer le mercredi soir entre 17h et 19h au 18 lotissement du val de Vèze à Ougney',
+    
   },
   {
     id: 3,
-    image: 'https://www.h-auteurs.com/wp-content/uploads/2019/04/1-bio.jpg',
-    caption: 'Nous sommes également présents sur les marchés d\'a coté le vendredi et le samedi',
+    image: '',
+    caption: 'Nous sommes également présents Au Marché d\'Ornans le samedi matin ',
   },
 ];

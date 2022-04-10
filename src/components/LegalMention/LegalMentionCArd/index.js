@@ -70,10 +70,10 @@ const LegalMentionCard = () => (
 
     <h3>Article 5 – Responsabilité</h3>
 
-    <p>La société LE POTAGER DE SANTE apporte le plus grand soin et met en œuvre tout moyen pour diffuser sur son Site des informations de qualité. LE POTAGER DE SANTE ne peut toutefois pas garantir de manière absolue l'exactitude et l'exhaustivité de l'ensemble de ces informations.
+    <p>La société LE POTAGER DES CULS FOUETTES apporte le plus grand soin et met en œuvre tout moyen pour diffuser sur son Site des informations de qualité. LE POTAGER DES CULS FOUETTES ne peut toutefois pas garantir de manière absolue l'exactitude et l'exhaustivité de l'ensemble de ces informations.
     Les Internautes utilisent le Site sous leur seule et entière responsabilité.
 
-    La société LE POTAGER DE SANTE ne saurait être tenue d'aucune garantie, d'aucune sorte, qu'elle soit implicite ou explicite, concernant notamment l'intégrité, l'exactitude, l'actualité, la non-contrefaçon, la disponibilité, la fiabilité ou l'exhaustivité des informations, produits, accessoires ou services apparaissant sur le Site ni leur adéquation à l'utilisation que l’internaute projette d'en faire ainsi que des conséquences de leur utilisation.
+    La société LE POTAGER DES CULS FOUETTES ne saurait être tenue d'aucune garantie, d'aucune sorte, qu'elle soit implicite ou explicite, concernant notamment l'intégrité, l'exactitude, l'actualité, la non-contrefaçon, la disponibilité, la fiabilité ou l'exhaustivité des informations, produits, accessoires ou services apparaissant sur le Site ni leur adéquation à l'utilisation que l’internaute projette d'en faire ainsi que des conséquences de leur utilisation.
 
     L’usage des informations, messages ou données de toute natures disponibles par l’intermédiaire du Site relève de la seule responsabilité de l’internaute, et les décisions ou actions que celui-ci serait conduit à prendre ou à mener en considération de ces informations ne sauraient engager d’autre responsabilité que celle de l’internaute.
 
@@ -93,7 +93,7 @@ const LegalMentionCard = () => (
     <h3>Article 7 – Droit d'accès</h3>
 
     <p>En application de cette loi, les internautes disposent d’un droit d’accès, de rectification, de modification et de suppression concernant les données qui les concernent personnellement. Ce droit peut être exercé par voie postale auprès de :
-    LE POTAGER DES CULS FOUETTES Lou Brats 34650 Romiguières ou par courriel à l’adresse email suivante : lepotagerdevie@gmail.com.
+    LE POTAGER DES CULS FOUETTES Rue du barboux 39350 Ougney  ou par courriel à l’adresse email suivante : contact@lepotagerdesculsfouettes.fr.
     Les informations personnelles collectées ne sont en aucun cas confiées à des tiers hormis dans un cas de force majeure ou pour l’éventuelle bonne exécution de la prestation commandée par l’internaute.</p>
 
     <h3>Article 8 – Litiges</h3>
@@ -102,7 +102,7 @@ const LegalMentionCard = () => (
 
     <h3>Article 9 – Loi Applicable</h3>
 
-    <p>Le contenu du site est assujetti au droit applicable en France. Tout utilisateur reconnaît la compétence du tribunal compétent de MONTPELLIER pour tout ce qui concerne le contenu et l’utilisation du site ou les recours en découlant.</p>
+    <p>Le contenu du site est assujetti au droit applicable en France. Tout utilisateur reconnaît la compétence du tribunal compétent  pour tout ce qui concerne le contenu et l’utilisation du site ou les recours en découlant.</p>
   </div>
 </div>
 );
